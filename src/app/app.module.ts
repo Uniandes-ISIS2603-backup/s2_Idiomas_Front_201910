@@ -17,6 +17,10 @@ import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
 import { ActividadComponent } from './actividad/actividad.component';
 import { ActividadCreateComponent } from './actividad-create/actividad-create.component';
+import { ChatCreateComponent } from './chat-create/chat-create.component';
+import { ChatDetailComponent } from './chat-detail/chat-detail.component';
+import { ChatEditComponent } from './chat-edit/chat-edit.component';
+import { ChatListComponent } from './chat-list/chat-list.component';
 
 
 
@@ -25,7 +29,11 @@ import { ActividadCreateComponent } from './actividad-create/actividad-create.co
     declarations: [
         AppComponent,
         ActividadComponent,
-        ActividadCreateComponent
+        ActividadCreateComponent,
+        ChatCreateComponent,
+        ChatDetailComponent,
+        ChatEditComponent,
+        ChatListComponent
     ],
     imports: [
         BrowserModule,
