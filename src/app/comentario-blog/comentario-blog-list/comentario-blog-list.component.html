@@ -40,7 +40,7 @@ and open the template in the editor.
                     <font size="6">Comentarios</font>
                 </h1>
             </div>
-            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink= "/{{comentario.id}}"
+            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink= "/{{comentario.titulo}}"
             >
             
                 <div class="media-body">
@@ -48,7 +48,7 @@ and open the template in the editor.
 
                     <div class="media-body">
 
-                        <h4 class="media-heading user_name">Autor - {{comentario.id}}</h4>
+                        <h4 class="media-heading user_name">Autor - {{comentario.titulo}}</h4>
                         {{comentario.texto}}
 
                         <p><small><a href="">Editar</a></small></p>

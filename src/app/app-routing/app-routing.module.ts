@@ -27,6 +27,10 @@ const routes: Routes = [
         
     },
     {
+        path: 'home',
+        component: AuthLoginComponent
+    },
+    {
         path: 'grupoInteresComments',
         children: [
             {
@@ -35,6 +39,10 @@ const routes: Routes = [
             }
         ]
         
+    },
+    {
+        path: '**',
+        redirectTo: 'home'
     }
 ];
 
