@@ -9,11 +9,12 @@ titulo: string;
 
 id: number;
 
-descripcion: string;
+texto: string;
 
 fecha: Date;
 
 autor: string;
+
 
 }
 

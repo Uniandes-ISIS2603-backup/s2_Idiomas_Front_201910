@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ComentarioBlogService } from '../comentario-blog.service';
 import { ComentarioBlog } from '../comentario-blog';
-import { ComentarioBlogDetail } from '../comentario-blog-detail';
+
 
 @Component({
     selector: 'app-comentario-blog-detail',
@@ -31,7 +31,7 @@ export class ComentarioBlogDetailComponent implements OnInit {
     /**
     * The comentarioBlog whose details we want to show
     */
-    comentarioBlogDetail: ComentarioBlogDetail;
+    comentarioBlog: ComentarioBlog;
 
 
 
@@ -45,8 +45,8 @@ export class ComentarioBlogDetailComponent implements OnInit {
     */
     getComentarioBlogDetail(): void {
         this.comentarioBlogService.getComentarioBlogDetail(this.comentarioBlog_id)
-            .subscribe(comentarioBlogDetail => {
-                this.comentarioBlogDetail = comentarioBlogDetail
+            .subscribe(comentarioBlog => {
+                this.comentarioBlog = comentarioBlog
             });
     }
 
@@ -56,7 +56,7 @@ export class ComentarioBlogDetailComponent implements OnInit {
     */
     ngOnInit() {
         this.comentarioBlog_id = +this.route.snapshot.paramMap.get('id');
-        this.comentarioBlogDetail = new ComentarioBlogDetail();
+        this.comentarioBlog = new ComentarioBlog();
         this.getComentarioBlogDetail();
     }
 
