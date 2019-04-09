@@ -15,25 +15,18 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
-import { ActividadComponent } from './actividad/actividad.component';
-import { ActividadCreateComponent } from './actividad-create/actividad-create.component';
-import { ChatCreateComponent } from './chat-create/chat-create.component';
-import { ChatDetailComponent } from './chat-detail/chat-detail.component';
-import { ChatEditComponent } from './chat-edit/chat-edit.component';
-import { ChatListComponent } from './chat-list/chat-list.component';
+import { ActividadModule } from './actividad/actividad.module';
+import { EstadiaModule } from './estadia/estadia.module';
+import { ChatModule } from './chat/chat.module';
+import { EncuentroModule } from './encuentro/encuentro.module';
+import { OtroModule } from './otro/otro.module';
 
 
 
 
 @NgModule({
     declarations: [
-        AppComponent,
-        ActividadComponent,
-        ActividadCreateComponent,
-        ChatCreateComponent,
-        ChatDetailComponent,
-        ChatEditComponent,
-        ChatListComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
@@ -45,6 +38,11 @@ import { ChatListComponent } from './chat-list/chat-list.component';
         FormsModule,
         ComentarioBlogModule,
         ComentarioGrupoInteresModule,
+        ActividadModule,
+        EstadiaModule,
+        ChatModule,
+        EncuentroModule,
+        OtroModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',

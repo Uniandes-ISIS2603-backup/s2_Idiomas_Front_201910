@@ -10,6 +10,8 @@ import {ComentarioGrupoInteresListComponent} from '../comentario-grupo-interes/c
 import {ComentarioBlogDetailComponent } from '../comentario-blog/comentario-blog-detail/comentario-blog-detail.component';
 import { ActividadListComponent } from '../actividad/actividad-list/actividad-list.component';
 import { ActividadDetailComponent } from '../actividad/actividad-detail/actividad-detail.component';
+import { ActividadCreateComponent } from '../actividad/actividad-create/actividad-create.component';
+import { ActividadEditComponent } from '../actividad/actividad-edit/actividad-edit.component';
 
 const routes: Routes = [
 
@@ -42,9 +44,17 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: ActividadDetailComponent
+            },
+            {
+            path: 'add',
+            component: ActividadCreateComponent
+            },
+            {
+                path:':id/edit',
+                component: ActividadEditComponent 
             }
         ]
-    }
+    },
     {
         path: 'home',
         component: AuthLoginComponent
