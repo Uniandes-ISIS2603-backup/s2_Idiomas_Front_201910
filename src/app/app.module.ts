@@ -15,6 +15,10 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
+import { UsuarioModule } from './usuario/usuario.module';
+import { AdministradorModule } from './administrador/administrador.module';
+import { CoordinadorModule } from './coordinador/coordinador.module';
+import { AnfitrionModule } from './anfitrion/anfitrion.module';
 
 
 
@@ -33,6 +37,10 @@ import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comenta
         FormsModule,
         ComentarioBlogModule,
         ComentarioGrupoInteresModule,
+        UsuarioModule,
+        AnfitrionModule,
+        AdministradorModule,
+        CoordinadorModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',

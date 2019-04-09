@@ -40,13 +40,26 @@
     <li class="nav-item">
         <a id="grupoInteresCommentsTag" class="nav-link" routerLink="/grupoInteresComments/list">Comentarios Grupo de Interes</a>
     </li>
+    <li class="nav-item">
+        <a id="usuariosTag" class="nav-link" routerLink="/usuarios/list">usuarios</a>
+    </li>
+    <li class="nav-item">
+        <a id="administradorTag" class="nav-link" routerLink="/administradores/list">administradores</a>
+    </li>
+    <li class="nav-item">
+        <a id="coordinadoresTag" class="nav-link" routerLink="/coordinadores/list">coordinadores</a>
+    </li>
+     <li class="nav-item">
+        <a id="anfitrionesTag" class="nav-link" routerLink="/anfitriones/list">anfitriones</a>
+    </li>
     </ul>
 
-    <div>
-        <router-outlet></router-outlet>
-        <br>
-        <br>
-    </div>
+    		<div class="col">
+			<router-outlet></router-outlet>
+		</div>
+		<div class="col">
+			<router-outlet name="detail"></router-outlet>
+		</div>
     <footer class="footer bg-light" id="footer">
         <div class="container">
             <p class="navbar-text text-center">
