@@ -24,7 +24,7 @@ export class ActividadService {
     * Returns the Observable object containing the list of actividades retrieved from the API
     * @returns The list of actividades in real time
     */
-   getActivities(): Observable<Actividad[]> {
+   getActividades(): Observable<Actividad[]> {
     return this.http.get<Actividad[]>(API_URL + actividades);
 }
 

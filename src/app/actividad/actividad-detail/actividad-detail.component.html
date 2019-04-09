@@ -1,3 +1,24 @@
-<p>
-  actividad-detail works!
-</p>
+<div class="panel-body">
+    <div class="border margin">
+        <p class="h3 p-3">{{actividadDetail.name}}<p> 
+        <div class="row">
+            <div class="col-md-3">
+                <div class="thumb">
+                    <img class="img-fluid" src='{{actividadDetail.image}}' alt="{{actividadDetail.image}}" />   
+                </div>
+            </div>
+            <div class="col">
+                <dl>     
+                    <dt>Bio</dt>
+                    <dd>{{actividadDetail.description}}</dd>
+                    <dt>BirthDay</dt>
+                    <dd>{{actividadDetail.nombre}}</dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+    <p class="h3 p-3">Books by this actividad : </p>
+    <app-book-list [books]="actividadDetail.books"></app-book-list>
+</div>
+

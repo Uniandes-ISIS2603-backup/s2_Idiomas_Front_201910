@@ -1,64 +1,69 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ActividadService } from '../actividad.service';
+import { Actividad } from '../actividad';
+import { ActividadDetail } from '../actividad-detail';
+import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-actividad-list',
   templateUrl: './actividad-list.component.html',
   styleUrls: ['./actividad-list.component.css']
 })
-export class AuthorListComponent implements OnInit {
+export class ActividadListComponent implements OnInit {
 
   /**
   * Constructor for the component
-  * @param authorService The author's services provider
+  * @param actividadService The actividad's services provider
   * @param toastrService The toastr to show messages to the user
   */
   constructor(
-      private authorService: AuthorService,
+      private actividadService: ActividadService,
       private modalDialogService: ModalDialogService,
       private viewRef: ViewContainerRef,
       private toastrService: ToastrService) {}
 
   /**
-  * The list of authors which belong to the BookStore
+  * The list of actividades which belong to the BookStore
   */
-  authors: Author[];
+  actividades: Actividad[];
 
   /**
-  * The id of the author that the user wants to view
+  * The id of the actividad that the user wants to view
   */
-  author_id: number;
+  actividad_id: number;
 
   /**
-  * Shows or hides the author-create-component
+  * Shows or hides the actividad-create-component
   */
   showCreate: boolean;
 
   /**
-   * Shows or hides the detail of an author
+   * Shows or hides the detail of an actividad
    */
   showView: boolean;
 
   /**
-  * Shows or hides the edition of an author
+  * Shows or hides the edition of an actividad
   */
   showEdit: boolean;
 
   /**
-   * the author that the user views.
+   * the actividad that the user views.
    */
-  selectedAuthor: Author;
+  selectedActividad: Actividad;
 
 
   /**
-  * Shows the author
+  * Shows the actividad
   */
-  onSelected(author_id: number): void {
+  onSelected(actividad_id: number): void {
       this.showCreate = false;
       this.showEdit = false;
       this.showView = true;
-      this.author_id = author_id;
-      this.selectedAuthor = new AuthorDetail();
-      this.getAuthorDetail();
+      this.actividad_id = actividad_id;
+      this.selectedActividad = new ActividadDetail();
+      this.getActividadDetail();
   }
 
   /**
@@ -73,14 +78,14 @@ export class AuthorListComponent implements OnInit {
   /**
   * Shows or hides the create component
   */
-  showHideEdit(author_id: number): void {
-      if (!this.showEdit || (this.showEdit && author_id != this.selectedAuthor.id)) {
+  showHideEdit(actividad_id: number): void {
+      if (!this.showEdit || (this.showEdit && actividad_id != this.selectedActividad.id)) {
           this.showView = false;
           this.showCreate = false;
           this.showEdit = true;
-          this.author_id = author_id;
-          this.selectedAuthor = new AuthorDetail();
-          this.getAuthorDetail();
+          this.actividad_id = actividad_id;
+          this.selectedActividad = new ActividadDetail();
+          this.getActividadDetail();
       }
       else {
           this.showEdit = false;
@@ -89,42 +94,42 @@ export class AuthorListComponent implements OnInit {
   }
 
   /**
-  * Asks the service to update the list of authors
+  * Asks the service to update the list of actividades
   */
-  getAuthors(): void {
-      this.authorService.getAuthors()
-          .subscribe(authors => {
-              this.authors = authors;
+  getActividades(): void {
+      this.actividadService.getActividades()
+          .subscribe(actividades => {
+              this.actividades = actividades;
           });
   }
 
-  getAuthorDetail(): void {
-      this.authorService.getAuthorDetail(this.author_id)
-          .subscribe(selectedAuthor => {
-              this.selectedAuthor = selectedAuthor
+  getActividadDetail(): void {
+      this.actividadService.getActividadDetail(this.actividad_id)
+          .subscribe(selectedActividad => {
+              this.selectedActividad = selectedActividad
           });
   }
 
-  updateAuthor(): void {
+  updateActividad(): void {
       this.showEdit = false;
       this.showView = true;
   }
 
   /**
-  * Deletes an author
+  * Deletes an actividad
   */
-  deleteAuthor(authorId): void {
+  deleteActividad(actividadId): void {
       this.modalDialogService.openDialog(this.viewRef, {
-          title: 'Delete an author',
+          title: 'Delete an actividad',
           childComponent: SimpleModalComponent,
-          data: {text: 'Are you sure your want to delete this author from the BookStore?'},
+          data: {text: 'Are you sure your want to delete this actividad from the BookStore?'},
           actionButtons: [
               {
                   text: 'Yes',
                   buttonClass: 'btn btn-danger',
                   onAction: () => {
-                      this.authorService.deleteAuthor(authorId).subscribe(() => {
-                          this.toastrService.error("The author was successfully deleted", "Author deleted");
+                      this.actividadService.deleteActividad(actividadId).subscribe(() => {
+                          this.toastrService.error("The actividad was successfully deleted", "Actividad deleted");
                           this.ngOnInit();
                       }, err => {
                           this.toastrService.error(err, "Error");
@@ -139,15 +144,15 @@ export class AuthorListComponent implements OnInit {
 
 
   /**
-  * This will initialize the component by retrieving the list of authors from the service
+  * This will initialize the component by retrieving the list of actividades from the service
   * This method will be called when the component is created
   */
   ngOnInit() {
       this.showCreate = false;
       this.showView = false;
       this.showEdit = false;
-      this.selectedAuthor = undefined;
-      this.author_id = undefined;
-      this.getAuthors();
+      this.selectedActividad = undefined;
+      this.actividad_id = undefined;
+      this.getActividades();
   }
 }

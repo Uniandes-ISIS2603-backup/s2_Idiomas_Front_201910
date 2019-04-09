@@ -2,7 +2,7 @@ import { Actividad } from "./actividad";
 //import { Usuario } from "../usuario/usuario";
 //import { Comentario } from "../comentario/comentario";
 
-export class ActividadDetail {
+export class ActividadDetail extends Actividad {
 
     /**
      * Lista que contiene los usuarios que están asociados con
