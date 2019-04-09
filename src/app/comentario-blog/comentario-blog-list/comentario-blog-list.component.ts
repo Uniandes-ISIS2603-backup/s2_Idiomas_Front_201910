@@ -64,15 +64,7 @@ export class ComentarioBlogListComponent implements OnInit {
           });
   }
 
-  editComentario(): void {
-    // let textoP: String = new String(this.comentario.texto);
-     //this.comentario.texto = this.textoP;
-     this.comentarioBlogService.updateComentario(this.selectedComment)
-         .subscribe(() => {
-             this.toastrService.success("The comentario's information was updated", "Comentario edition");
-         });
-     this.update.emit();
- }
+
 
     /**
      * This will initialize the component by retrieving the list of editorials from the service
