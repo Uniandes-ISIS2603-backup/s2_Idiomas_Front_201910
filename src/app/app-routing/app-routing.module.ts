@@ -9,6 +9,7 @@ import {ComentarioBlogListComponent} from '../comentario-blog/comentario-blog-li
 import {ComentarioGrupoInteresListComponent} from '../comentario-grupo-interes/comentario-grupo-interes-list/comentario-grupo-interes-list.component';
 import {ComentarioBlogDetailComponent } from '../comentario-blog/comentario-blog-detail/comentario-blog-detail.component';
 import {ComentarioCreateComponent } from '../comentario-blog/comentario-create/comentario-create.component';
+import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comentario-edit.component';
 
 const routes: Routes = [
 
@@ -27,6 +28,10 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: ComentarioBlogDetailComponent
+            },
+            {
+                path: ':id/edit',
+                component: ComentarioEditComponent,
             }
         ]
         
