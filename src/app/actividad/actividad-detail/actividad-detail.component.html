@@ -2,23 +2,22 @@
     <div class="border margin">
         <p class="h3 p-3">{{actividadDetail.name}}<p> 
         <div class="row">
-            <div class="col-md-3">
-                <div class="thumb">
-                    <img class="img-fluid" src='{{actividadDetail.image}}' alt="{{actividadDetail.image}}" />   
-                </div>
-            </div>
             <div class="col">
                 <dl>     
-                    <dt>Bio</dt>
-                    <dd>{{actividadDetail.description}}</dd>
-                    <dt>BirthDay</dt>
+                    <dt>Nombre</dt>
                     <dd>{{actividadDetail.nombre}}</dd>
+                    <dt>Fecha</dt>
+                    <dd>{{actividadDetail.fecha}}</dd>
+                    <dt>Descripcion</dt>
+                    <dd>{{actividadDetail.descripcion}}</dd>
+                    <dt>Motivacion</dt>
+                    <dd>{{actividadDetail.motivacion}}</dd>
                 </dl>
             </div>
 
         </div>
     </div>
-    <p class="h3 p-3">Books by this actividad : </p>
-    <app-book-list [books]="actividadDetail.books"></app-book-list>
+    <!--<p class="h3 p-3">Calificaciones de la actividad : </p>
+    <app-calificacion-list [books]="actividadDetail.calificacion"></app-book-list>-->
 </div>
 

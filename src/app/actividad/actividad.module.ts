@@ -15,6 +15,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActividadService } from './actividad.service';
+import { ActividadCreateComponent } from './actividad-create/actividad-create.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ActividadService } from './actividad.service';
     NgbModule
   ],
   declarations: [
+    ActividadCreateComponent,
     ActividadDetailComponent,
     ActividadEditComponent,
     ActividadListComponent,

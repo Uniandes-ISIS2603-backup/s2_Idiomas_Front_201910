@@ -9,9 +9,7 @@ import { ActividadDetail } from './actividad-detail';
 const API_URL = environment.apiURL;
 const actividades = '/actividades';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ActividadService {
 
   /**

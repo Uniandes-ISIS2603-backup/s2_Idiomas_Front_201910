@@ -2,11 +2,11 @@
     <div class="col-3"></div>
     <div class="col-6">
         <br>
-        <h2 class="text-center">Create an actividad</h2>
+        <h2 class="text-center">Crear actividad</h2>
         <br>
         <form name="actividad" (ngSubmit)="f.form.valid && createActividad()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="actividadName"><b>Name</b></label>
+                <label for="actividadName"><b>Nombre</b></label>
                 <input type="text" name="actividadName" class="form-control" id="actividadName" [(ngModel)]="actividad.name"
                     #actividadName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadName.invalid }" required>
                 <div class="invalid-feedback">

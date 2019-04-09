@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-4">
             <br>
-            <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+            <div class="row justify-content-center align-self-center">
                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
                     (click)="showHideCreate()">Create an actividad</button>
             </div>
@@ -11,12 +11,14 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="h4">Actividad´s Name</th>    
+                        <th class="h4">Nombre</th>
+                        <th class="h4">Fecha</th>  
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor = "let actividad of actividades" >
-                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.name}}</dd>
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.nombre}}</dd>
+                        <dd>{{actividad.fecha}}</dd>
                 </td>
                 <td *ngxPermissionsOnly="['ADMIN']">
                     <button class="btn btn-primary" (click)="showHideEdit(actividad.id)"><span class="fa fa-pencil"></span></button>

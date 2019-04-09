@@ -45,9 +45,9 @@ export class ActividadCreateComponent implements OnInit {
     */
     createActividad(): Actividad {
 
-        let dateB: Date = new Date(this.actividad.fecha.year, this.actividad.fecha.month - 1, this.actividad.fecha.day);
+        /*let dateB: Date = new Date(this.actividad.fecha.year, this.actividad.fecha.month - 1, this.actividad.fecha.day);
 
-        this.actividad.fecha = this.dp.transform(dateB, 'yyyy-MM-dd');
+        this.actividad.fecha = this.dp.transform(dateB, 'yyyy-MM-dd');*/
         console.log(this.actividad);
         this.actividadService.createActividad(this.actividad)
             .subscribe((actividad) => {

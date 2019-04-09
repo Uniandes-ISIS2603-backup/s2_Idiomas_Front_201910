@@ -1,6 +1,6 @@
 import { Actividad } from "./actividad";
 //import { Usuario } from "../usuario/usuario";
-//import { Comentario } from "../comentario/comentario";
+import { ComentarioBlog } from "../comentario-blog/comentario-blog";
 
 export class ActividadDetail extends Actividad {
 
@@ -14,5 +14,5 @@ export class ActividadDetail extends Actividad {
      * Lista que contiene los comentarios que están
      * asociados con esta actividad.
      */
-    //comentarios: Comentario[];
+    comentarios: ComentarioBlog[];
 }
