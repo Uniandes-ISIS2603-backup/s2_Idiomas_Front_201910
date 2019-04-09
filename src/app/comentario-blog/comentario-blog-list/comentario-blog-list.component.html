@@ -60,5 +60,9 @@ and open the template in the editor.
 
         </div>
     </div>
-    <button class="btn btn-primary">Crear comentario</button>  
+    <button class="btn btn-primary"  routerLink="../add">Crear comentario</button>  
+
+    <div *ngIf="showCreate">
+        <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comentario-create>
+    </div>
 </div>

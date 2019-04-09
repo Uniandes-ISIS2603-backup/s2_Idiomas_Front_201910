@@ -15,8 +15,8 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
-import { ActividadComponent } from './actividad/actividad.component';
-import { ActividadCreateComponent } from './actividad-create/actividad-create.component';
+//import { ActividadComponent } from './actividad/actividad.component';
+//import { ActividadCreateComponent } from './actividad-create/actividad-create.component';
 
 
 
@@ -24,8 +24,7 @@ import { ActividadCreateComponent } from './actividad-create/actividad-create.co
 @NgModule({
     declarations: [
         AppComponent,
-        ActividadComponent,
-        ActividadCreateComponent
+
     ],
     imports: [
         BrowserModule,
