@@ -12,6 +12,13 @@ import { ActividadComentarioListComponent } from './actividad-comentario-list/ac
   imports: [
     CommonModule
   ],
-  declarations: [ActividadDetailComponent, ActividadEditComponent, ActividadListComponent, ActividadComentarioCreateComponent, ActividadComentarioDetailComponent, ActividadComentarioEditComponent, ActividadComentarioListComponent]
+  declarations: [
+    ActividadDetailComponent, 
+    ActividadEditComponent, 
+    ActividadListComponent, 
+    ActividadComentarioCreateComponent, 
+    ActividadComentarioDetailComponent, 
+    ActividadComentarioEditComponent, 
+    ActividadComentarioListComponent]
 })
 export class ActividadModule { }

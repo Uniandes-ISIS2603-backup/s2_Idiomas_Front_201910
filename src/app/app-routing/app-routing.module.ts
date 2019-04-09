@@ -8,6 +8,8 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import {ComentarioBlogListComponent} from '../comentario-blog/comentario-blog-list/comentario-blog-list.component';
 import {ComentarioGrupoInteresListComponent} from '../comentario-grupo-interes/comentario-grupo-interes-list/comentario-grupo-interes-list.component';
 import {ComentarioBlogDetailComponent } from '../comentario-blog/comentario-blog-detail/comentario-blog-detail.component';
+import { ActividadListComponent } from '../actividad/actividad-list/actividad-list.component';
+import { ActividadDetailComponent } from '../actividad/actividad-detail/actividad-detail.component';
 
 const routes: Routes = [
 
@@ -26,6 +28,23 @@ const routes: Routes = [
         ]
         
     },
+
+    /**
+     * Rutas para los componentes asociados con actividad
+     */
+    {
+        path: 'actividades',
+        children: [
+            {
+                path: 'list',
+                component: ActividadListComponent
+            },
+            {
+                path: ':id',
+                component: ActividadDetailComponent
+            }
+        ]
+    }
     {
         path: 'home',
         component: AuthLoginComponent

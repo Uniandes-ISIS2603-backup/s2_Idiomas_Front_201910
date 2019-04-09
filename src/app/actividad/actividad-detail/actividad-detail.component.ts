@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ActividadService } from '../actividad.service';
 
 @Component({
   selector: 'app-actividad-detail',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActividadDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private actividadService: ActividadService,
+    private route: ActivatedRoute
+  ) { }
+    actividad_id: number;
+
 
   ngOnInit() {
+    this.actividad_id = +this.route.snapshot.paramMap.get('id');
   }
 
 }

@@ -1,3 +1,5 @@
-<p>
-  actividad-list works!
-</p>
+<tr *ngFor = "let actividad of actividades">
+  <td style="cursor: pointer;">
+      <dd class="figure-caption" routerLink="/actividades/{{actividad.id}}">{{actividad.nombre}}</dd>
+  </td>
+</tr>
