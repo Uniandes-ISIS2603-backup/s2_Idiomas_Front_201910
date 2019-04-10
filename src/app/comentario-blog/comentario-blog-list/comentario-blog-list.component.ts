@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import {ComentarioBlogService} from '../comentario-blog.service'
 import {ActivatedRoute} from '@angular/router';
 import 'rxjs/add/operator/filter';
 import {ComentarioBlog} from '../comentario-blog'
+import {ToastrService} from 'ngx-toastr';
 @Component({
   selector: 'list-comentarioblog',
   templateUrl: './comentario-blog-list.component.html',
@@ -20,7 +21,7 @@ export class ComentarioBlogListComponent implements OnInit {
      * Constructor for the component
      * @param editorialService The author's services provider
      */
-    constructor(private comentarioBlogService: ComentarioBlogService,  private route: ActivatedRoute) { }
+    constructor(private comentarioBlogService: ComentarioBlogService,  private route: ActivatedRoute, private toastrService: ToastrService) { }
     
     /**
      * The list of editorials which belong to the BookStore
@@ -28,7 +29,8 @@ export class ComentarioBlogListComponent implements OnInit {
     comentarioBlogs: ComentarioBlog[];
     comentarioBlogId: number;
     selectedComment : ComentarioBlog;
-     
+
+    @Output() update = new EventEmitter();
 
     /**
      * Asks the service to update the list of editorials
@@ -51,7 +53,7 @@ export class ComentarioBlogListComponent implements OnInit {
     onSelected(comentarioId: number):void {
         this.comentarioBlogId = comentarioId;
         this.selectedComment = new ComentarioBlog();
-        this.getCommentDetail();     
+ 
         console.log(comentarioId);
     }
 
@@ -61,6 +63,8 @@ export class ComentarioBlogListComponent implements OnInit {
               this.selectedComment = selectedComment
           });
   }
+
+
 
     /**
      * This will initialize the component by retrieving the list of editorials from the service

@@ -28,6 +28,8 @@ import { ChatListComponent } from '../chat/chat-list/chat-list.component';
 import { ChatDetailComponent } from '../chat/chat-detail/chat-detail.component';
 import { ChatCreateComponent } from '../chat/chat-create/chat-create.component';
 import { ChatEditComponent } from '../chat/chat-edit/chat-edit.component';
+import {ComentarioCreateComponent } from '../comentario-blog/comentario-create/comentario-create.component';
+import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comentario-edit.component';
 
 const routes: Routes = [
 
@@ -40,8 +42,16 @@ const routes: Routes = [
                 component: ComentarioBlogListComponent
             },
             {
+                path: 'add',
+                component: ComentarioCreateComponent,
+            },
+            {
                 path: ':id',
                 component: ComentarioBlogDetailComponent
+            },
+            {
+                path: ':id/edit',
+                component: ComentarioEditComponent,
             }
         ]
         
@@ -150,8 +160,9 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'home'
+        redirectTo: 'home',
     }
+    
 ];
 
 @NgModule({
