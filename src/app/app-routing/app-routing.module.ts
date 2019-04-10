@@ -46,8 +46,8 @@ const routes: Routes = [
                 component: ActividadDetailComponent
             },
             {
-            path: 'add',
-            component: ActividadCreateComponent
+                path: 'add',
+                component: ActividadCreateComponent
             },
             {
                 path:':id/edit',

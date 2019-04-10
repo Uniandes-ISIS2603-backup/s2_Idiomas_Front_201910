@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewContainerRef } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ActividadService } from '../actividad.service';
 import { ToastrService } from 'ngx-toastr';
@@ -21,7 +21,7 @@ export class ActividadCreateComponent implements OnInit {
     constructor(
         private dp: DatePipe,
         private actividadService: ActividadService,
-        private toastrService: ToastrService
+        private toastrService: ToastrService,
     ) {}
 
     /**
