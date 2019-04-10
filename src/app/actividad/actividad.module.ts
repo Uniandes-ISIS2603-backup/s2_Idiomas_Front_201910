@@ -35,6 +35,7 @@ import { OtroListComponent } from '../otro/otro-list/otro-list.component';
 import { ChatService } from '../chat/chat.service';
 import { EncuentroService } from '../encuentro/encuentro.service';
 import { EstadiaService } from '../estadia/estadia.service';
+import { OtroService } from '../otro/otro.service';
 
 
 @NgModule({
@@ -76,7 +77,7 @@ import { EstadiaService } from '../estadia/estadia.service';
     providers: [ActividadService,
       ChatService,
       EncuentroService,
-      EstadiaService/*,
-      OtroService*/]
+      EstadiaService,
+      OtroService]
 })
 export class ActividadModule { }
