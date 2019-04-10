@@ -9,6 +9,6 @@ import { EncuentroListComponent } from './encuentro-list/encuentro-list.componen
   imports: [
     CommonModule
   ],
-  declarations: [EncuentroCreateComponent, EncuentroDetailComponent, EncuentroEditComponent, EncuentroListComponent]
+  declarations: []
 })
 export class EncuentroModule { }
