@@ -1,3 +1,53 @@
-<p>
-  actividad-create works!
-</p>
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Crear una actividad</h2>
+        <br>
+        <form name="actividad" (ngSubmit)="f.form.valid && createActividad()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="actividadNombre"><b>Nombre</b></label>
+                <input type="text" name="actividadNombre" class="form-control" id="actividadNombre" [(ngModel)]="actividad.nombre"
+                       #actividadName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadName.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>The actividad's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="actividadFecha"><b>Fecha</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && actividadFecha.invalid }">
+                    <input class="form-control" id="actividadFecha" name="actividadFecha" dateFormat="YYYY-MM-dd"
+                       [(ngModel)]="actividad.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                       #actividadFecha="ngModel" [ngClass]="{'is-invalid': f.submitted && actividadFecha.invalid }"
+                       required>
+                       <div class="invalid-feedback">
+                        <div>The actividad's date is missing</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="actividadDescripcion"><b>Descripcion</b></label>
+                <textarea name="actividadDescripcion" class="form-control" id="actividadDescripcion" [(ngModel)]="actividad.descripcion"
+                          #actividadDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The actividad's description is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="actividadMotivacion"><b>Motivacion</b></label>
+                <textarea name="actividadMotivacion" class="form-control" id="actividadMotivacion" [(ngModel)]="actividad.motivacion"
+                          #actividadMotivacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The actividad's motivacion is missing</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Crear</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
