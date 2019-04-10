@@ -15,4 +15,10 @@ export class ActividadDetail extends Actividad {
      * asociados con esta actividad.
      */
     comentarios: ComentarioBlog[];
+
+    /**
+     * Lista de tipo UsuarioDTO contiene los usuarios que están asociados con
+     * esta estadia.
+     */
+    //private List<UsuarioDTO> usuario;
 }
