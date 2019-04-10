@@ -9,6 +9,6 @@ import { OtroListComponent } from './otro-list/otro-list.component';
   imports: [
     CommonModule
   ],
-  declarations: [OtroCreateComponent, OtroDetailComponent, OtroEditComponent, OtroListComponent]
+  declarations: []
 })
 export class OtroModule { }

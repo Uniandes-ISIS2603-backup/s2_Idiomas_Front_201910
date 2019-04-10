@@ -36,7 +36,27 @@ export class ActividadListComponent implements OnInit {
   /**
   * Shows or hides the actividad-create-component
   */
-  showCreate: boolean;
+  showCreateA: boolean;
+
+  /**
+  * Shows or hides the actividad-create-component
+  */
+ showCreateC: boolean;
+
+ /**
+  * Shows or hides the actividad-create-component
+  */
+ showCreateEs: boolean;
+
+ /**
+  * Shows or hides the actividad-create-component
+  */
+ showCreateEn: boolean;
+
+ /**
+  * Shows or hides the actividad-create-component
+  */
+ showCreateO: boolean;
 
   /**
    * Shows or hides the detail of an actividad
@@ -58,7 +78,11 @@ export class ActividadListComponent implements OnInit {
   * Shows the actividad
   */
   onSelected(actividad_id: number): void {
-      this.showCreate = false;
+      this.showCreateA = false;
+      this.showCreateC = false;
+      this.showCreateEn = false;
+      this.showCreateEs = false;
+      this.showCreateO = false;
       this.showEdit = false;
       this.showView = true;
       this.actividad_id = actividad_id;
@@ -67,13 +91,40 @@ export class ActividadListComponent implements OnInit {
   }
 
   /**
-  * Shows or hides the create component
+  * Shows or hides the create component for actividad
   */
-  showHideCreate(): void {
+  showHideCreateC(): void {
       this.showView = false;
       this.showEdit = false;
-      this.showCreate = !this.showCreate;
+      this.showCreateC = !this.showCreateC;
   }
+
+  /**
+  * Shows or hides the create component for actividad
+  */
+ showHideCreateEn(): void {
+    this.showView = false;
+    this.showEdit = false;
+    this.showCreateEn = !this.showCreateEn;
+}
+
+/**
+  * Shows or hides the create component for actividad
+  */
+ showHideCreateEs(): void {
+    this.showView = false;
+    this.showEdit = false;
+    this.showCreateEn = !this.showCreateEs;
+}
+
+  /**
+  * Shows or hides the create component for actividad
+  */
+ showHideCreateA(): void {
+    this.showView = false;
+    this.showEdit = false;
+    this.showCreateA = !this.showCreateA;
+}
 
   /**
   * Shows or hides the create component
@@ -81,7 +132,11 @@ export class ActividadListComponent implements OnInit {
   showHideEdit(actividad_id: number): void {
       if (!this.showEdit || (this.showEdit && actividad_id != this.selectedActividad.id)) {
           this.showView = false;
-          this.showCreate = false;
+          this.showCreateA = false;
+          this.showCreateC = false;
+          this.showCreateEn = false;
+          this.showCreateEs = false;
+          this.showCreateO = false;
           this.showEdit = true;
           this.actividad_id = actividad_id;
           this.selectedActividad = new ActividadDetail();
@@ -148,7 +203,11 @@ export class ActividadListComponent implements OnInit {
   * This method will be called when the component is created
   */
   ngOnInit() {
-      this.showCreate = false;
+        this.showCreateA = false;
+    this.showCreateC = false;
+    this.showCreateEn = false;
+    this.showCreateEs = false;
+    this.showCreateO = false;
       this.showView = false;
       this.showEdit = false;
       this.selectedActividad = undefined;

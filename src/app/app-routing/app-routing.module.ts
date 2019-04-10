@@ -71,6 +71,33 @@ const routes: Routes = [
             }
         ]
     },
+    /**
+     * Rutas para los componentes asociados con chat
+     */
+    {
+        path: 'chats',
+        children: [
+            {
+                path: 'list',
+                component: ChatListComponent
+            },
+            {
+                path: ':id',
+                component: ChatDetailComponent
+            },
+            {
+                path: 'add',
+                component: ChatCreateComponent
+            },
+            {
+                path:':id/edit',
+                component: ChatEditComponent 
+            }
+        ]
+    },
+    /**
+     * Rutas para los componentes asociados con encuentros
+     */
     {
         path: 'encuentros',
         children: [
@@ -92,6 +119,9 @@ const routes: Routes = [
             }
         ]
     },
+    /**
+     * Rutas para los componentes asociados con estadias
+     */
     {
         path: 'estadias',
         children: [
@@ -113,6 +143,9 @@ const routes: Routes = [
             }
         ]
     },
+    /**
+     * Rutas para los componentes asociados con otro
+     */
     {
         path: 'otros',
         children: [

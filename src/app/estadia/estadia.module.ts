@@ -9,6 +9,6 @@ import { EstadiaListComponent } from './estadia-list/estadia-list.component';
   imports: [
     CommonModule
   ],
-  declarations: [EstadiaCreateComponent, EstadiaDetailComponent, EstadiaEditComponent, EstadiaListComponent]
+  declarations: []
 })
 export class EstadiaModule { }
