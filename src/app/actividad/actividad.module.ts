@@ -33,6 +33,7 @@ import { OtroDetailComponent } from '../otro/otro-detail/otro-detail.component';
 import { OtroEditComponent } from '../otro/otro-edit/otro-edit.component';
 import { OtroListComponent } from '../otro/otro-list/otro-list.component';
 import { ChatService } from '../chat/chat.service';
+import { EncuentroService } from '../encuentro/encuentro.service';
 
 
 @NgModule({
@@ -72,8 +73,8 @@ import { ChatService } from '../chat/chat.service';
     OtroEditComponent,
     OtroListComponent],
     providers: [ActividadService,
-      ChatService/*,
-      EncuentroService,
+      ChatService,
+      EncuentroService/*,
       EstadiaService,
       OtroService*/]
 })
