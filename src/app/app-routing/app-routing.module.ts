@@ -12,6 +12,22 @@ import { ActividadListComponent } from '../actividad/actividad-list/actividad-li
 import { ActividadDetailComponent } from '../actividad/actividad-detail/actividad-detail.component';
 import { ActividadCreateComponent } from '../actividad/actividad-create/actividad-create.component';
 import { ActividadEditComponent } from '../actividad/actividad-edit/actividad-edit.component';
+import { EncuentroListComponent } from '../encuentro/encuentro-list/encuentro-list.component';
+import { EncuentroDetailComponent } from '../encuentro/encuentro-detail/encuentro-detail.component';
+import { EncuentroCreateComponent } from '../encuentro/encuentro-create/encuentro-create.component';
+import { EncuentroEditComponent } from '../encuentro/encuentro-edit/encuentro-edit.component';
+import { EstadiaListComponent } from '../estadia/estadia-list/estadia-list.component';
+import { EstadiaDetailComponent } from '../estadia/estadia-detail/estadia-detail.component';
+import { EstadiaCreateComponent } from '../estadia/estadia-create/estadia-create.component';
+import { EstadiaEditComponent } from '../estadia/estadia-edit/estadia-edit.component';
+import { OtroListComponent } from '../otro/otro-list/otro-list.component';
+import { OtroDetailComponent } from '../otro/otro-detail/otro-detail.component';
+import { OtroCreateComponent } from '../otro/otro-create/otro-create.component';
+import { OtroEditComponent } from '../otro/otro-edit/otro-edit.component';
+import { ChatListComponent } from '../chat/chat-list/chat-list.component';
+import { ChatDetailComponent } from '../chat/chat-detail/chat-detail.component';
+import { ChatCreateComponent } from '../chat/chat-create/chat-create.component';
+import { ChatEditComponent } from '../chat/chat-edit/chat-edit.component';
 
 const routes: Routes = [
 
@@ -52,6 +68,69 @@ const routes: Routes = [
             {
                 path:':id/edit',
                 component: ActividadEditComponent 
+            }
+        ]
+    },
+    {
+        path: 'encuentros',
+        children: [
+            {
+                path: 'list',
+                component: EncuentroListComponent
+            },
+            {
+                path: ':id',
+                component: EncuentroDetailComponent
+            },
+            {
+                path: 'add',
+                component: EncuentroCreateComponent
+            },
+            {
+                path:':id/edit',
+                component: EncuentroEditComponent 
+            }
+        ]
+    },
+    {
+        path: 'estadias',
+        children: [
+            {
+                path: 'list',
+                component: EstadiaListComponent
+            },
+            {
+                path: ':id',
+                component: EstadiaDetailComponent
+            },
+            {
+                path: 'add',
+                component: EstadiaCreateComponent
+            },
+            {
+                path:':id/edit',
+                component: EstadiaEditComponent 
+            }
+        ]
+    },
+    {
+        path: 'otros',
+        children: [
+            {
+                path: 'list',
+                component: OtroListComponent
+            },
+            {
+                path: ':id',
+                component: OtroDetailComponent
+            },
+            {
+                path: 'add',
+                component: OtroCreateComponent
+            },
+            {
+                path:':id/edit',
+                component: OtroEditComponent 
             }
         ]
     },

@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-4">
+        <div class="col-12">
             <br>
             <div class="row justify-content-center align-self-center">
                     <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
@@ -22,10 +22,10 @@
                         
                 </td>
                 <td>
-                    <button class="btn btn-primary" (click)="showHideEdit(actividad.id)">Editar<span class="fa fa-pencil"></span></button>
+                    <button class="btn btn-primary" (click)="showHideEdit(actividad.id)">Editar<span class="fa"></span></button>
                 </td>
                 <td>
-                    <button class="btn btn-danger" (click)="deleteActividad(actividad.id)">Eliminar<span class="fa fa-trash"></span></button>
+                    <button class="btn btn-danger" (click)="deleteActividad(actividad.id)">Eliminar<span class="fa"></span></button>
                 </td>
                 </tr>
                 </tbody>

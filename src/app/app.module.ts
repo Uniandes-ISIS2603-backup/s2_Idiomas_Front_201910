@@ -17,9 +17,9 @@ import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
 import { ActividadModule } from './actividad/actividad.module';
 import { EstadiaModule } from './estadia/estadia.module';
-import { ChatModule } from './chat/chat.module';
 import { EncuentroModule } from './encuentro/encuentro.module';
 import { OtroModule } from './otro/otro.module';
+import { ChatModule } from './chat/chat.module';
 
 
 

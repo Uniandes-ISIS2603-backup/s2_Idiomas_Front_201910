@@ -5,19 +5,19 @@
         <br>
         <form name="actividad" (ngSubmit)="f.form.valid && editActividad()" #f="ngForm" novalidate>
               <div class="form-group">
-                <label for="actividadName"><b>Nombre</b></label>
-                <input type="text" name="actividadName" class="form-control" id="actividadName" [(ngModel)]="actividad.name"
+                <label for="actividadNombre"><b>Nombre</b></label>
+                <input type="text" name="actividadNombre" class="form-control" id="actividadNombre" [(ngModel)]="actividad.nombre"
                        #actividadName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadName.invalid }" required>
                        <div class="invalid-feedback">
                     <div>The actividad's name is missing</div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="actividadBirthDate"><b>Fecha</b></label>
-                <div [ngClass]="{ 'is-invalid': f.submitted && actividadBirthDate.invalid }">
-                    <input class="form-control" id="actividadBirthDate" name="actividadBirthDate" dateFormat="YYYY-MM-dd"
-                       [(ngModel)]="actividad.birthDate" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
-                       #actividadBirthDate="ngModel" [ngClass]="{'is-invalid': f.submitted && actividadBirthDate.invalid }"
+                <label for="actividadFecha"><b>Fecha</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && actividadFecha.invalid }">
+                    <input class="form-control" id="actividadFecha" name="actividadFecha" dateFormat="YYYY-MM-dd"
+                       [(ngModel)]="actividad.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                       #actividadFecha="ngModel" [ngClass]="{'is-invalid': f.submitted && actividadFecha.invalid }"
                        required>
                        <div class="invalid-feedback">
                         <div>The actividad's date is missing</div>
@@ -25,9 +25,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="actividadDescription"><b>Descripcion</b></label>
-                <textarea name="actividadDescription" class="form-control" id="actividadDescription" [(ngModel)]="actividad.description"
-                          #actividadDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadDescription.invalid }"
+                <label for="actividadDescripcion"><b>Descripcion</b></label>
+                <textarea name="actividadDescripcion" class="form-control" id="actividadDescripcion" [(ngModel)]="actividad.descripcion"
+                          #actividadDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadDescripcion.invalid }"
                           required></textarea>
                 <div class="invalid-feedback">
                     <div>The actividad's description is missing</div>
@@ -36,10 +36,10 @@
             <div class="form-group">
                 <label for="actividadMotivacion"><b>Motivacion</b></label>
                 <textarea name="actividadMotivacion" class="form-control" id="actividadMotivacion" [(ngModel)]="actividad.motivacion"
-                          #actividadMotivacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadDescription.invalid }"
+                          #actividadMotivacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadDescripcion.invalid }"
                           required></textarea>
                 <div class="invalid-feedback">
-                    <div>The actividad's description is missing</div>
+                    <div>The actividad's motivacion is missing</div>
                 </div>
             </div>
         </form>
@@ -48,9 +48,9 @@
 <div class="row">
     <div class="col-12">
         <div class="row form-inline justify-content-center align-self-center">
-            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editActividad()"></i>
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editActividad()">Salvar</i>
           
-            <i class="fa fa-ban" (click)="cancelEdition()"></i>
+            <i class="fa fa-ban" (click)="cancelEdition()">Descartar</i>
         </div>
     </div>
 </div>
