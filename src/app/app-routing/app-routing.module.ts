@@ -10,6 +10,7 @@ import {ComentarioGrupoInteresListComponent} from '../comentario-grupo-interes/c
 import {ComentarioBlogDetailComponent} from '../comentario-blog/comentario-blog-detail/comentario-blog-detail.component';
 import {UsuarioListComponent} from '../usuario/usuario-list/usuario-list.component';
 import {UsuarioDetailComponent} from '../usuario/usuario-detail/usuario-detail.component';
+import {UsuarioCreateComponent} from '../usuario/usuario-create/usuario-create.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {CoordinadorListComponent} from '../coordinador/coordinador-list/coordinador-list.component';
@@ -34,6 +35,10 @@ const routes: Routes = [
 
     },
     {
+        path: 'home',
+        component: AuthLoginComponent
+    },
+    {
         path: 'grupoInteresComments',
         children: [
             {
@@ -54,6 +59,11 @@ const routes: Routes = [
                 path: ':id',
                 component: UsuarioDetailComponent,
                 outlet: 'detail'
+            },
+            {
+                path: 'create',
+                component: UsuarioCreateComponent,
+                
             }
         ]
     },
@@ -70,6 +80,7 @@ const routes: Routes = [
                 outlet: 'detail'
             }
         ]
+        
     }
     ,
     {
@@ -100,6 +111,11 @@ const routes: Routes = [
                 outlet: 'detail'
             }
         ]
+    }
+    ,
+    {
+        path: '**',
+        redirectTo: 'home'
     }
     
 

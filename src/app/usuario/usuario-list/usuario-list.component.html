@@ -20,7 +20,7 @@
                                     <tr>
                                         <th>id</th>  
                                         <th>Nombre</th>   
-
+                                        <th>Contrasenia</th> 
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -32,6 +32,9 @@
 
                                         <td style="cursor: pointer;">
                                             <a class="figure-caption" [routerLink] ="['/usuarios', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
+                                        </td>
+                                        <td>
+                                            {{e.contrasenia}}
                                         </td>
                                     </tr>
                                 </tbody>

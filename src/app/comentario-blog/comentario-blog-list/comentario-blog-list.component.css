@@ -7,4 +7,10 @@ and open the template in the editor.
     Created on : 26-mar-2019, 21:22:42
     Author     : estudiante
 */
-
+.user_name{
+    font-size:20px;
+    font-weight: bold;
+}
+.comments-list .media-body{
+    border-bottom: 1px dotted #ccc;
+}

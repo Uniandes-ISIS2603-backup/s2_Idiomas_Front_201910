@@ -15,10 +15,13 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
+//import { ActividadComponent } from './actividad/actividad.component';
+//import { ActividadCreateComponent } from './actividad-create/actividad-create.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { CoordinadorModule } from './coordinador/coordinador.module';
 import { AnfitrionModule } from './anfitrion/anfitrion.module';
+import {  ReactiveFormsModule } from '@angular/forms'
 
 
 
@@ -26,6 +29,9 @@ import { AnfitrionModule } from './anfitrion/anfitrion.module';
 @NgModule({
     declarations: [
         AppComponent
+//        ,
+//        ActividadComponent,
+//        ActividadCreateComponent
     ],
     imports: [
         BrowserModule,
@@ -40,7 +46,8 @@ import { AnfitrionModule } from './anfitrion/anfitrion.module';
         UsuarioModule,
         AnfitrionModule,
         AdministradorModule,
-        CoordinadorModule,
+        CoordinadorModule,        
+        ReactiveFormsModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',

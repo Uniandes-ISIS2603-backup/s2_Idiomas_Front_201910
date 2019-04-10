@@ -4,7 +4,10 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<div class="container-fluid">
+
+
+<!--
+    <div class="container-fluid">
     <div class="col-md-12">
         <table class="table table-striped">
             <thead class="thead-dark">
@@ -12,6 +15,7 @@ and open the template in the editor.
                     <th>Titulo</th>
                     <th>Texto</th>
                     <th>Fecha</th>
+                    <th>Id</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,40 +23,42 @@ and open the template in the editor.
                     <td>{{comentario.titulo}}</td>
                     <td>{{comentario.texto}}</td>
                     <td>{{comentario.fecha}}</td>
+                    <td>{{countComments()}}</td>
                 </tr>
 
         </table>
     </div>
-
-    <!--
-    <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <h2 class="page-header">Comments</h2>
-              <section class="comment-list">
-                <!-- First Comment 
-                <article class="row">
-                  <div class="col-md-2 col-sm-2 hidden-xs">
-                    <figure class="thumbnail">
-                      <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                      <figcaption class="text-center">username</figcaption>
-                    </figure>
-                  </div>
-                  <div class="col-md-10 col-sm-10">
-                    <div class="panel panel-default arrow left">
-                      <div class="panel-body">
-                        <header class="text-left">
-                          <div class="comment-user" *ngFor = "let comentario of comentarioBlogs"><i class="fa fa-user"></i> That Guy</div>
-                          <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
-                        </header>
-                        <div class="comment-post">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                          </p>
-                        </div>
-                        <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </article>
             -->
+
+<div class="container pull-left">
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1><small class="pull-right ">
+                        <font size="4">{{countComments()}} comentarios</font>
+                    </small>
+                    <font size="6">Comentarios</font>
+                </h1>
+            </div>
+            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink= "/{{comentario.titulo}}"
+            >
+            
+                <div class="media-body">
+                    <p class="pull-right"><small class="pull-right">{{comentario.fecha| date:'MM/dd/yyyy'}}</small></p>
+
+                    <div class="media-body">
+
+                        <h4 class="media-heading user_name">Autor - {{comentario.titulo}}</h4>
+                        {{comentario.texto}}
+
+                        <p><small><a href="">Editar</a></small></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <button class="btn btn-primary">Crear comentario</button>  
+</div>

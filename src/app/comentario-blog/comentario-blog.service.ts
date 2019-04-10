@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { ComentarioBlog } from './comentario-blog';
-import {ComentarioBlogDetail} from './comentario-blog-detail';
 
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
@@ -39,8 +38,8 @@ export class ComentarioBlogService {
     * Returns the Observable object containing the editorial retrieved from the API
     * @returns The editorial
     */
-    getComentarioBlogDetail(comentarioBlogId): Observable<ComentarioBlogDetail> {
-        return this.http.get<ComentarioBlogDetail>(API_URL + comments + '/' + comentarioBlogId);
+    getComentarioBlogDetail(comentarioBlogId): Observable<ComentarioBlog> {
+        return this.http.get<ComentarioBlog>(API_URL + comments + '/' + comentarioBlogId);
     }
     
     

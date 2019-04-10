@@ -26,6 +26,8 @@ export class ComentarioBlogListComponent implements OnInit {
      * The list of editorials which belong to the BookStore
      */
     comentarioBlogs: ComentarioBlog[];
+    comentarioBlogId: number;
+    selectedComment : ComentarioBlog;
      
 
     /**
@@ -34,6 +36,31 @@ export class ComentarioBlogListComponent implements OnInit {
     getComments(): void {
         this.comentarioBlogService.getComments().subscribe(comentarioBlogs => this.comentarioBlogs = comentarioBlogs);
     }
+
+    cont:number;
+    countComments(): number{
+      this.cont = 0;
+      for(let c of this.comentarioBlogs){
+        this.cont++;
+      }
+      return this.cont;
+    }
+
+
+    
+    onSelected(comentarioId: number):void {
+        this.comentarioBlogId = comentarioId;
+        this.selectedComment = new ComentarioBlog();
+        this.getCommentDetail();     
+        console.log(comentarioId);
+    }
+
+    getCommentDetail(): void {
+      this.comentarioBlogService.getComentarioBlogDetail(this.comentarioBlogId)
+          .subscribe(selectedComment => {
+              this.selectedComment = selectedComment
+          });
+  }
 
     /**
      * This will initialize the component by retrieving the list of editorials from the service

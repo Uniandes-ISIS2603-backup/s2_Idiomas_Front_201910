@@ -8,7 +8,6 @@ import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
 const usuarios = '/usuarios';
 
-
 @Injectable()
 export class UsuarioService {
 
@@ -20,5 +19,8 @@ export class UsuarioService {
   getUsuarioDetail(usuarioId): Observable<UsuarioDetail> {
     return this.http.get<UsuarioDetail>(API_URL + usuarios+ "/" + usuarioId );
   }
+    createUsuario(usuario): Observable<Usuario> {
+        return this.http.post<Usuario>(API_URL + usuarios+ "/" , usuario);
+    }
 
 }
