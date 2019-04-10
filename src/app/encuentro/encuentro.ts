@@ -14,7 +14,7 @@ export class Encuentro extends Actividad
     /**
      * Atributo que representa el número máximo de asistentes
      */
-    numeroMaxAsistentes: any;
+    numeroMaxAsistentes: number;
     
     /**
      * Atributo que representa si el encuentro fue aprobado

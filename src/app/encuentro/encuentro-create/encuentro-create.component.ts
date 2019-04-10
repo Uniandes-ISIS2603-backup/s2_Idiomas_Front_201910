@@ -49,7 +49,6 @@ export class EncuentroCreateComponent implements OnInit {
         let dateB: Date = new Date(this.encuentro.fecha.year, this.encuentro.fecha.month - 1, this.encuentro.fecha.day);
 
         this.encuentro.fecha = dateB;
-        this.encuentro.numeroMaxAsistentes = parseInt(this.encuentro.numeroMaxAsistentes);
         console.log(this.encuentro);
         this.encuentroService.createEncuentro(this.encuentro)
             .subscribe((encuentro) => {
