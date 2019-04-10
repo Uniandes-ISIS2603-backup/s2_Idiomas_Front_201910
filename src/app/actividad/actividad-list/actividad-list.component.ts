@@ -122,7 +122,7 @@ export class ActividadListComponent implements OnInit {
       this.modalDialogService.openDialog(this.viewRef, {
           title: 'Delete an actividad',
           childComponent: SimpleModalComponent,
-          data: {text: 'Are you sure your want to delete this actividad from the BookStore?'},
+          data: {text: 'Are you sure your want to delete this actividad from your activities?'},
           actionButtons: [
               {
                   text: 'Yes',

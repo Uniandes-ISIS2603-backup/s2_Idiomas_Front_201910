@@ -7,7 +7,8 @@ import { ActividadDetail } from '../actividad-detail';
 @Component({
   selector: 'app-actividad-edit',
   templateUrl: './actividad-edit.component.html',
-  styleUrls: ['./actividad-edit.component.css']
+  styleUrls: ['./actividad-edit.component.css'],
+  providers: [DatePipe]
 })
 export class ActividadEditComponent implements OnInit {
 

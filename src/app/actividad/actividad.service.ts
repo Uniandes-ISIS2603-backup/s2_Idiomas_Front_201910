@@ -7,7 +7,7 @@ import { ActividadDetail } from './actividad-detail';
 
 
 const API_URL = environment.apiURL;
-const actividades = '/actividades';
+const actividades = '/actividad';
 
 @Injectable()
 export class ActividadService {

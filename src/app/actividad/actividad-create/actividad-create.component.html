@@ -7,14 +7,14 @@
         <form name="actividad" (ngSubmit)="f.form.valid && createActividad()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="actividadName"><b>Nombre</b></label>
-                <input type="text" name="actividadName" class="form-control" id="actividadName" [(ngModel)]="actividad.name"
+                <input type="text" name="actividadName" class="form-control" id="actividadName" [(ngModel)]="actividad.nombre"
                     #actividadName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && actividadName.invalid }" required>
                 <div class="invalid-feedback">
                     <div>The actividad's name is missing</div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="actividadBirthDate"><b>Birth date</b></label>
+                <label for="actividadBirthDate"><b></b></label>
                 <div [ngClass]="{ 'is-invalid': f.submitted && actividadBDate.invalid }">
                     <input class="form-control" id="actividadBDate" name="actividadBDate" [(ngModel)]="actividad.birthDate"
                         ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #actividadBDate="ngModel" [ngClass]="{'is-invalid': f.submitted && (actividadBDate.untouched || actividadBDate.invalid) }"
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
                 <div class="divider"></div>
                 <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
             </div>

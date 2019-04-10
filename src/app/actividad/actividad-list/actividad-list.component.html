@@ -4,7 +4,7 @@
             <br>
             <div class="row justify-content-center align-self-center">
                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Create an actividad</button>
+                    (click)="showHideCreate()">Crear una actividad</button>
             </div>
             <br>
             <br>
@@ -12,25 +12,26 @@
                 <thead>
                     <tr>
                         <th class="h4">Nombre</th>
-                        <th class="h4">Fecha</th>  
+                        <th class="h4">Descripcion</th>  
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor = "let actividad of actividades" >
                         <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.nombre}}</dd>
-                        <dd>{{actividad.fecha}}</dd>
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.descripcion}}</dd>
+                        
                 </td>
-                <td *ngxPermissionsOnly="['ADMIN']">
-                    <button class="btn btn-primary" (click)="showHideEdit(actividad.id)"><span class="fa fa-pencil"></span></button>
+                <td>
+                    <button class="btn btn-primary" (click)="showHideEdit(actividad.id)">Editar<span class="fa fa-pencil"></span></button>
                 </td>
-                <td *ngxPermissionsOnly="['ADMIN']">
-                    <button class="btn btn-danger" (click)="deleteActividad(actividad.id)"><span class="fa fa-trash"></span></button>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteActividad(actividad.id)">Eliminar<span class="fa fa-trash"></span></button>
                 </td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        <div class="col-8">
+        <div class="col-6">
             <div *ngIf="showView">
                 <app-actividad-detail [actividadDetail]="selectedActividad"></app-actividad-detail>
             </div>
