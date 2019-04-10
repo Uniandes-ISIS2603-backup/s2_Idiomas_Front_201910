@@ -41,7 +41,27 @@ export class ActividadListComponent implements OnInit {
   /**
    * Shows or hides the detail of an actividad
    */
-  showView: boolean;
+  showViewA: boolean;
+
+  /**
+   * Shows or hides the detail of an chat
+   */
+  showViewC: boolean;
+
+  /**
+   * Shows or hides the detail of an encuentro
+   */
+  showViewE: boolean;
+
+  /**
+   * Shows or hides the detail of an estadia
+   */
+  showViewF: boolean;
+
+  /**
+   * Shows or hides the detail of an otro
+   */
+  showViewO: boolean;
 
   /**
   * Shows or hides the edition of an actividad
@@ -57,20 +77,39 @@ export class ActividadListComponent implements OnInit {
   /**
   * Shows the actividad
   */
-  onSelected(actividad_id: number): void {
+  onSelected(actividad_id: number, pActividad: Actividad): void {
       this.showCreate = false;
       this.showEdit = false;
-      this.showView = true;
       this.actividad_id = actividad_id;
       this.selectedActividad = new ActividadDetail();
       this.getActividadDetail();
+      if(pActividad.pTipo === 'A')
+      {
+        this.showViewA = true;
+      }
+      if(pActividad.pTipo === 'C')
+      {
+        this.showViewC = true;
+      }
+      if(pActividad.pTipo === 'E')
+      {
+        this.showViewE = true;
+      }
+      if(pActividad.pTipo === 'F')
+      {
+        this.showViewF = true;
+      }
+      if(pActividad.pTipo === 'O')
+      {
+        this.showViewO = true;
+      }
   }
 
   /**
   * Shows or hides the create component
   */
   showHideCreate(): void {
-      this.showView = false;
+      this.showViewA = false;
       this.showEdit = false;
       this.showCreate = !this.showCreate;
   }
@@ -80,7 +119,11 @@ export class ActividadListComponent implements OnInit {
   */
   showHideEdit(actividad_id: number): void {
       if (!this.showEdit || (this.showEdit && actividad_id != this.selectedActividad.id)) {
-          this.showView = false;
+          this.showViewA = false;
+          this.showViewC = false;
+          this.showViewE = false;
+          this.showViewF = false;
+          this.showViewO = false;
           this.showCreate = false;
           this.showEdit = true;
           this.actividad_id = actividad_id;
@@ -89,7 +132,7 @@ export class ActividadListComponent implements OnInit {
       }
       else {
           this.showEdit = false;
-          this.showView = true;
+          this.showViewA = true;
       }
   }
 
@@ -104,15 +147,16 @@ export class ActividadListComponent implements OnInit {
   }
 
   getActividadDetail(): void {
-      this.actividadService.getActividadDetail(this.actividad_id)
+        this.actividadService.getActividadDetail(this.actividad_id)
           .subscribe(selectedActividad => {
               this.selectedActividad = selectedActividad
-          });
+        });
+
   }
 
   updateActividad(): void {
       this.showEdit = false;
-      this.showView = true;
+      this.showViewA = true;
   }
 
   /**
@@ -149,7 +193,11 @@ export class ActividadListComponent implements OnInit {
   */
   ngOnInit() {
       this.showCreate = false;
-      this.showView = false;
+      this.showViewA = false;
+          this.showViewC = false;
+          this.showViewE = false;
+          this.showViewF = false;
+          this.showViewO = false;
       this.showEdit = false;
       this.selectedActividad = undefined;
       this.actividad_id = undefined;
