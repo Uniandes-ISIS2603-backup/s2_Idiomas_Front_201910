@@ -30,8 +30,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor = "let actividad of actividades" >
-                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.nombre}}</dd>
-                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.descripcion}}</dd>
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id,actividad)"> <dd>{{actividad.nombre}}</dd>
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id,actividad)"> <dd>{{actividad.descripcion}}</dd>
                         
                 </td>
                 <td>
@@ -45,8 +45,20 @@
             </table>
         </div>
         <div class="container-fluid">
-            <div *ngIf="showView">
+            <div *ngIf="showViewA">
                 <app-actividad-detail [actividadDetail]="selectedActividad"></app-actividad-detail>
+            </div>
+            <div *ngIf="showViewC">
+                <app-chat-detail [chatDetail]="selectedChat"></app-chat-detail>
+            </div>
+            <div *ngIf="showViewE">
+                <app-encuentro-detail [encuentroDetail]="selectedEncuentro"></app-encuentro-detail>
+            </div>
+            <div *ngIf="showViewF">
+                <app-estadia-detail [estadiaDetail]="selectedEstadia"></app-estadia-detail>
+            </div>
+            <div *ngIf="showViewO">
+                <app-otro-detail [otroDetail]="selectedOtro"></app-otro-detail>
             </div>
             <div *ngIf="showCreateA">
                 <app-actividad-create (cancel)="showHideCreateA()" (create)="ngOnInit()"></app-actividad-create>
@@ -63,7 +75,7 @@
             <div *ngIf="showCreateO">
                 <app-otro-create (cancel)="showHideCreateO()" (create)="ngOnInit()"></app-otro-create>
             </div>
-            <div *ngIf="showEdit">
+            <div *ngIf="showEditA">
                 <app-actividad-edit [actividad]="selectedActividad" (cancel)="showHideEdit(selectedActividad.id)" (update)="updateActividad()" ></app-actividad-edit>
             </div>
         </div>   

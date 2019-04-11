@@ -82,6 +82,27 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'chats',
+        children: [
+            {
+                path: 'list',
+                component: ChatListComponent
+            },
+            {
+                path: ':id',
+                component: ChatDetailComponent
+            },
+            {
+                path: 'add',
+                component: ChatCreateComponent
+            },
+            {
+                path:':id/edit',
+                component: ChatEditComponent 
+            }
+        ]
+    },
+    {
         path: 'encuentros',
         children: [
             {
