@@ -66,6 +66,33 @@ export class ComentarioBlogListComponent implements OnInit {
 
 
 
+    cont:number;
+    countComments(): number{
+      this.cont = 0;
+      for(let c of this.comentarioBlogs){
+        this.cont++;
+      }
+      return this.cont;
+    }
+
+
+    
+    onSelected(comentarioId: number):void {
+        this.comentarioBlogId = comentarioId;
+        this.selectedComment = new ComentarioBlog();
+ 
+        console.log(comentarioId);
+    }
+
+    getCommentDetail(): void {
+      this.comentarioBlogService.getComentarioBlogDetail(this.comentarioBlogId)
+          .subscribe(selectedComment => {
+              this.selectedComment = selectedComment
+          });
+  }
+
+
+
     /**
      * This will initialize the component by retrieving the list of editorials from the service
      * This method will be called when the component is created

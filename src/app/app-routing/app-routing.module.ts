@@ -188,47 +188,11 @@ const routes: Routes = [
                 component: ComentarioGrupoInteresListComponent
             }
         ]
-
+        
     },
     {
-        path: 'usuarios',
-        children: [
-            {
-                path: 'list',
-                component: UsuarioListComponent
-            },
-            {
-                path: ':id',
-                component: UsuarioDetailComponent,
-                outlet: 'detail'
-            },
-            {
-                path: 'create',
-                component: UsuarioCreateComponent,
-
-            }
-        ]
-    },
-    {
-        path: 'coordinadores',
-        children: [
-            {
-                path: 'list',
-                component: CoordinadorListComponent
-            },
-            {
-                path: ':id',
-                component: CoordinadorDetailComponent,
-                outlet: 'detail'
-            }
-            ,
-            {
-                path: 'create',
-                component: CoordinadorCreateComponent,
-
-            }
-        ]
-
+        path: '**',
+        redirectTo: 'home',
     }
     ,
     {
