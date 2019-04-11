@@ -6,7 +6,7 @@ import { AdministradorDetail } from './administrador-detail';
 import { environment } from '../../environments/environment';
 
 const API_URL = environment.apiURL;
-const administradores = '/administradores';
+const administradores = '/administradores/';
 
 @Injectable()
 export class AdministradorService {
@@ -18,7 +18,10 @@ export class AdministradorService {
   }
 
   getAdministrador(administradorId):Observable <AdministradorDetail>{
-    return  this.http.get<AdministradorDetail>(API_URL + "administradores/" + administradorId );
+    return  this.http.get<AdministradorDetail>(API_URL + administradores + administradorId );
   }
+      createAdministrador(usuario): Observable<Administrador> {
+        return this.http.post<Administrador>(API_URL + administradores , usuario);
+    }
 
 }

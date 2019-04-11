@@ -17,9 +17,16 @@ import {CoordinadorListComponent} from '../coordinador/coordinador-list/coordina
 import {CoordinadorDetailComponent} from '../coordinador/coordinador-detail/coordinador-detail.component';
 import {AnfitrionListComponent} from '../anfitrion/anfitrion-list/anfitrion-list.component';
 import {AnfitrionDetailComponent} from '../anfitrion/anfitrion-detail/anfitrion-detail.component';
+import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
+import {AnfitrionCreateComponent} from '../anfitrion/anfitrion-create/anfitrion-create.component';
+import {CoordinadorCreateComponent} from '../coordinador/coordinadro-create/coordinador-create.component';
 const routes: Routes = [
 
-
+    {
+        path: 'home',
+        component: AuthLoginComponent
+    }
+    ,
     {
         path: 'comments',
         children: [
@@ -33,11 +40,8 @@ const routes: Routes = [
             }
         ]
 
-    },
-    {
-        path: 'home',
-        component: AuthLoginComponent
-    },
+    }
+    ,
     {
         path: 'grupoInteresComments',
         children: [
@@ -63,11 +67,11 @@ const routes: Routes = [
             {
                 path: 'create',
                 component: UsuarioCreateComponent,
-                
+
             }
         ]
     },
-     {
+    {
         path: 'coordinadores',
         children: [
             {
@@ -79,8 +83,14 @@ const routes: Routes = [
                 component: CoordinadorDetailComponent,
                 outlet: 'detail'
             }
+            ,
+            {
+                path: 'create',
+                component: CoordinadorCreateComponent,
+
+            }
         ]
-        
+
     }
     ,
     {
@@ -94,6 +104,12 @@ const routes: Routes = [
                 path: ':id',
                 component: AdministradorDetailComponent,
                 outlet: 'detail'
+            }
+            ,
+            {
+                path: 'create',
+                component: AdministradorCreateComponent,
+
             }
         ]
     }
@@ -110,6 +126,12 @@ const routes: Routes = [
                 component: AnfitrionDetailComponent,
                 outlet: 'detail'
             }
+            ,
+            {
+                path: 'create',
+                component: AnfitrionCreateComponent,
+
+            }
         ]
     }
     ,
@@ -117,7 +139,7 @@ const routes: Routes = [
         path: '**',
         redirectTo: 'home'
     }
-    
+
 
 ];
 

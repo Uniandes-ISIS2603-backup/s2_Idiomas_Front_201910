@@ -20,5 +20,8 @@ export class AnfitrionService {
   getAnfitrionDetail(anfitrionId): Observable<AnfitrionDetail> {
     return this.http.get<AnfitrionDetail>(API_URL + "anfitrions/" + anfitrionId );
   }
+      createAnfitrion(anfitrion): Observable<Anfitrion> {
+        return this.http.post<Anfitrion>(API_URL + anfitrions+ "/" , anfitrion);
+    }
 
 }
