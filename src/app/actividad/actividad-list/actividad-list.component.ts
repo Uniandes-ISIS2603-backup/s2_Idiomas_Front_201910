@@ -25,6 +25,8 @@ export class ActividadListComponent implements OnInit {
     * Constructor for the component
     * @param actividadService The actividad's services provider
     * @param toastrService The toastr to show messages to the user
+    * @param encuentroService The encuentro's services provider
+    * @param otroService The otro's services provider
     */
     constructor(
         private actividadService: ActividadService,
@@ -435,6 +437,9 @@ export class ActividadListComponent implements OnInit {
             });
     }
 
+    /**
+    * The method which obtains the activity whose details we want to show
+    */
     getActividadDetail(): void {
         this.actividadService.getActividadDetail(this.actividad_id)
             .subscribe(selectedActividad => {
@@ -442,6 +447,9 @@ export class ActividadListComponent implements OnInit {
             });
     }
 
+    /**
+    * The method which obtains the chat whose details we want to show
+    */
     getChatDetail(): void {
         this.chatService.getChatDetail(this.actividad_id)
             .subscribe(selectedChat => {
@@ -463,6 +471,9 @@ export class ActividadListComponent implements OnInit {
             });
     }
 
+    /**
+    * The method which obtains the other whose details we want to show
+    */
     getOtroDetail(): void {
         this.otroService.getOtroDetail(this.actividad_id)
             .subscribe(selectedOtro => {
@@ -470,6 +481,9 @@ export class ActividadListComponent implements OnInit {
             });
     }
 
+    /**
+     * The resulting view after updating an activity
+     */
     updateActividad(): void {
         if (this.showEditA) {
             this.showEditA = false;

@@ -78,19 +78,19 @@
                 <app-otro-create (cancel)="showHideCreateO()" (create)="ngOnInit()"></app-otro-create>
             </div>
             <div *ngIf="showEditA">
-                <app-actividad-edit [actividad]="selectedActividad" (cancel)="showHideEdit(selectedActividad.id)" (update)="updateActividad()" (update)="ngOnInit()"></app-actividad-edit>
+                <app-actividad-edit [actividad]="selectedActividad" (cancel)="showHideEdit(selectedActividad.id)" (update)="updateActividad()"></app-actividad-edit>
             </div>
             <div *ngIf="showEditC">
-                <app-chat-edit [chat]="selectedChat" (cancel)="showHideEdit(selectedChat.id)" (update)="updateActividad()" (update)="ngOnInit()"></app-chat-edit>
+                <app-chat-edit [chat]="selectedChat" (cancel)="showHideEdit(selectedChat.id)" (update)="updateActividad()"></app-chat-edit>
             </div>
             <div *ngIf="showEditE">
-                <app-encuentro-edit [encuentro]="selectedEncuentro" (cancel)="showHideEdit(selectedEncuentro.id)" (update)="updateActividad()" (update)="ngOnInit()"></app-encuentro-edit>
+                <app-encuentro-edit [encuentro]="selectedEncuentro" (cancel)="showHideEdit(selectedEncuentro.id)" (update)="updateActividad()"></app-encuentro-edit>
             </div>
             <div *ngIf="showEditF">
-                <app-estadia-edit [estadia]="selectedEstadia" (cancel)="showHideEdit(selectedEstadia.id)" (update)="updateActividad()" (update)="ngOnInit()"></app-estadia-edit>
+                <app-estadia-edit [estadia]="selectedEstadia" (cancel)="showHideEdit(selectedEstadia.id)" (update)="updateActividad()"></app-estadia-edit>
             </div>
             <div *ngIf="showEditO">
-                <app-otro-edit [otro]="selectedOtro" (cancel)="showHideEdit(selectedOtro.id)" (update)="updateActividad()" (update)="ngOnInit()"></app-otro-edit>
+                <app-otro-edit [otro]="selectedOtro" (cancel)="showHideEdit(selectedOtro.id)" (update)="updateActividad()"></app-otro-edit>
             </div>
         </div>   
     </div>
