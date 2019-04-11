@@ -13,16 +13,7 @@
                 <div class="invalid-feedback">
                     <div>The comentario's titulo is missing</div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="comentarioFecha"><b>Fecha</b></label>
-                <input type="date" name="comentarioFecha" class="form-control" id="comentarioFecha" min="2018-12-31"
-                    [(ngModel)]="comentario.fecha" #comentarioFecha="ngModel"
-                    [ngClass]="{ 'is-invalid': f.submitted && comentarioFecha.invalid }" required >
-                <div class="invalid-feedback">
-                    <div>The comentario's date is missing</div>
-                </div>
-            </div>
+            </div>  
             <div class="form-group">
                 <label for="comentarioTexto"><b>Texto</b></label>
                 <textarea name="comentarioTexto" maxlength="300" class="form-control" id="comentarioTexto" [(ngModel)]="comentario.texto"
@@ -33,7 +24,7 @@
                 </div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">
-                <button type="button" class="btn btn-danger" routerLink="../list">Back</button>
+
                 <div class="divider"></div>
                 <button type="submit" class="btn btn-primary">Create</button>
 
