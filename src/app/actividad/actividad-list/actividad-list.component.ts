@@ -13,6 +13,7 @@ import { Encuentro } from '../../encuentro/encuentro';
 import { EstadiaDetail } from '../../estadia/estadia-detail';
 import { Otro } from '../../otro/otro';
 import { Estadia } from '../../estadia/estadia';
+import { ResourceLoader } from '@angular/compiler';
 
 @Component({
     selector: 'app-actividad-list',

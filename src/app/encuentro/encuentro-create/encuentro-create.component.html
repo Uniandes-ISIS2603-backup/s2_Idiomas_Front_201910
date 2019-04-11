@@ -45,7 +45,7 @@
             <div class="form-group">
                 <label for="encuentroLugar"><b>Lugar</b></label>
                 <textarea name="encuentroLugar" class="form-control" id="encuentroLugar" [(ngModel)]="encuentro.lugar"
-                          #encuentroLugar="ngModel" [ngClass]="{ 'is-invalid': f.submitted && encuentroDescripcion.invalid }"
+                          #encuentroLugar="ngModel" [ngClass]="{ 'is-invalid': f.submitted && encuentroLugar.invalid }"
                           required></textarea>
                 <div class="invalid-feedback">
                     <div>The encuentro's lugar is missing</div>
