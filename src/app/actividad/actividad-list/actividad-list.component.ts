@@ -140,7 +140,7 @@ export class ActividadListComponent implements OnInit {
      * the estadia that the user views.
      */
     selectedEstadia: Estadia;
-    
+
     /**
      * the estadia that the user views.
      */
@@ -317,8 +317,9 @@ export class ActividadListComponent implements OnInit {
     /**
     * Shows or hides the edit component
     */
-    showHideEdit(actividad_id: number): void {
-        if (!this.showEditA || (this.showEditA && actividad_id != this.selectedActividad.id)) {
+    showHideEdit(actividad_id: number,actividad: Actividad): void {
+        if ((!this.showEditA && actividad.pTipo === 'A')
+             || (actividad.pTipo === 'A' && actividad_id != this.selectedActividad.id)) {
             this.showCreateA = false;
             this.showCreateC = false;
             this.showCreateE = false;
@@ -330,15 +331,16 @@ export class ActividadListComponent implements OnInit {
             this.showViewF = false;
             this.showViewO = false;
             this.showEditA = true;
+            this.showEditC = false;
+            this.showEditE = false;
+            this.showEditF = false;
+            this.showEditO = false;
             this.actividad_id = actividad_id;
             this.selectedActividad = new ActividadDetail();
             this.getActividadDetail();
         }
-        else {
-            this.showEditA = false;
-            this.showViewA = true;
-        }
-        if (!this.showEditC || (this.showEditC && actividad_id != this.selectedActividad.id)) {
+        if ((!this.showEditC && actividad.pTipo === 'C')
+        || (actividad.pTipo === 'C' && actividad_id != this.selectedActividad.id)) {
             this.showCreateA = false;
             this.showCreateC = false;
             this.showCreateE = false;
@@ -350,15 +352,16 @@ export class ActividadListComponent implements OnInit {
             this.showViewF = false;
             this.showViewO = false;
             this.showEditC = true;
+            this.showEditA = false;
+            this.showEditE = false;
+            this.showEditF = false;
+            this.showEditO = false;
             this.actividad_id = actividad_id;
             this.selectedChat = new Chat();
             this.getChatDetail();
         }
-        else {
-            this.showEditC = false;
-            this.showViewC = true;
-        }
-        if (!this.showEditE || (this.showEditE && actividad_id != this.selectedActividad.id)) {
+        if ((!this.showEditE && actividad.pTipo === 'E')
+        || (actividad.pTipo === 'E' && actividad_id != this.selectedEncuentro.id)) {
             this.showCreateA = false;
             this.showCreateC = false;
             this.showCreateE = false;
@@ -370,15 +373,16 @@ export class ActividadListComponent implements OnInit {
             this.showViewF = false;
             this.showViewO = false;
             this.showEditE = true;
+            this.showEditA = false;
+            this.showEditC = false;
+            this.showEditF = false;
+            this.showEditO = false;
             this.actividad_id = actividad_id;
             this.selectedEncuentro = new Encuentro();
             this.getEncuentroDetail();
         }
-        else {
-            this.showEditE = false;
-            this.showViewE = true;
-        }
-        if (!this.showEditF || (this.showEditF && actividad_id != this.selectedActividad.id)) {
+        if ((!this.showEditF && actividad.pTipo === 'F')
+         ||(actividad.pTipo === 'F' && actividad_id != this.selectedEstadia.id)) {
             this.showCreateA = false;
             this.showCreateC = false;
             this.showCreateE = false;
@@ -390,15 +394,16 @@ export class ActividadListComponent implements OnInit {
             this.showViewF = false;
             this.showViewO = false;
             this.showEditF = true;
+            this.showEditA = false;
+            this.showEditC = false;
+            this.showEditE = false;
+            this.showEditO = false;
             this.actividad_id = actividad_id;
             this.selectedEstadia = new EstadiaDetail();
             this.getEstadiaDetail();
         }
-        else {
-            this.showEditF = false;
-            this.showViewF = true;
-        }
-        if (!this.showEditO || (this.showEditO && actividad_id != this.selectedActividad.id)) {
+        if ((!this.showEditO && actividad.pTipo === 'O')
+         || (actividad.pTipo === 'O' && actividad_id != this.selectedOtro.id)) {
             this.showCreateA = false;
             this.showCreateC = false;
             this.showCreateE = false;
@@ -410,13 +415,13 @@ export class ActividadListComponent implements OnInit {
             this.showViewF = false;
             this.showViewO = false;
             this.showEditO = true;
+            this.showEditA = false;
+            this.showEditC = false;
+            this.showEditE = false;
+            this.showEditF = false;
             this.actividad_id = actividad_id;
             this.selectedOtro = new Otro();
             this.getOtroDetail();
-        }
-        else {
-            this.showEditO = false;
-            this.showViewO = true;
         }
     }
 
