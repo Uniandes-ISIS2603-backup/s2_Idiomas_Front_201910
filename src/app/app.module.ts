@@ -16,7 +16,7 @@ import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
 import { ActividadModule } from './actividad/actividad.module';
-import { CalificacionModule } from './Calificacion/calificaciones.module';
+import { CalificacionesModule } from './Calificacion/calificaciones.module';
 import { EstadiaModule } from './estadia/estadia.module';
 import { EncuentroModule } from './encuentro/encuentro.module';
 import { OtroModule } from './otro/otro.module';

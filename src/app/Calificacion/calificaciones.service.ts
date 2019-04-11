@@ -3,13 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Calificacion } from './calificacion';
 import { CalificacionDetail } from './calificacion-detail';
 import { Observable } from 'rxjs';
-import data from '../../assets/calificacion-1.json';
 //import {environment} from '../../environments/environment';
 
 //const API_URL = environment.apiURL;
-const API_URL = '../../assets/';
+const API_URL = '../assets/';
 const calificaciones = 'calificaciones.json';
-console.log(data);
 @Injectable()
 export class CalificacionesService {
 
