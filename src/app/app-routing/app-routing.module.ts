@@ -32,13 +32,31 @@ import {ComentarioCreateComponent } from '../comentario-blog/comentario-create/c
 import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comentario-edit.component';
 import { ListarCalificacionesComponent } from '../Calificacion/listar-calificaciones/listar-calificaciones.component';
 import { CalificacionesDetailComponent } from '../Calificacion/calificaciones-detail/calificaciones-detail/calificaciones-detail.component';
-import {CalificacionCreateComponent} from '../Calificacion/calificacion-create/calificacion-create.component';
+import {UsuarioListComponent} from '../usuario/usuario-list/usuario-list.component';
+import {UsuarioDetailComponent} from '../usuario/usuario-detail/usuario-detail.component';
+import {UsuarioCreateComponent} from '../usuario/usuario-create/usuario-create.component';
+import {CoordinadorListComponent} from '../coordinador/coordinador-list/coordinador-list.component';
+import {CoordinadorDetailComponent} from '../coordinador/coordinador-detail/coordinador-detail.component';
+import {CoordinadorCreateComponent} from '../coordinador/coordinadro-create/coordinador-create.component';
+import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
+import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
+import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
+import {AnfitrionListComponent} from '../anfitrion/anfitrion-list/anfitrion-list.component';
+import {AnfitrionDetailComponent} from '../anfitrion/anfitrion-detail/anfitrion-detail.component';
+import {AnfitrionCreateComponent} from '../anfitrion/anfitrion-create/anfitrion-create.component';
 
 const routes: Routes = [
 
-     /**
+
+    /**
       * Rutas de los comentarios junto con sus servicios.
       */
+    {
+        path: 'home',
+        component: AuthLoginComponent
+    }
+    ,
+
     {
         path: 'comments',
         children: [
@@ -191,12 +209,77 @@ const routes: Routes = [
     {
         path: 'home',
         component: AuthLoginComponent
-    },
+    }
+    ,
+    {
+        path: 'administradores',
+        children: [
+            {
+                path: 'list',
+                component: AdministradorListComponent
+            },
+            {
+                path: ':id',
+                component: AdministradorDetailComponent,
+                outlet: 'detail'
+            }
+            ,
+            {
+                path: 'create',
+                component: AdministradorCreateComponent,
+
+            }
+        ]
+    }
+    ,
+    {
+        path: 'anfitriones',
+        children: [
+            {
+                path: 'list',
+                component: AnfitrionListComponent
+            },
+            {
+                path: ':id',
+                component: AnfitrionDetailComponent,
+                outlet: 'detail'
+            }
+            ,
+            {
+                path: 'create',
+                component: AnfitrionCreateComponent,
+
+            }
+        ]
+    }
+    ,
+    {
+        path: 'usuarios',
+        children: [
+            {
+                path: 'list',
+                component: UsuarioListComponent
+            },
+            {
+                path: ':id',
+                component: UsuarioDetailComponent,
+                outlet: 'detail'
+            }
+            ,
+            {
+                path: 'create',
+                component: UsuarioCreateComponent,
+
+            }
+        ]
+    }
+    ,
     {
         path: '**',
-        redirectTo: 'home',
+        redirectTo: 'home'
     }
-    
+
+
 ];
 
 @NgModule({

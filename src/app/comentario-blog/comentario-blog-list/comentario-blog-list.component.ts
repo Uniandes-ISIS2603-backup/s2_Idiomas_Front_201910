@@ -118,6 +118,7 @@ export class ComentarioBlogListComponent implements OnInit {
     this.showCreate = !this.showCreate;
   }
 
+
   /**
    * Shows or hides the edit component
    */
@@ -132,6 +133,7 @@ export class ComentarioBlogListComponent implements OnInit {
     } else {
       this.showEdit = false;
       this.showView = true;
+
     }
   }
 

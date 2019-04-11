@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <title>listar Ususarios</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    </head>
+    <body>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <br>
+                <h2 class="text-center">Crear anfitrion</h2>
+                <br>                      
+              <form  name="Anfitrion" (ngSubmit)=" createAnfitrion()" #f="ngForm" novalidate>
+                      <div class="form-group">
+                        <label for="anfitrionNombre"><b>Nombre</b></label>
+                        <input type="text" name="anfitrionNombre" class="form-control" id="usuarrioNombre"  [(ngModel)]="anfitrion.nombre" #anfitrionNombre="ngModel"  required>
+                               <div class="invalid-feedback">
+                            <div>El nombre de anfitrion esta vacio</div>
+                        </div>
+                    </div>
+                   
+                  <div class="form-group">
+                        <label for="anfitrionContrasenia"><b>Contrasenia</b></label>
+                        <input type="text" name="anfitrionContrasenia" class="form-control" id="anfitrionContrasenia" 
+                               [(ngModel)]="anfitrion.contrasenia" #comentarioFecha="ngModel" required >
+                               <div class="invalid-feedback">
+                            <div>La contraseña de anfitrion esta vacio</div>
+                        </div>
+                    </div> 
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="button" class="btn btn-danger" routerLink="../list">Back</button>
+                        <div class="divider"></div>
+                        <button type="submit" class="btn btn-primary">Create</button>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+    </body>
+</html>
