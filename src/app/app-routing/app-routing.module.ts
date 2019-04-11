@@ -32,6 +32,7 @@ import {ComentarioCreateComponent } from '../comentario-blog/comentario-create/c
 import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comentario-edit.component';
 import { ListarCalificacionesComponent } from '../Calificacion/listar-calificaciones/listar-calificaciones.component';
 import { CalificacionesDetailComponent } from '../Calificacion/calificaciones-detail/calificaciones-detail/calificaciones-detail.component';
+import {CalificacionCreateComponent} from '../Calificacion/calificacion-create/calificacion-create.component';
 
 const routes: Routes = [
 
@@ -136,6 +137,10 @@ const routes: Routes = [
                 path: ':id',
                 component: CalificacionesDetailComponent,
                 outlet: 'detail'
+            },
+            {
+                path: 'add',
+                component: CalificacionCreateComponent
             }
         ]
     },

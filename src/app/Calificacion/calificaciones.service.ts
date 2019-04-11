@@ -3,11 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Calificacion } from './calificacion';
 import { CalificacionDetail } from './calificacion-detail';
 import { Observable } from 'rxjs';
-//import {environment} from '../../environments/environment';
+import {environment} from '../../environments/environment';
 
-//const API_URL = environment.apiURL;
-const API_URL = '../assets/';
-const calificaciones = 'calificaciones.json';
+const API_URL = environment.apiURL;
+const calificaciones = '/grades';
 @Injectable()
 export class CalificacionesService {
 
@@ -18,7 +17,7 @@ export class CalificacionesService {
     }
   
   getCalificacionDetail(calificacionId) : Observable<CalificacionDetail> {
-        return this.http.get<CalificacionDetail>(API_URL + "calificacion-" + calificacionId+".json");
+        return this.http.get<CalificacionDetail>(API_URL + calificaciones + '/' + calificacionId);
   }
 
   
