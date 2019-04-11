@@ -1,3 +1,24 @@
-<p>
-  chat-detail works!
-</p>
+<div class="panel-body">
+    <div class="border margin">
+        <p class="h3 p-3">{{chatDetail.nombre}}<p> 
+        <div class="row">
+            <div class="col">
+                <dl>     
+                    <dt>Nombre</dt>
+                    <dd>{{chatDetail.nombre}}</dd>
+                    <dt>Fecha</dt>
+                    <dd>{{chatDetail.fecha}}</dd>
+                    <dt>Descripcion</dt>
+                    <dd>{{chatDetail.descripcion}}</dd>
+                    <dt>Motivacion</dt>
+                    <dd>{{chatDetail.motivacion}}</dd>
+                    <dt>Medio</dt>
+                    <dd>{{chatDetail.medio}}</dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+    <!--<p class="h3 p-3">Calificaciones de la chat : </p>
+    <app-calificacion-list [books]="chatDetail.calificacion"></app-book-list>-->
+</div>

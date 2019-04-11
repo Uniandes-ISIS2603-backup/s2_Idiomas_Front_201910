@@ -28,6 +28,11 @@ export class Actividad {
      * Atributo que contiene la motivacion de la actvidad
      */
     motivacion: string;
+
+        /**
+     * Atributo que contiene el tipo de la actividad
+     */
+    pTipo: string;
     
     /**
      * Atributo que contiene la calificación de la actividad

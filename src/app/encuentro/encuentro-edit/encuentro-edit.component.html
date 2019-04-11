@@ -1,3 +1,76 @@
-<p>
-  encuentro-edit works!
-</p>
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar un encuentro</h2>
+        <br>
+        <form name="encuentro" (ngSubmit)="f.form.valid && editEncuentro()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="encuentroNombre"><b>Nombre</b></label>
+                <input type="text" name="encuentroNombre" class="form-control" id="encuentroNombre" [(ngModel)]="encuentro.nombre"
+                       #encuentroName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && encuentroName.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>The encuentro's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="encuentroFecha"><b>Fecha</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && encuentroFecha.invalid }">
+                    <input class="form-control" id="encuentroFecha" name="encuentroFecha" dateFormat="YYYY-MM-dd"
+                       [(ngModel)]="encuentro.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                       #encuentroFecha="ngModel" [ngClass]="{'is-invalid': f.submitted && encuentroFecha.invalid }"
+                       required>
+                       <div class="invalid-feedback">
+                        <div>The encuentro's date is missing</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="encuentroDescripcion"><b>Descripcion</b></label>
+                <textarea name="encuentroDescripcion" class="form-control" id="encuentroDescripcion" [(ngModel)]="encuentro.descripcion"
+                          #encuentroDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && encuentroDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The encuentro's description is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="encuentroMotivacion"><b>Motivacion</b></label>
+                <textarea name="encuentroMotivacion" class="form-control" id="encuentroMotivacion" [(ngModel)]="encuentro.motivacion"
+                          #encuentroMotivacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && encuentroDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The encuentro's motivacion is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="encuentroNumeroMaxAsistentes"><b>NumeroMaxAsistentes</b></label>
+                <textarea name="encuentroNumeroMaxAsistentes" class="form-control" id="encuentroNumeroMaxAsistentes" [(ngModel)]="encuentro.numeroMaxAsistentes"
+                          #encuentroNumeroMaxAsistentes="ngModel" [ngClass]="{ 'is-invalid': f.submitted && encuentroDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The encuentro's numeromaxasistentes is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="encuentroLugar"><b>Lugar</b></label>
+                <textarea name="encuentroLugar" class="form-control" id="encuentroLugar" [(ngModel)]="encuentro.lugar"
+                          #encuentroLugar="ngModel" [ngClass]="{ 'is-invalid': f.submitted && encuentroDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The encuentro's lugar is missing</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editEncuentro()">Salvar</i>
+          
+            <i class="fa fa-ban" (click)="cancelEdition()">Descartar</i>
+        </div>
+    </div>
+</div>
+<br>
+<br>
