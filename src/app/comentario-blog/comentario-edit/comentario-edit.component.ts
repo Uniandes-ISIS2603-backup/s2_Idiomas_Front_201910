@@ -1,9 +1,26 @@
-import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
+import {
+    Component,
+    OnInit,
+    Input,
+    OnChanges,
+    Output,
+    EventEmitter
+} from '@angular/core';
 
-import {DatePipe} from '@angular/common';
-import {ComentarioBlogService} from '../comentario-blog.service';
-import {ComentarioBlog} from '../comentario-blog';
-import {ToastrService} from 'ngx-toastr';
+import {
+    DatePipe
+} from '@angular/common';
+import {
+    ComentarioBlogService
+} from '../comentario-blog.service';
+import {
+    ComentarioBlog
+} from '../comentario-blog';
+import {
+    ToastrService
+} from 'ngx-toastr';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
     selector: 'app-comentario-edit',
@@ -13,49 +30,58 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class ComentarioEditComponent implements OnInit, OnChanges {
 
-    textoP:string;
     /**
-    * Constructor for the component
-    * @param dp DatePipe to format the date.
-    * @param comentarioService The comentarios' services provider
-    * @param toastrService The toastr to show messages to the user
-    */
+     * Constructor for the component
+     * @param dp DatePipe to format the date.
+     * @param comentarioService The comentarios' services provider
+     * @param toastrService The toastr to show messages to the user
+     */
     constructor(
         private comentarioService: ComentarioBlogService,
         private toastrService: ToastrService,
+        private route: ActivatedRoute,
+        private router: Router
+
     ) {}
 
     /**
-    * The comentario id as received from the parent component
-    */
+     * The comentario as received from the parent component
+     */
     @Input() comentario: ComentarioBlog;
-
+    /**
+     * The comentario id as received from the parent component
+     */
     @Input() comentario_id: number;
     /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an comentario
-    */
+     * The output which tells the parent component
+     * that the user no longer wants to create an comentario
+     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user updated a new comentario
-    */
+     * The output which tells the parent component
+     * that the user updated a new comentario
+     */
     @Output() update = new EventEmitter();
 
     /**
-    * Updates the information of the comentario
-    */
+     * Updates the information of the comentario
+     */
     editComentario(): void {
-       // let textoP: String = new String(this.comentario.texto);
+        // let textoP: String = new String(this.comentario.texto);
         //this.comentario.texto = this.textoP;
         this.comentarioService.updateComentario(this.comentario)
             .subscribe(() => {
                 this.toastrService.success("The comentario's information was updated", "Comentario edition");
+                this.router.navigate(['/comments/' + this.comentario_id]);
             });
         this.update.emit();
     }
 
+
+    /**
+     * Retorna el detalle del comentario
+     */
     getComentario(): void {
         this.comentarioService.getComentarioBlogDetail(this.comentario_id)
             .subscribe(comentario => {
@@ -64,25 +90,26 @@ export class ComentarioEditComponent implements OnInit, OnChanges {
     }
 
     /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
-    */
+     * Emits the signal to tell the parent component that the
+     * user no longer wants to create an user
+     */
     cancelEdition(): void {
         this.cancel.emit();
     }
 
 
     /**
-    * This function will initialize the component
-    */
+     * This function will initialize the component
+     */
     ngOnInit() {
+        this.comentario_id = +this.route.snapshot.paramMap.get('id');
         this.comentario = new ComentarioBlog();
         this.getComentario();
     }
 
     /**
-    * This function will be called when the user chooses another comentario to edit
-    */
+     * This function will be called when the user chooses another comentario to edit
+     */
     ngOnChanges() {
         this.ngOnInit();
     }

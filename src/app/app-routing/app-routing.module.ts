@@ -33,7 +33,9 @@ import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comen
 
 const routes: Routes = [
 
-     
+     /**
+      * Rutas de los comentarios junto con sus servicios.
+      */
     {
         path: 'comments',
         children: [
@@ -147,16 +149,6 @@ const routes: Routes = [
     {
         path: 'home',
         component: AuthLoginComponent
-    },
-    {
-        path: 'grupoInteresComments',
-        children: [
-            {
-                path: 'list',
-                component: ComentarioGrupoInteresListComponent
-            }
-        ]
-        
     },
     {
         path: '**',

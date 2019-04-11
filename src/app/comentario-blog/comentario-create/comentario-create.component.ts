@@ -1,8 +1,21 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {DatePipe} from '@angular/common';
-import {ToastrService} from 'ngx-toastr';
-import {ComentarioBlogService} from '../comentario-blog.service';
-import {ComentarioBlog} from '../comentario-blog';
+import {
+    Component,
+    OnInit,
+    Output,
+    EventEmitter
+} from '@angular/core';
+import {
+    DatePipe
+} from '@angular/common';
+import {
+    ToastrService
+} from 'ngx-toastr';
+import {
+    ComentarioBlogService
+} from '../comentario-blog.service';
+import {
+    ComentarioBlog
+} from '../comentario-blog';
 
 @Component({
     selector: 'app-comentario-create',
@@ -13,11 +26,11 @@ import {ComentarioBlog} from '../comentario-blog';
 export class ComentarioCreateComponent implements OnInit {
 
     /**
-    * Constructor for the component
-    * @param dp DatePipe to format the date.
-    * @param ComentarioBlogService The Comentario's services provider
-    * @param toastrService The toastr to show messages to the user
-    */
+     * Constructor for the component
+     * @param dp DatePipe to format the date.
+     * @param ComentarioBlogService The Comentario's services provider
+     * @param toastrService The toastr to show messages to the user
+     */
     constructor(
         private dp: DatePipe,
         private comentarioBlogService: ComentarioBlogService,
@@ -25,25 +38,32 @@ export class ComentarioCreateComponent implements OnInit {
     ) {}
 
     /**
-    * The new Comentario
-    */
+     * The new Comentario
+     */
     comentario: ComentarioBlog;
+    fechita: String;
 
     /**
-    * The output which tells the parent component
-    * that the user no longer wants to create an Comentario
-    */
+     * The output which tells the parent component
+     * that the user no longer wants to create an Comentario
+     */
     @Output() cancel = new EventEmitter();
 
     /**
-    * The output which tells the parent component
-    * that the user created a new Comentario
-    */
+     * The output which tells the parent component
+     * that the user created a new Comentario
+     */
     @Output() create = new EventEmitter();
 
+    fecha(): void {
+        let today = new Date().toISOString().substr(0, 10);
+        var inputValue = ( < HTMLInputElement > document.querySelector("#today")).value = today;
+        this.fechita = today;
+    }
+
     /**
-    * Creates an Comentario
-    */
+     * Creates an Comentario
+     */
     createComentario(): ComentarioBlog {
 
 
@@ -59,16 +79,16 @@ export class ComentarioCreateComponent implements OnInit {
     }
 
     /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
-    */
+     * Emits the signal to tell the parent component that the
+     * user no longer wants to create an user
+     */
     cancelCreation(): void {
         this.cancel.emit();
     }
 
     /**
-    * This function will initialize the component
-    */
+     * This function will initialize the component
+     */
     ngOnInit() {
         this.comentario = new ComentarioBlog();
     }

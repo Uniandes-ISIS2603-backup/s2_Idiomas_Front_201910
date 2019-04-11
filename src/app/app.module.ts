@@ -14,7 +14,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
-import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
+
 import { ActividadModule } from './actividad/actividad.module';
 import { EstadiaModule } from './estadia/estadia.module';
 import { EncuentroModule } from './encuentro/encuentro.module';
@@ -37,7 +37,6 @@ import { ChatModule } from './chat/chat.module';
         AuthModule,
         FormsModule,
         ComentarioBlogModule,
-        ComentarioGrupoInteresModule,
         ActividadModule,
         EstadiaModule,
         ChatModule,
