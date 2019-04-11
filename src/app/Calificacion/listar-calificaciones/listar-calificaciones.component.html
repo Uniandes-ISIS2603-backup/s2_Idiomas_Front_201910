@@ -1,0 +1,11 @@
+<div class = container>
+  <div class = "table table-bordered table-dark">
+    <thead> Calificaciones
+      <tr *ngFor = "let c of calificaciones">
+        <td> id : {{c.id}} </td>
+        <td> 
+         <a class="figure-caption" [routerLink] ="['/calificaciones', { outlets: { 'detail': [c.id] } }]" > calificacion : {{c.calificacion}} </a></td>
+        <td> mensaje : {{c.mensaje}} </td>
+    </tr>
+  </thead>
+</div>

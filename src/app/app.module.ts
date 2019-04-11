@@ -16,6 +16,7 @@ import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 
 import { ActividadModule } from './actividad/actividad.module';
+import { CalificacionesModule } from './Calificacion/calificaciones.module';
 import { EstadiaModule } from './estadia/estadia.module';
 import { EncuentroModule } from './encuentro/encuentro.module';
 import { OtroModule } from './otro/otro.module';
@@ -37,6 +38,7 @@ import { ChatModule } from './chat/chat.module';
         AuthModule,
         FormsModule,
         ComentarioBlogModule,
+        CalificacionesModule,
         ActividadModule,
         EstadiaModule,
         ChatModule,

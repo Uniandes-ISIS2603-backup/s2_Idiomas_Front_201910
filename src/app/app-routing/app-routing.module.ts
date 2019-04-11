@@ -30,6 +30,9 @@ import { ChatCreateComponent } from '../chat/chat-create/chat-create.component';
 import { ChatEditComponent } from '../chat/chat-edit/chat-edit.component';
 import {ComentarioCreateComponent } from '../comentario-blog/comentario-create/comentario-create.component';
 import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comentario-edit.component';
+import { ListarCalificacionesComponent } from '../Calificacion/listar-calificaciones/listar-calificaciones.component';
+import { CalificacionesDetailComponent } from '../Calificacion/calificaciones-detail/calificaciones-detail/calificaciones-detail.component';
+import {CalificacionCreateComponent} from '../Calificacion/calificacion-create/calificacion-create.component';
 
 const routes: Routes = [
 
@@ -122,6 +125,24 @@ const routes: Routes = [
             {
                 path:':id/edit',
                 component: EstadiaEditComponent 
+            }
+        ]
+    },
+    {
+        path: 'calificaciones',
+        children: [
+            {
+                path: 'list',
+                component: ListarCalificacionesComponent
+            },
+            {
+                path: ':id',
+                component: CalificacionesDetailComponent,
+                outlet: 'detail'
+            },
+            {
+                path: 'add',
+                component: CalificacionCreateComponent
             }
         ]
     },
