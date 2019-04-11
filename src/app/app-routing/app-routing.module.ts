@@ -126,6 +126,20 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'calificaciones',
+        children: [
+            {
+                path: 'list',
+                component: ListarCalificacionesComponent
+            },
+            {
+                path: ':id',
+                component: CalificacionesDetailComponent,
+                outlet: 'detail'
+            }
+        ]
+    },
+    {
         path: 'otros',
         children: [
             {

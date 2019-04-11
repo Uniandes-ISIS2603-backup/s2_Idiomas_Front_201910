@@ -12,7 +12,9 @@ import {Calificacion} from '../calificacion';
 export class CalificacionCreateComponent implements OnInit {
 
   constructor(
+    private dp: DatePipe,
     private calificacionesService: CalificacionesService,
+    private toastrService: ToastrService
   ) { }
 
     /**
@@ -37,18 +39,15 @@ export class CalificacionCreateComponent implements OnInit {
     */
     createCalificacion(): Calificacion {
 
-        let dateB: Date = new Date(this.author.birthDate.year, this.author.birthDate.month - 1, this.author.birthDate.day);
-
-        this.author.birthDate = this.dp.transform(dateB, 'yyyy-MM-dd');
-        console.log(this.author);
-        this.authorService.createAuthor(this.author)
-            .subscribe((author) => {
-                this.author = author;
+        console.log(this.calificacion);
+        this.calificacionesService.createCalificacion(this.calificacion)
+            .subscribe((Calificacion) => {
+                this.calificacion = Calificacion;
                 this.create.emit();
-                this.toastrService.success("The author was created", "Author creation");
+                this.toastrService.success("The Calificacion was created", "Calificacion creation");
 
             });
-        return this.author;
+        return this.calificacion;
     }
 
     /**
