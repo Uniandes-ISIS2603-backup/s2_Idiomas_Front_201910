@@ -152,6 +152,10 @@ const routes: Routes = [
                 path: ':id',
                 component: CalificacionesDetailComponent,
                 outlet: 'detail'
+            },
+            {
+                path: 'add',
+                component: CalificacionCreateComponent
             }
         ]
     },
