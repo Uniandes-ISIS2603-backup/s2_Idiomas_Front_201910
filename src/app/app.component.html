@@ -14,12 +14,16 @@
                             <font size="3">Comentarios Grupo de Interes</font>
                         </a>
                     </li>
+                    <li class = "nav-item">
+                        <a id= "actividadesTag" class = "nav-link" routerLink = "/actividades/list">
+                        <font size = "3"></font>Actividades</a>
+                    </li>
                 </ul>
             </div>
         </a>
 
         <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -86,11 +90,12 @@
     <div class="col">
         <router-outlet name="detail"></router-outlet>
     </div>
+
     <footer class="footer bg-light" id="footer">
         <div class="container">
-            <p class="navbar-text text-center">
-                <img src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text"></span>
-                <a routerLink="/home"> s2_idiomas-Front</a>
+            <p class="navbar-text text-center pull-right ">
+                <img src="../assets/logooo.png" alt="logo" width="60%" /><span id="footer-text"></span>
+                <a routerLink="/home"> Home</a>
             </p>
         </div>
     </footer>

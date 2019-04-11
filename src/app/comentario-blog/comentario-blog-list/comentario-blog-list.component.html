@@ -40,7 +40,7 @@ and open the template in the editor.
                     <font size="6">Comentarios</font>
                 </h1>
             </div>
-            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink= "/{{comentario.titulo}}"
+            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink= "../{{comentario.id}}"
             >
             
                 <div class="media-body">
@@ -51,7 +51,7 @@ and open the template in the editor.
                         <h4 class="media-heading user_name">Autor - {{comentario.titulo}}</h4>
                         {{comentario.texto}}
 
-                        <p><small><a href="">Editar</a></small></p>
+                        <p><small><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
                     </div>
                 </div>
             </div>
@@ -60,5 +60,12 @@ and open the template in the editor.
 
         </div>
     </div>
-    <button class="btn btn-primary">Crear comentario</button>  
+    <button class="btn btn-primary"  routerLink="../add">Crear comentario</button>  
+
+    <div *ngIf="showCreate">
+        <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comentario-create>
+    </div>
+    <div *ngIf="showEdit">
+        <app-comentario-edit [comentario_id]="comentario_edit_id" (cancel)="showHideEdit(comentario_edit_id)" (update)="updateComentario()"></app-comentario-edit>
+    </div>
 </div>

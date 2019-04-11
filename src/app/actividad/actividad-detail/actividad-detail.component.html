@@ -1,3 +1,23 @@
-<p>
-  actividad-detail works!
-</p>
+<div class="panel-body">
+    <div class="border margin">
+        <p class="h3 p-3">{{actividadDetail.nombre}}<p> 
+        <div class="row">
+            <div class="col">
+                <dl>     
+                    <dt>Nombre</dt>
+                    <dd>{{actividadDetail.nombre}}</dd>
+                    <dt>Fecha</dt>
+                    <dd>{{actividadDetail.fecha}}</dd>
+                    <dt>Descripcion</dt>
+                    <dd>{{actividadDetail.descripcion}}</dd>
+                    <dt>Motivacion</dt>
+                    <dd>{{actividadDetail.motivacion}}</dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+    <!--<p class="h3 p-3">Calificaciones de la actividad : </p>
+    <app-calificacion-list [books]="actividadDetail.calificacion"></app-book-list>-->
+</div>
+

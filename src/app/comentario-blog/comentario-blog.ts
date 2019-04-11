@@ -11,9 +11,11 @@ id: number;
 
 texto: string;
 
-fecha: Date;
+fecha: any;
 
 autor: string;
+    
+
 
 
 }

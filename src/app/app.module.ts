@@ -17,11 +17,17 @@ import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
 //import { ActividadComponent } from './actividad/actividad.component';
 //import { ActividadCreateComponent } from './actividad-create/actividad-create.component';
-import { UsuarioModule } from './usuario/usuario.module';
-import { AdministradorModule } from './administrador/administrador.module';
-import { CoordinadorModule } from './coordinador/coordinador.module';
-import { AnfitrionModule } from './anfitrion/anfitrion.module';
-import {  ReactiveFormsModule } from '@angular/forms'
+import {UsuarioModule} from './usuario/usuario.module';
+import {AdministradorModule} from './administrador/administrador.module';
+import {CoordinadorModule} from './coordinador/coordinador.module';
+import {AnfitrionModule} from './anfitrion/anfitrion.module';
+import {ReactiveFormsModule} from '@angular/forms'
+import {ActividadModule} from './actividad/actividad.module';
+import {CalificacionesModule} from './Calificacion/calificaciones.module';
+import {EstadiaModule} from './estadia/estadia.module';
+import {EncuentroModule} from './encuentro/encuentro.module';
+import {OtroModule} from './otro/otro.module';
+import {ChatModule} from './chat/chat.module';
 
 
 
@@ -29,9 +35,9 @@ import {  ReactiveFormsModule } from '@angular/forms'
 @NgModule({
     declarations: [
         AppComponent
-//        ,
-//        ActividadComponent,
-//        ActividadCreateComponent
+        //        ,
+        //        ActividadComponent,
+        //        ActividadCreateComponent
     ],
     imports: [
         BrowserModule,
@@ -46,8 +52,15 @@ import {  ReactiveFormsModule } from '@angular/forms'
         UsuarioModule,
         AnfitrionModule,
         AdministradorModule,
-        CoordinadorModule,        
+        CoordinadorModule,
         ReactiveFormsModule,
+        CalificacionesModule,
+        ActividadModule,
+        EstadiaModule,
+        ChatModule,
+        EncuentroModule,
+        OtroModule,
+
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',

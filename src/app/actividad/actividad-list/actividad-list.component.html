@@ -1,3 +1,46 @@
-<p>
-  actividad-list works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                    <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear una actividad</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Nombre</th>
+                        <th class="h4">Descripcion</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let actividad of actividades" >
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.nombre}}</dd>
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.descripcion}}</dd>
+                        
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="showHideEdit(actividad.id)">Editar<span class="fa"></span></button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteActividad(actividad.id)">Eliminar<span class="fa"></span></button>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container-fluid">
+            <div *ngIf="showView">
+                <app-actividad-detail [actividadDetail]="selectedActividad"></app-actividad-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-actividad-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-actividad-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-actividad-edit [actividad]="selectedActividad" (cancel)="showHideEdit(selectedActividad.id)" (update)="updateActividad()" ></app-actividad-edit>
+            </div>
+        </div>   
+    </div>
+</div>
