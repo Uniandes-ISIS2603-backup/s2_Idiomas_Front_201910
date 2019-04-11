@@ -1,3 +1,28 @@
-<p>
-  estadia-detail works!
-</p>
+<div class="panel-body">
+    <div class="border margin">
+        <p class="h3 p-3">{{estadiaDetail.nombre}}<p> 
+        <div class="row">
+            <div class="col">
+                <dl>     
+                    <dt>Nombre</dt>
+                    <dd>{{estadiaDetail.nombre}}</dd>
+                    <dt>Fecha</dt>
+                    <dd>{{estadiaDetail.fecha}}</dd>
+                    <dt>Descripcion</dt>
+                    <dd>{{estadiaDetail.descripcion}}</dd>
+                    <dt>Motivacion</dt>
+                    <dd>{{estadiaDetail.motivacion}}</dd>
+                    <dt>Pais</dt>
+                    <dd>{{estadiaDetail.pais}}</dd>
+                    <dt>Anfitrion</dt>
+                    <dd>{{estadiaDetail.anfitrion}}</dd>
+                    <!--<dt>Usuarios</dt>
+                    <dd>{{estadiaDetail.usuario}}-->
+                </dl>
+            </div>
+
+        </div>
+    </div>
+    <!--<p class="h3 p-3">Calificaciones de la estadia : </p>
+    <app-calificacion-list [books]="estadiaDetail.calificacion"></app-book-list>-->
+</div>

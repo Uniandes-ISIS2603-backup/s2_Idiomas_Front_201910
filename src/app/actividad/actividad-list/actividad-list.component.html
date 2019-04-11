@@ -2,27 +2,42 @@
     <div class="row">
         <div class="col-12">
             <br>
-            <div class="row justify-content-center align-self-center">
-                    <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Crear una actividad</button>
-            </div>
+            <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle justify-content-center align-self-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Crear actividad
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a [ngClass]="{ 'btn-primary': !showCreateA, 'btn-danger': showCreateA }" type="button" class="dropdown-item"
+                        (click)="showHideCreateA()">Crear actividad</a>
+                        <a [ngClass]="{ 'btn-primary': !showCreateC, 'btn-danger': showCreateC }" type="button" class="dropdown-item"
+                        (click)="showHideCreateC()">Crear chat</a>
+                        <a [ngClass]="{ 'btn-primary': !showCreateE, 'btn-danger': showCreateE }" type="button" class="dropdown-item"
+                        (click)="showHideCreateE()">Crear encuentro</a>
+                        <a [ngClass]="{ 'btn-primary': !showCreateF, 'btn-danger': showCreateF }" type="button" class="dropdown-item"
+                        (click)="showHideCreateF()">Crear estadia</a>
+                        <a [ngClass]="{ 'btn-primary': !showCreateO, 'btn-danger': showCreateO }" type="button" class="dropdown-item"
+                        (click)="showHideCreateO()">Crear otro</a>
+                    </div>
+                  </div>
             <br>
             <br>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th class="h4">Nombre</th>
-                        <th class="h4">Descripcion</th>  
+                        <th class="h4">Descripcion</th> 
+                        <th class= "h4">Fecha</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor = "let actividad of actividades" >
-                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.nombre}}</dd>
-                        <td style="cursor: pointer;" (click)="onSelected(actividad.id)"> <dd>{{actividad.descripcion}}</dd>
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id,actividad)"> <dd>{{actividad.nombre}}</dd>
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id,actividad)"> <dd>{{actividad.descripcion}}</dd>
+                        <td style="cursor: pointer;" (click)="onSelected(actividad.id,actividad)"> <dd>{{actividad.fecha}}</dd>
                         
                 </td>
                 <td>
-                    <button class="btn btn-primary" (click)="showHideEdit(actividad.id)">Editar<span class="fa"></span></button>
+                    <button class="btn btn-primary" (click)="showHideEdit(actividad.id,actividad)">Editar<span class="fa"></span></button>
                 </td>
                 <td>
                     <button class="btn btn-danger" (click)="deleteActividad(actividad.id)">Eliminar<span class="fa"></span></button>
@@ -32,14 +47,50 @@
             </table>
         </div>
         <div class="container-fluid">
-            <div *ngIf="showView">
+            <div *ngIf="showViewA">
                 <app-actividad-detail [actividadDetail]="selectedActividad"></app-actividad-detail>
             </div>
-            <div *ngIf="showCreate">
-                <app-actividad-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-actividad-create>
+            <div *ngIf="showViewC">
+                <app-chat-detail [chatDetail]="selectedChat"></app-chat-detail>
             </div>
-            <div *ngIf="showEdit">
-                <app-actividad-edit [actividad]="selectedActividad" (cancel)="showHideEdit(selectedActividad.id)" (update)="updateActividad()" ></app-actividad-edit>
+            <div *ngIf="showViewE">
+                <app-encuentro-detail [encuentroDetail]="selectedEncuentro"></app-encuentro-detail>
+            </div>
+            <div *ngIf="showViewF">
+                <app-estadia-detail [estadiaDetail]="selectedEstadia"></app-estadia-detail>
+            </div>
+            <div *ngIf="showViewO">
+                <app-otro-detail [otroDetail]="selectedOtro"></app-otro-detail>
+            </div>
+            <div *ngIf="showCreateA">
+                <app-actividad-create (cancel)="showHideCreateA()" (create)="ngOnInit()"></app-actividad-create>
+            </div>
+            <div *ngIf="showCreateC">
+                    <app-chat-create (cancel)="showHideCreateC()" (create)="ngOnInit()"></app-chat-create>
+                </div>
+            <div *ngIf="showCreateE">
+                <app-encuentro-create (cancel)="showHideCreateE()" (create)="ngOnInit()"></app-encuentro-create>
+            </div>
+            <div *ngIf="showCreateF">
+                <app-estadia-create (cancel)="showHideCreateF()" (create)="ngOnInit()"></app-estadia-create>
+            </div>
+            <div *ngIf="showCreateO">
+                <app-otro-create (cancel)="showHideCreateO()" (create)="ngOnInit()"></app-otro-create>
+            </div>
+            <div *ngIf="showEditA">
+                <app-actividad-edit [actividad]="selectedActividad" (cancel)="showHideEdit(selectedActividad.id,selectedActividad)" (update)="updateActividad()"></app-actividad-edit>
+            </div>
+            <div *ngIf="showEditC">
+                <app-chat-edit [chat]="selectedChat" (cancel)="showHideEdit(selectedChat.id,selectedChat)" (update)="updateActividad()"></app-chat-edit>
+            </div>
+            <div *ngIf="showEditE">
+                <app-encuentro-edit [encuentro]="selectedEncuentro" (cancel)="showHideEdit(selectedEncuentro.id,selectedEncuentro)" (update)="updateActividad()"></app-encuentro-edit>
+            </div>
+            <div *ngIf="showEditF">
+                <app-estadia-edit [estadia]="selectedEstadia" (cancel)="showHideEdit(selectedEstadia.id,selectedEstadia)" (update)="updateActividad()"></app-estadia-edit>
+            </div>
+            <div *ngIf="showEditO">
+                <app-otro-edit [otro]="selectedOtro" (cancel)="showHideEdit(selectedOtro.id,selectedOtro)" (update)="updateActividad()"></app-otro-edit>
             </div>
         </div>   
     </div>

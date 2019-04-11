@@ -47,11 +47,16 @@ import {AnfitrionCreateComponent} from '../anfitrion/anfitrion-create/anfitrion-
 
 const routes: Routes = [
 
+
+    /**
+      * Rutas de los comentarios junto con sus servicios.
+      */
     {
         path: 'home',
         component: AuthLoginComponent
     }
     ,
+
     {
         path: 'comments',
         children: [
@@ -96,6 +101,27 @@ const routes: Routes = [
             {
                 path:':id/edit',
                 component: ActividadEditComponent 
+            }
+        ]
+    },
+    {
+        path: 'chats',
+        children: [
+            {
+                path: 'list',
+                component: ChatListComponent
+            },
+            {
+                path: ':id',
+                component: ChatDetailComponent
+            },
+            {
+                path: 'add',
+                component: ChatCreateComponent
+            },
+            {
+                path:':id/edit',
+                component: ChatEditComponent 
             }
         ]
     },
@@ -183,20 +209,6 @@ const routes: Routes = [
     {
         path: 'home',
         component: AuthLoginComponent
-    },
-    {
-        path: 'grupoInteresComments',
-        children: [
-            {
-                path: 'list',
-                component: ComentarioGrupoInteresListComponent
-            }
-        ]
-        
-    },
-    {
-        path: '**',
-        redirectTo: 'home',
     }
     ,
     {
