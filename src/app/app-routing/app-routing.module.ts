@@ -181,7 +181,7 @@ const routes: Routes = [
             },
             {
                 path: 'add',
-                component: CalificacionCreateComponent
+               
             }
         ]
     },

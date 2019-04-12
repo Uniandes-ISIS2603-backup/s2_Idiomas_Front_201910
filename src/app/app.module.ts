@@ -56,7 +56,7 @@ import {ChatModule} from './chat/chat.module';
         AdministradorModule,
         CoordinadorModule,
         ReactiveFormsModule
-        CalificacionesModule,
+        ,
         ActividadModule,
         EstadiaModule,
         ChatModule,
