@@ -31,6 +31,7 @@ import {ComentarioCreateComponent } from '../comentario-blog/comentario-create/c
 import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comentario-edit.component';
 import { ListarCalificacionesComponent } from '../Calificacion/listar-calificaciones/listar-calificaciones.component';
 import { CalificacionesDetailComponent } from '../Calificacion/calificaciones-detail/calificaciones-detail/calificaciones-detail.component';
+import { CalificacionCreateComponent } from '../Calificacion/calificacion-create/calificacion-create.component';
 import {UsuarioListComponent} from '../usuario/usuario-list/usuario-list.component';
 import {UsuarioDetailComponent} from '../usuario/usuario-detail/usuario-detail.component';
 import {UsuarioCreateComponent} from '../usuario/usuario-create/usuario-create.component';
@@ -180,7 +181,7 @@ const routes: Routes = [
             },
             {
                 path: 'add',
-               
+                component: CalificacionCreateComponent
             }
         ]
     },
