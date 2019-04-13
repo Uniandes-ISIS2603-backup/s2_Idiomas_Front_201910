@@ -41,7 +41,6 @@ export class ComentarioCreateComponent implements OnInit {
      * The new Comentario
      */
     comentario: ComentarioBlog;
-    fechita: String;
 
     /**
      * The output which tells the parent component
@@ -55,11 +54,6 @@ export class ComentarioCreateComponent implements OnInit {
      */
     @Output() create = new EventEmitter();
 
-    fecha(): void {
-        let today = new Date().toISOString().substr(0, 10);
-        var inputValue = ( < HTMLInputElement > document.querySelector("#today")).value = today;
-        this.fechita = today;
-    }
 
     /**
      * Creates an Comentario

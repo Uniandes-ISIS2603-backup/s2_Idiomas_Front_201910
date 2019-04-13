@@ -7,7 +7,7 @@
         <form texto="comentario" (ngSubmit)="f.form.valid && editComentario()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="comentarioTexto"><b>Texto</b></label>
-                <input type="text" texto="comentarioTexto" class="form-control" id="comentarioTexto"
+                <input type="text" name="comentarioTexto" class="form-control" id="comentarioTexto"
                     [(ngModel)]="comentario.texto" #comentarioTexto="ngModel"
                     [ngClass]="{ 'is-invalid': f.submitted && comentarioTexto.invalid }" required>
                 <div class="invalid-feedback">

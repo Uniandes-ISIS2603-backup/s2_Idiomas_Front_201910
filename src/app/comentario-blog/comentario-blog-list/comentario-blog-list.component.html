@@ -50,7 +50,7 @@ and open the template in the editor.
                         <h4 class="media-heading user_name"  style="cursor: pointer;" (click)="onSelected(comentario.id)">Autor - {{comentario.titulo}}</h4>
                         {{comentario.texto}}
 
-                        <p><small><a (click)="showHideEdit(comentario.id)">Editar</a></small></p>
+                        <p><small><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
                     </div>
                 </div>
             </div>
@@ -66,9 +66,7 @@ and open the template in the editor.
     <div *ngIf="showCreate">
         <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comentario-create>
     </div>
-    <div *ngIf="showEdit">
-        <app-comentario-edit [comentario_id]="comentario_edit_id" (cancel)="showHideEdit(comentario_edit_id)" (update)="updateComentario()"></app-comentario-edit>
-    </div>
+
 </div>
 
 
