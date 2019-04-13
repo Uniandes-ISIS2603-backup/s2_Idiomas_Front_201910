@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear calificacion</h2>
+        <br>
+        <form titulo="calificacion" (ngSubmit)="f.form.valid && createCalificacion()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="calificacionG"><b>Calificacion</b></label>
+                <input type="number" name="calificacionG" class="form-control" id="calificacionG"
+                    [(ngModel)]="calificacionG.calificacion" #calificacionG="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && calificacionG.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The calificacion is invalid</div>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label for="calificacionTexto"><b>Mensaje</b></label>
+                <textarea name="calificacionTexto" maxlength="300" class="form-control" id="calificacionTexto" [(ngModel)]="calificacion.texto"
+                    #calificacionTexto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionTexto.invalid}"
+                    required></textarea>
+                <div class="invalid-feedback">
+                    <div>The calificacion's mensaje is missing</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+
+                <div class="divider"></div>
+                <button type="submit" class="btn btn-primary">Create</button>
+
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
