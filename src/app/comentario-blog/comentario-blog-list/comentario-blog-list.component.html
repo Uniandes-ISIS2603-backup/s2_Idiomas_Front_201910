@@ -61,11 +61,15 @@ and open the template in the editor.
     </div>
     <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
     (click)="showHideCreate()">Crear un comentario</button>  
+ 
 
     <div class="container-fluid">
     <div *ngIf="showCreate">
         <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comentario-create>
     </div>
+    <div *ngIf="showEdit">
+            <app-comentario-edit [comentario]="selectedComment" (cancel)="showHideEdit(selectedComment.id)" (update)="updateComentario()" ></app-comentario-edit>
+        </div>
 
 </div>
 
