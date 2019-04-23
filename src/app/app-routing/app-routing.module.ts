@@ -140,25 +140,7 @@ const routes: Routes = [
                 component: EstadiaEditComponent 
             }
         ]
-    },
-    {
-        path: 'calificaciones',
-        children: [
-            {
-                path: 'list',
-                component: ListarCalificacionesComponent
-            },
-            {
-                path: ':id',
-                component: CalificacionesDetailComponent,
-                outlet: 'detail'
-            },
-            {
-                path: 'add',
-                component: CalificacionCreateComponent
-            }
-        ]
-    },
+    },   
     {
         path: 'otros',
         children: [
