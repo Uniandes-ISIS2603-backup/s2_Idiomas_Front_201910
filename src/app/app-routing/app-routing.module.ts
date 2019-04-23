@@ -6,7 +6,6 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import {ComentarioBlogListComponent} from '../comentario-blog/comentario-blog-list/comentario-blog-list.component';
-import {ComentarioGrupoInteresListComponent} from '../comentario-grupo-interes/comentario-grupo-interes-list/comentario-grupo-interes-list.component';
 import {ComentarioBlogDetailComponent } from '../comentario-blog/comentario-blog-detail/comentario-blog-detail.component';
 import { ActividadListComponent } from '../actividad/actividad-list/actividad-list.component';
 import { ActividadDetailComponent } from '../actividad/actividad-detail/actividad-detail.component';
@@ -32,6 +31,7 @@ import {ComentarioCreateComponent } from '../comentario-blog/comentario-create/c
 import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comentario-edit.component';
 import { ListarCalificacionesComponent } from '../Calificacion/listar-calificaciones/listar-calificaciones.component';
 import { CalificacionesDetailComponent } from '../Calificacion/calificaciones-detail/calificaciones-detail/calificaciones-detail.component';
+import { CalificacionCreateComponent } from '../Calificacion/calificacion-create/calificacion-create.component';
 import {UsuarioListComponent} from '../usuario/usuario-list/usuario-list.component';
 import {UsuarioDetailComponent} from '../usuario/usuario-detail/usuario-detail.component';
 import {UsuarioCreateComponent} from '../usuario/usuario-create/usuario-create.component';
@@ -47,11 +47,16 @@ import {AnfitrionCreateComponent} from '../anfitrion/anfitrion-create/anfitrion-
 
 const routes: Routes = [
 
+
+    /**
+      * Rutas de los comentarios junto con sus servicios.
+      */
     {
         path: 'home',
         component: AuthLoginComponent
     }
     ,
+
     {
         path: 'comments',
         children: [
@@ -96,6 +101,27 @@ const routes: Routes = [
             {
                 path:':id/edit',
                 component: ActividadEditComponent 
+            }
+        ]
+    },
+    {
+        path: 'chats',
+        children: [
+            {
+                path: 'list',
+                component: ChatListComponent
+            },
+            {
+                path: ':id',
+                component: ChatDetailComponent
+            },
+            {
+                path: 'add',
+                component: ChatCreateComponent
+            },
+            {
+                path:':id/edit',
+                component: ChatEditComponent 
             }
         ]
     },
@@ -165,20 +191,6 @@ const routes: Routes = [
     {
         path: 'home',
         component: AuthLoginComponent
-    },
-    {
-        path: 'grupoInteresComments',
-        children: [
-            {
-                path: 'list',
-                component: ComentarioGrupoInteresListComponent
-            }
-        ]
-        
-    },
-    {
-        path: '**',
-        redirectTo: 'home',
     }
     ,
     {

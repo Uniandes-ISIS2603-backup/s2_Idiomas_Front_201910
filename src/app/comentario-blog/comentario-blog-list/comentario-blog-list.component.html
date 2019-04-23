@@ -40,15 +40,14 @@ and open the template in the editor.
                     <font size="6">Comentarios</font>
                 </h1>
             </div>
-            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink= "../{{comentario.id}}"
-            >
+            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink="../{{comentario.id}}"> 
             
                 <div class="media-body">
-                    <p class="pull-right"><small class="pull-right">{{comentario.fecha| date:'MM/dd/yyyy'}}</small></p>
+                    <p ><small class="pull-right">{{comentario.fecha| date:'MM/dd/yyyy'}}</small></p>
 
                     <div class="media-body">
 
-                        <h4 class="media-heading user_name">Autor - {{comentario.titulo}}</h4>
+                        <h4 class="media-heading user_name"  style="cursor: pointer;" (click)="onSelected(comentario.id)">Autor - {{comentario.titulo}}</h4>
                         {{comentario.texto}}
 
                         <p><small><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
@@ -60,12 +59,15 @@ and open the template in the editor.
 
         </div>
     </div>
-    <button class="btn btn-primary"  routerLink="../add">Crear comentario</button>  
+    <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+    (click)="showHideCreate()">Crear un comentario</button>  
 
+    <div class="container-fluid">
     <div *ngIf="showCreate">
         <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comentario-create>
     </div>
-    <div *ngIf="showEdit">
-        <app-comentario-edit [comentario_id]="comentario_edit_id" (cancel)="showHideEdit(comentario_edit_id)" (update)="updateComentario()"></app-comentario-edit>
-    </div>
+
 </div>
+
+
+

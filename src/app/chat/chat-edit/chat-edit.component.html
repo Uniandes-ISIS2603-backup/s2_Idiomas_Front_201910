@@ -1,3 +1,67 @@
-<p>
-  chat-edit works!
-</p>
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar un chat</h2>
+        <br>
+        <form name="chat" (ngSubmit)="f.form.valid && editChat()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="chatNombre"><b>Nombre</b></label>
+                <input type="text" name="chatNombre" class="form-control" id="chatNombre" [(ngModel)]="chat.nombre"
+                       #chatName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && chatName.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>The chat's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="chatFecha"><b>Fecha</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && chatFecha.invalid }">
+                    <input class="form-control" id="chatFecha" name="chatFecha" dateFormat="YYYY-MM-dd"
+                       [(ngModel)]="chat.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                       #chatFecha="ngModel" [ngClass]="{'is-invalid': f.submitted && chatFecha.invalid }"
+                       required>
+                       <div class="invalid-feedback">
+                        <div>The chat's date is missing</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="chatDescripcion"><b>Descripcion</b></label>
+                <textarea name="chatDescripcion" class="form-control" id="chatDescripcion" [(ngModel)]="chat.descripcion"
+                          #chatDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && chatDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The chat's description is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="chatMotivacion"><b>Motivacion</b></label>
+                <textarea name="chatMotivacion" class="form-control" id="chatMotivacion" [(ngModel)]="chat.motivacion"
+                          #chatMotivacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && chatDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The chat's motivacion is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="chatMedio"><b>Medio</b></label>
+                <textarea name="chatMedio" class="form-control" id="chatMedio" [(ngModel)]="chat.medio"
+                          #chatMedio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && chatDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The chat's medio is missing</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editChat()">Salvar</i>
+          
+            <i class="fa fa-ban" (click)="cancelEdition()">Descartar</i>
+        </div>
+    </div>
+</div>
+<br>
+<br>

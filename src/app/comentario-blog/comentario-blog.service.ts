@@ -20,6 +20,9 @@ const comments = '/comments';
 */
 @Injectable()
 export class ComentarioBlogService {
+    updateComentario(comentario: ComentarioBlog) {
+        return this.http.put<ComentarioBlog>(API_URL + comments + '/' + comentario.id, comentario);
+    }
     
     /**
     * Constructor of the service
@@ -43,6 +46,10 @@ export class ComentarioBlogService {
         return this.http.get<ComentarioBlog>(API_URL + comments + '/' + comentarioBlogId);
     }
     
+    /**
+     * Crea un nuevo comentario en la base de datos invocando el servicio POST implementado en el back
+     * @param comentarioBlog Comentario que se va a crear
+     */
     createComentario(comentarioBlog): Observable<ComentarioBlog> {
         return this.http.post<ComentarioBlog>(API_URL + comments, comentarioBlog);
     }

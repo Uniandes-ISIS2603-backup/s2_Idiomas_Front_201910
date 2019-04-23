@@ -1,3 +1,67 @@
-<p>
-  estadia-edit works!
-</p>
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar una estadia</h2>
+        <br>
+        <form name="estadia" (ngSubmit)="f.form.valid && editEstadia()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="estadiaNombre"><b>Nombre</b></label>
+                <input type="text" name="estadiaNombre" class="form-control" id="estadiaNombre" [(ngModel)]="estadia.nombre"
+                       #estadiaName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && estadiaName.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>The estadia's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="estadiaFecha"><b>Fecha</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && estadiaFecha.invalid }">
+                    <input class="form-control" id="estadiaFecha" name="estadiaFecha" dateFormat="YYYY-MM-dd"
+                       [(ngModel)]="estadia.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                       #estadiaFecha="ngModel" [ngClass]="{'is-invalid': f.submitted && estadiaFecha.invalid }"
+                       required>
+                       <div class="invalid-feedback">
+                        <div>The estadia's date is missing</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="estadiaDescripcion"><b>Descripcion</b></label>
+                <textarea name="estadiaDescripcion" class="form-control" id="estadiaDescripcion" [(ngModel)]="estadia.descripcion"
+                          #estadiaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && estadiaDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The estadia's description is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="estadiaMotivacion"><b>Motivacion</b></label>
+                <textarea name="estadiaMotivacion" class="form-control" id="estadiaMotivacion" [(ngModel)]="estadia.motivacion"
+                          #estadiaMotivacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && estadiaDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The estadia's motivacion is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="estadiaPais"><b>Pais</b></label>
+                <textarea name="estadiaPais" class="form-control" id="estadiaPais" [(ngModel)]="estadia.pais"
+                          #estadiaPais="ngModel" [ngClass]="{ 'is-invalid': f.submitted && estadiaDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The estadia's pais is missing</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editEstadia()">Salvar</i>
+          
+            <i class="fa fa-ban" (click)="cancelEdition()">Descartar</i>
+        </div>
+    </div>
+</div>
+<br>
+<br>

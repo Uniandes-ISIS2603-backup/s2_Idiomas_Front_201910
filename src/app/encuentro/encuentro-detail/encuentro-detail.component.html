@@ -1,3 +1,28 @@
-<p>
-  encuentro-detail works!
-</p>
+<div class="panel-body">
+    <div class="border margin">
+        <p class="h3 p-3">{{encuentroDetail.nombre}}<p> 
+        <div class="row">
+            <div class="col">
+                <dl>     
+                    <dt>Nombre</dt>
+                    <dd>{{encuentroDetail.nombre}}</dd>
+                    <dt>Fecha</dt>
+                    <dd>{{encuentroDetail.fecha}}</dd>
+                    <dt>Descripcion</dt>
+                    <dd>{{encuentroDetail.descripcion}}</dd>
+                    <dt>Motivacion</dt>
+                    <dd>{{encuentroDetail.motivacion}}</dd>
+                    <dt>Lugar</dt>
+                    <dd>{{encuentroDetail.lugar}}</dd>
+                    <dt>Número máximo de asistentes</dt>
+                    <dd>{{encuentroDetail.numeroMaxAsistentes}}</dd>
+                    <dt>Aprobado</dt>
+                    <dd>{{encuentroDetail.aprobado}}</dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+    <!--<p class="h3 p-3">Calificaciones de la encuentro : </p>
+    <app-calificacion-list [books]="encuentroDetail.calificacion"></app-book-list>-->
+</div>

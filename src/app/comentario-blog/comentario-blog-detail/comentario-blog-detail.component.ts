@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ComentarioBlogService } from '../comentario-blog.service';
@@ -31,7 +31,7 @@ export class ComentarioBlogDetailComponent implements OnInit {
     /**
     * The comentarioBlog whose details we want to show
     */
-    comentarioBlog: ComentarioBlog;
+    @Input() comentarioBlog: ComentarioBlog;
 
 
 

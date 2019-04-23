@@ -14,9 +14,10 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
-import { ComentarioGrupoInteresModule } from './comentario-grupo-interes/comentario-grupo-interes.module';
-//import { ActividadComponent } from './actividad/actividad.component';
-//import { ActividadCreateComponent } from './actividad-create/actividad-create.component';
+
+import { ActividadCreateComponent} from './actividad/actividad-create/actividad-create.component';
+
+
 import {UsuarioModule} from './usuario/usuario.module';
 import {AdministradorModule} from './administrador/administrador.module';
 import {CoordinadorModule} from './coordinador/coordinador.module';
@@ -32,12 +33,11 @@ import {ChatModule} from './chat/chat.module';
 
 
 
+
 @NgModule({
     declarations: [
-        AppComponent
-        //        ,
-        //        ActividadComponent,
-        //        ActividadCreateComponent
+        AppComponent,
+
     ],
     imports: [
         BrowserModule,
@@ -48,7 +48,6 @@ import {ChatModule} from './chat/chat.module';
         AuthModule,
         FormsModule,
         ComentarioBlogModule,
-        ComentarioGrupoInteresModule,
         UsuarioModule,
         AnfitrionModule,
         AdministradorModule,
