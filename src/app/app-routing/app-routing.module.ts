@@ -255,6 +255,28 @@ const routes: Routes = [
             }
         ]
     }
+    
+    ,
+    {
+        path: 'coordinadores',
+        children: [
+            {
+                path: 'list',
+                component: CoordinadorListComponent
+            },
+            {
+                path: ':id',
+                component: CoordinadorDetailComponent,
+                outlet: 'detail'
+            }
+            ,
+            {
+                path: 'create',
+                component: CoordinadorCreateComponent,
+
+            }
+        ]
+    }
     ,
     {
         path: '**',

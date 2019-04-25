@@ -39,6 +39,8 @@ export class UsuarioDetailComponent implements OnInit {
     this.usuarioService.getUsuarioDetail(this.usuario_id)
       .subscribe(o => {
         this.usuarioDetail = o;
+        this.usuarioDetail.nombre = o.nombre;
+        this.usuarioDetail.contrasenia = o.contrasenia;
         this.actividades = o.actividades;
         this.grupos = o.grupos;
       });
