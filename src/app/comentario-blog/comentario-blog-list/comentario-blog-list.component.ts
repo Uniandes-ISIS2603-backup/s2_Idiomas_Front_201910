@@ -10,7 +10,8 @@ import {
   Input,
   OnChanges,
   Output,
-  EventEmitter
+  EventEmitter,
+  ViewContainerRef
 } from '@angular/core';
 import {
   ComentarioBlogService
@@ -28,6 +29,7 @@ import {
 import {
   ComentarioBlogDetailComponent
 } from '../comentario-blog-detail/comentario-blog-detail.component';
+import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
 
 @Component({
   selector: 'list-comentarioblog',
@@ -40,7 +42,7 @@ export class ComentarioBlogListComponent implements OnInit {
    * Constructor for the component
    * @param editorialService The author's services provider
    */
-  constructor(private comentarioBlogService: ComentarioBlogService, private route: ActivatedRoute, private toastrService: ToastrService) {}
+  constructor(private comentarioBlogService: ComentarioBlogService, private viewRef: ViewContainerRef, private route: ActivatedRoute, private toastrService: ToastrService, private modalDialogService: ModalDialogService,) {}
 
   /**
    * The list of editorials which belong to the BookStore
@@ -136,6 +138,34 @@ export class ComentarioBlogListComponent implements OnInit {
 
     }
   }
+
+      /**
+    * Deletes a comment
+    */
+   deleteComentario(comentarioId): void {
+    this.modalDialogService.openDialog(this.viewRef, {
+        title: 'Delete a comment',
+        childComponent: SimpleModalComponent,
+        data: { text: 'Are you sure your want to delete this comment?' },
+        actionButtons: [
+            {
+                text: 'Yes',
+                buttonClass: 'btn btn-danger',
+                onAction: () => {
+                    this.comentarioBlogService.deleteComentario(comentarioId).subscribe(() => {
+                        this.toastrService.error("The comment was successfully deleted", "Comment deleted");
+                        this.ngOnInit();
+                    }, err => {
+                        this.toastrService.error(err, "Error");
+                    });
+                    return true;
+                }
+            },
+            { text: 'No', onAction: () => true }
+        ]
+    });
+    this.ngOnInit();
+}
 
   /**
    * This will initialize the component by retrieving the list of editorials from the service
