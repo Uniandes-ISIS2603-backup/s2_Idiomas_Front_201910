@@ -33,6 +33,16 @@
                                         <td style="cursor: pointer;">
                                             <a class="figure-caption" [routerLink] ="['/coordinadores', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
                                         </td>
+                                        
+                                         <td>
+                                             <button class="btn btn-primary"  routerLink="/coordinadores/{{e.id}}/edit" >
+                                                coordinadoresEdit
+                                             </button>
+                                        </td>
+                                        
+                                        <td>
+                                             <button class="btn btn-danger" (click)="deleteCoordinador(e.id)">Eliminar<span class="fa"></span></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -6,13 +6,14 @@ import { CoordinadorService } from './coordinador.service';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import {CoordinadorCreateComponent} from './coordinadro-create/coordinador-create.component';
 import { FormsModule } from '@angular/forms';
+import {CoordinadorEditComponent} from './coordinador-edit/coordinador-edit.component';
 
 @NgModule({
   imports: [
     CommonModule,AppRoutingModule, FormsModule
     
   ],
-  declarations: [CoordinadorListComponent, CoordinadorDetailComponent, CoordinadorCreateComponent],
+  declarations: [CoordinadorListComponent, CoordinadorDetailComponent, CoordinadorCreateComponent ,CoordinadorEditComponent],
   providers: [CoordinadorService]
 })
 export class CoordinadorModule { }

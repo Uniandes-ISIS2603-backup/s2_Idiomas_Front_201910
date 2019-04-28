@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <title>editar Ususarios</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    </head>
+    <body>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <br>
+                <h2 class="text-center">Editar administrador</h2>
+                <br>                      
+              <form  name="Usuario" (ngSubmit)=" editAdministrador()" #f="ngForm" novalidate>
+                      <div class="form-group">
+                        <label for="administradorNombre"><b>Nombre</b></label>
+                        <input type="text" name="administradorNombre" class="form-control" id="administradorNombre"  [(ngModel)]="administrador.nombre" #administradorNombre="ngModel"  required>
+                               <div class="invalid-feedback">
+                            <div>El nombre de administrador esta vacio</div>
+                        </div>
+                    </div>
+                   
+                  <div class="form-group">
+                        <label for="administradorContrasenia"><b>Contrasenia</b></label>
+                        <input type="text" name="administradorContrasenia" class="form-control" id="administradorContrasenia" 
+                               [(ngModel)]="administrador.contrasenia" #comentarioFecha="ngModel" required >
+                               <div class="invalid-feedback">
+                            <div>La contraseña de administrador esta vacio</div>
+                        </div>
+                    </div> 
+                    <div class="row form-inline justify-content-center align-self-center">
+                        <button type="button" class="btn btn-danger" routerLink="/administradores/list">Back</button>
+                        <div class="divider"></div>
+                        <button type="submit" class="btn btn-primary" >UpDate</button>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+    </body>
+</html>

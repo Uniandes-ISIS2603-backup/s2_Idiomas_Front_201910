@@ -4,6 +4,7 @@ import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 import { UsuarioService } from './usuario.service';
 import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.component';
 import { UsuarioCreateComponent } from './usuario-create/usuario-create.component';
+import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent],
+  declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent, UsuarioEditComponent],
   providers: [UsuarioService]
 })
 export class UsuarioModule { }

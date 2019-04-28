@@ -34,9 +34,12 @@ constructor( private coordinadorService: CoordinadorService,
   getCoordinadorDetail(): void {
 
     this.coordinadorService.getCoordinadorDetail(this.coordinador_id)
-      .subscribe(o => {
+         .subscribe(o => {
         this.coordinadorDetail = o;
-
+        this.coordinadorDetail.nombre = o.nombre;
+        this.coordinadorDetail.contrasenia = o.contrasenia;
+        this.actividades = o.actividades;
+        this.grupos = o.grupos;
       });
   }
 

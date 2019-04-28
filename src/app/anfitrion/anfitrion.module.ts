@@ -6,6 +6,7 @@ import { AnfitrionDetailComponent } from './anfitrion-detail/anfitrion-detail.co
 import { AnfitrionCreateComponent } from './anfitrion-create/anfitrion-create.component';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
+import {AnfitrionEditComponent} from './anfitrion-edit/anfitrion-edit.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,    
     FormsModule
   ],
-  declarations: [AnfitrionListComponent, AnfitrionDetailComponent, AnfitrionCreateComponent],
+  declarations: [AnfitrionListComponent, AnfitrionDetailComponent, AnfitrionCreateComponent , AnfitrionEditComponent],
   providers: [AnfitrionService]
 })
 export class AnfitrionModule { }

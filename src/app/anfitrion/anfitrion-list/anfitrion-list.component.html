@@ -36,6 +36,15 @@
                             <td style="cursor: pointer;">
                                 <a class="figure-caption" [routerLink] ="['/anfitriones', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
                             </td>
+                             <td>
+                                             <button class="btn btn-primary"  routerLink="/anfitriones/{{e.id}}/edit" >
+                                                usuariosEdit
+                                             </button>
+                                        </td>
+                                        
+                                        <td>
+                                             <button class="btn btn-danger" (click)="deleteAnfitrion(e.id)">Eliminar<span class="fa"></span></button>
+                                        </td>
                             </tr>
                             </tbody>
                         </table>

@@ -35,15 +35,19 @@ import { CalificacionCreateComponent } from '../Calificacion/calificacion-create
 import {UsuarioListComponent} from '../usuario/usuario-list/usuario-list.component';
 import {UsuarioDetailComponent} from '../usuario/usuario-detail/usuario-detail.component';
 import {UsuarioCreateComponent} from '../usuario/usuario-create/usuario-create.component';
+import {UsuarioEditComponent} from '../usuario/usuario-edit/usuario-edit.component';
 import {CoordinadorListComponent} from '../coordinador/coordinador-list/coordinador-list.component';
 import {CoordinadorDetailComponent} from '../coordinador/coordinador-detail/coordinador-detail.component';
 import {CoordinadorCreateComponent} from '../coordinador/coordinadro-create/coordinador-create.component';
+import {CoordinadorEditComponent} from '../coordinador/coordinador-edit/coordinador-edit.component';
 import {AdministradorListComponent} from '../administrador/administrador-list/administrador-list.component';
 import {AdministradorDetailComponent} from '../administrador/administrador-detail/administrador-detail.component';
 import {AdministradorCreateComponent} from '../administrador/administrador-create/administrador-create.component';
+import {AdministradorEditComponent} from '../administrador/administrador-edit/administrador-edit.component';
 import {AnfitrionListComponent} from '../anfitrion/anfitrion-list/anfitrion-list.component';
 import {AnfitrionDetailComponent} from '../anfitrion/anfitrion-detail/anfitrion-detail.component';
 import {AnfitrionCreateComponent} from '../anfitrion/anfitrion-create/anfitrion-create.component';
+import {AnfitrionEditComponent} from '../anfitrion/anfitrion-edit/anfitrion-edit.component';
 
 const routes: Routes = [
 
@@ -211,6 +215,11 @@ const routes: Routes = [
                 component: AdministradorCreateComponent,
 
             }
+            ,
+            {
+                path:':id/edit',
+                component: AdministradorEditComponent 
+            }
         ]
     }
     ,
@@ -231,6 +240,11 @@ const routes: Routes = [
                 path: 'create',
                 component: AnfitrionCreateComponent,
 
+            }
+             ,
+            {
+                path:':id/edit',
+                component: AnfitrionEditComponent 
             }
         ]
     }
@@ -253,6 +267,12 @@ const routes: Routes = [
                 component: UsuarioCreateComponent,
 
             }
+            ,
+            {
+                path: ':id/edit',
+                component: UsuarioEditComponent
+
+            }
         ]
     }
     
@@ -273,6 +293,12 @@ const routes: Routes = [
             {
                 path: 'create',
                 component: CoordinadorCreateComponent,
+
+            }
+            ,
+            {
+                path: ':id/edit',
+                component: CoordinadorEditComponent
 
             }
         ]

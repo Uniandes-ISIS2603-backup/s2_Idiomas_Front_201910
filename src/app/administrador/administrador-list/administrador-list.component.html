@@ -32,6 +32,16 @@
                                         <td style="cursor: pointer;">
                                             <a  [routerLink] ="['/administradores', { outlets: { 'detail': [e.id] } }]">{{e.nombre}} </a>
                                         </td>
+                                        
+                                         <td>
+                                             <button class="btn btn-primary"  routerLink="/administradores/{{e.id}}/edit" >
+                                                administradoresEdit
+                                             </button>
+                                        </td>
+                                        
+                                        <td>
+                                             <button class="btn btn-danger" (click)="deleteAdministrador(e.id)">Eliminar<span class="fa"></span></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

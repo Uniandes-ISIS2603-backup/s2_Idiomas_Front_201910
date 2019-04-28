@@ -1,2 +1,7 @@
-export class CoordinadorDetail {
+import {Coordinador} from "./coordinador";
+
+export class CoordinadorDetail extends Coordinador
+{
+          grupos:number[];
+  actividades: number[];
 }

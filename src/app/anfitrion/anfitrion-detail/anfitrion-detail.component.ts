@@ -20,7 +20,7 @@ export class AnfitrionDetailComponent implements OnInit {
   * The anfitrion whose details we want to show
   */
   anfitrionDetail: AnfitrionDetail;
-  actividades : number[];
+  estadias : number[];
   grupos: number[];
 
 
@@ -39,7 +39,9 @@ export class AnfitrionDetailComponent implements OnInit {
     this.anfitrionService.getAnfitrionDetail(this.anfitrion_id)
       .subscribe(o => {
         this.anfitrionDetail = o;
-        this.actividades = o.actividades;
+        this.anfitrionDetail.nombre = o.nombre;
+        this.anfitrionDetail.contrasenia = o.contrasenia;
+        this.estadias = o.estadias;
         this.grupos = o.grupos;
       });
   }

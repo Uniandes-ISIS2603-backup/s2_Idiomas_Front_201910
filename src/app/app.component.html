@@ -77,14 +77,19 @@
         <li class="nav-item">
             <a id="anfitrionesCreateTag" class="nav-link" routerLink="/anfitriones/create">anfitrionesCreate</a>
         </li>
+       
+        
+         
     </ul>
 
     <div class="col">
-        <router-outlet></router-outlet>
-    </div>
-    <div class="col">
+        <router-outlet>
+            <div class="col">
         <router-outlet name="detail"></router-outlet>
     </div>
+        </router-outlet>
+    </div>
+    
 
     <footer class="footer bg-light" id="footer">
         <div class="container">

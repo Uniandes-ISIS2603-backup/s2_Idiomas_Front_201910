@@ -36,9 +36,20 @@
                                         <td>
                                             {{e.contrasenia}}
                                         </td>
+                                        
+                                        <td>
+                                             <button class="btn btn-primary"  routerLink="/usuarios/{{e.id}}/edit" >
+                                                usuariosEdit
+                                             </button>
+                                        </td>
+                                        
+                                        <td>
+                                             <button class="btn btn-danger" (click)="deleteUsuario(e.id)">Eliminar<span class="fa"></span></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
+                            
                         </div>
                     </div>
                 </div>
