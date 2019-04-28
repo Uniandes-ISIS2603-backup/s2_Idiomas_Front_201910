@@ -41,7 +41,7 @@ export class GrupoDeInteresDetailComponent implements OnInit {
   */
   getGrupoDeInteresDetail(): void {
 
-    this.grupodeInteresService.getGrupoDeInteresDetail(this.grupodeinteres_id)
+    this.grupodeinteresService.getGrupoDeInteresDetail(this.grupodeInteres_id)
       .subscribe(o => {
         this.grupoDeInteresDetail = o
       });
@@ -49,8 +49,8 @@ export class GrupoDeInteresDetailComponent implements OnInit {
 
   onLoad(params) {
 
-    this.grupodeinteres_id = parseInt(params['id']);
-    console.log(" en detail " + this.grupodeinteres_id);
+    this.grupodeInteres_id = parseInt(params['id']);
+    console.log(" en detail " + this.grupodeInteres_id);
     this.grupoDeInteresDetail = new GrupoDeInteresDetail();
     this.getGrupoDeInteresDetail();
   }

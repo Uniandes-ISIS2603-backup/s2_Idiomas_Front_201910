@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Editorial } from '../editorial';
-import { EditorialService } from '../editorial.service';
+import { GrupoDeInteres } from '../grupodeinteres';
+import { GrupoDeInteresService } from '../grupodeinteres.service';
 
 /**
  * The component for the list of editorials in the BookStore
@@ -10,24 +10,24 @@ import { EditorialService } from '../editorial.service';
   selector: 'list-editorial',
   templateUrl: './editorial-list.component.html',
 })
-export class EditorialListComponent implements OnInit {
+export class GrupoDeInteresListComponent implements OnInit {
 
   /**
    * Constructor for the component
    * @param editorialService The author's services provider
    */
-  constructor(private editorialService: EditorialService, private router: Router) { }
+  constructor(private grupodeinteresService: GrupoDeInteresService, private router: Router) { }
 
   /**
    * The list of editorials which belong to the BookStore
    */
-  editorials: Editorial[];
+  grupodeinteress: GrupoDeInteres[];
 
   /**
    * Asks the service to update the list of editorials
    */
-  getEditorials(): void {
-    this.editorialService.getEditorials().subscribe(editorials => this.editorials = editorials);
+  getGrupoDeInteres(): void {
+    this.grupodeinteresService.getGrupoDeInteres().subscribe(grupodeinteres => this.grupodeinteress = grupodeinteres);
   }
 
   
@@ -36,6 +36,6 @@ export class EditorialListComponent implements OnInit {
    * This method will be called when the component is created
    */
   ngOnInit() {
-    this.getEditorials();
+    this.getGrupoDeInteres();
   }
 }

@@ -1,7 +1,7 @@
 
-import {Editorial} from "./editorial";
+import {GrupoDeInteres} from "./grupodeinteres";
 
-export class EditorialDetail extends Editorial{
+export class GrupoDeInteresDetail extends GrupoDeInteres{
 
   description: string;
 }

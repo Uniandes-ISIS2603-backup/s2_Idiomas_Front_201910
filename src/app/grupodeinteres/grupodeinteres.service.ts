@@ -6,7 +6,7 @@ import { GrupoDeInteresDetail } from './grupodeinteres-detail';
 import { Observable } from 'rxjs';
 
 const API_URL = "../../assets/";
-//const grupodeinteres = 'editorials.json';
+const grupodeinteres = 'editorials.json';
 
 /**
 * The service provider for everything related to editorials
