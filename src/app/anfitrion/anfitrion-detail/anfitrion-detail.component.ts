@@ -41,6 +41,9 @@ export class AnfitrionDetailComponent implements OnInit {
         this.anfitrionDetail = o;
         this.anfitrionDetail.nombre = o.nombre;
         this.anfitrionDetail.contrasenia = o.contrasenia;
+          this.anfitrionDetail.pais = o.pais;
+          this.anfitrionDetail.ciudad = o.ciudad;
+          this.anfitrionDetail.direccion = o.direccion;
         this.estadias = o.estadias;
         this.grupos = o.grupos;
       });

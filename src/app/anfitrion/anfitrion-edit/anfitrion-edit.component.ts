@@ -50,6 +50,9 @@ export class AnfitrionEditComponent implements OnInit {
             id: this.anfitrion.id,
             nombre: this.anfitrion.nombre,
             contrasenia : this.anfitrion.contrasenia,
+            pais: this.anfitrion.pais,
+            ciudad: this.anfitrion.ciudad,
+            direccion: this.anfitrion.direccion
             
         };
         this.anfitrionService.updateAnfitrion(anfitrion_editado)

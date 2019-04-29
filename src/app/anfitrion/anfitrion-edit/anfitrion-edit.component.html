@@ -32,6 +32,30 @@
                             <div>La contraseña de anfitrion esta vacio</div>
                         </div>
                     </div> 
+                     <div class="form-group">
+                        <label for="anfitrionPais"><b>pais</b></label>
+                        <input type="text" name="anfitrionPais" class="form-control" id="anfitrionPais" 
+                               [(ngModel)]="anfitrion.pais" #comentarioFecha="ngModel" required >
+                               <div class="invalid-feedback">
+                            <div>El pais del anfitrion esta vacio</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="anfitrionCiudad"><b>Ciudad</b></label>
+                        <input type="text" name="anfitrionCiudad" class="form-control" id="anfitrionCiudad" 
+                               [(ngModel)]="anfitrion.ciudad" #comentarioFecha="ngModel" required >
+                               <div class="invalid-feedback">
+                            <div>El pais del anfitrion esta vacio</div>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="anfitrionDireccion"><b>Direccion</b></label>
+                        <input type="text" name="anfitrionDireccion" class="form-control" id="anfitrionDireccion" 
+                               [(ngModel)]="anfitrion.direccion" #comentarioFecha="ngModel" required >
+                               <div class="invalid-feedback">
+                            <div>El pais del anfitrion esta vacio</div>
+                        </div>
+                    </div>  
                     <div class="row form-inline justify-content-center align-self-center">
                         <button type="button" class="btn btn-danger" routerLink="/anfitriones/list">Back</button>
                         <div class="divider"></div>

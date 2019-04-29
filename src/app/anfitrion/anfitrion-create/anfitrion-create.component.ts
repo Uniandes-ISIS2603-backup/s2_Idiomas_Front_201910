@@ -38,7 +38,11 @@ export class AnfitrionCreateComponent implements OnInit {
     createAnfitrion(): void {
         var author_create = {
             nombre: this.anfitrion.nombre,
-            contrasenia : this.anfitrion.contrasenia
+            contrasenia : this.anfitrion.contrasenia,
+            pais: this.anfitrion.pais,
+            ciudad: this.anfitrion.ciudad,
+            direccion: this.anfitrion.direccion
+            
         };
         this.anfitrionService.createAnfitrion(author_create)
             .subscribe(() => {
