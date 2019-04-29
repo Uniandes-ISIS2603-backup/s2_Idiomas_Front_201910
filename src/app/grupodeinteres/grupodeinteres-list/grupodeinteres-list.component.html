@@ -1,0 +1,20 @@
+<div class="container-fluid">
+	<div class="col">
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Editorial Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let i of editorials">
+					<td style="cursor: pointer;">
+						<a class="figure-caption" [routerLink] ="['/grupodeinteres', { outlets: { 'detail': [i.id] } }]" >{{i.id}}</a>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
