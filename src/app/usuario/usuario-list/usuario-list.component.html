@@ -16,31 +16,33 @@
                     <div class="panel-body">                
                         <div class="col-md-8">
                             <table class="table table-striped">
-                                <thead class="thead-dark">
+                                <thead class="thead-dark" >
                                     <tr>
-                                        <th>id</th>  
-                                        <th>Nombre</th>   
-                                        <th>Contrasenia</th> 
-                                    </tr>
+                                        <th scope="col">id</th>  
+                                        <th scope="col-6">Nombre</th>   
+                                        <th scope="col">editar</th>
+                                        <th scope="col">eliminar</th>
+                                      </tr>                  
                                 </thead>
                                 <tbody>
 
                                     <tr *ngFor ="let e of usuarios ">
+                                        
+                                        
                                         <td>
-                                            {{e.id}}
+                                            <div class="col col-lg-10">
+                                                {{e.id}}
+                                            </div>                                           
                                         </td>
 
                                         <td style="cursor: pointer;">
                                             <a class="figure-caption" [routerLink] ="['/usuarios', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
-                                        </td>
-                                        <td>
-                                            {{e.contrasenia}}
-                                        </td>
+                                        </td>                                  
                                         
-                                        <td>
+                                        <td>                                            
                                              <button class="btn btn-primary"  routerLink="/usuarios/{{e.id}}/edit" >
                                                 usuariosEdit
-                                             </button>
+                                             </button>                                             
                                         </td>
                                         
                                         <td>
