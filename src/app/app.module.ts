@@ -29,6 +29,7 @@ import {EstadiaModule} from './estadia/estadia.module';
 import {EncuentroModule} from './encuentro/encuentro.module';
 import {OtroModule} from './otro/otro.module';
 import {ChatModule} from './chat/chat.module';
+import { ComentarioActividadComponent } from './comentario-actividad/comentario-actividad.component';
 
 
 
@@ -37,6 +38,7 @@ import {ChatModule} from './chat/chat.module';
 @NgModule({
     declarations: [
         AppComponent,
+        ComentarioActividadComponent,
 
     ],
     imports: [
