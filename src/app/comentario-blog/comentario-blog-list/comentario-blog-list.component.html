@@ -23,27 +23,6 @@
 
                     <hr>
 
-                    <div class="comments-list" *ngFor="let c of comentarioFecha">
-
-                        <div class="media-body">
-                            <p><small class="pull-right">{{c.fecha| date:'MM/dd/yyyy'}}</small></p>
-
-                            <div class="media-body">
-
-                                <h4 class="media-heading user_name" style="cursor: pointer;" routerLink="../{{c.id}}">
-                                    Autor
-                                    - {{c.titulo}}</h4>
-                                {{c.texto}}
-
-                                <p><small><a routerLink="../{{c.id}}/edit">Editar</a></small></p>
-                                <td>
-                                    <button class="btn btn-danger" (click)="deleteComentario(o.id)">Eliminar<span
-                                            class="fa"></span></button>
-                                </td>
-                            </div>
-                        </div>
-                    </div>
-
                 <div class="comments-list" *ngFor="let comentario of comentarioBlogs">
 
                     <div class="media-body">
@@ -52,7 +31,7 @@
                         <div class="media-body">
 
                             <h4 class="media-heading user_name" style="cursor: pointer;"
-                                routerLink="../{{comentario.id}}">Autor - {{comentario.titulo}}</h4>
+                                routerLink="../{{comentario.id}}">{{comentario.autor}} - {{comentario.titulo}}</h4>
                             {{comentario.texto}}
 
                             <p><small><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>

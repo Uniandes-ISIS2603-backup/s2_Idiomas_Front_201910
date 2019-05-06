@@ -3,6 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+import {Usuario} from '../usuario/usuario';
+
 export class ComentarioBlog {
 
 titulo: string;
@@ -13,7 +16,7 @@ texto: string;
 
 fecha: Date;
 
-autor: string;
+autor: Usuario;
     
 /*constructor(titulo: string, id: number, texto: string, fecha:Date, autor:string) {
     this.titulo = titulo;

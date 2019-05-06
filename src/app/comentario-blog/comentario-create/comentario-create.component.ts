@@ -16,6 +16,7 @@ import {
 import {
     ComentarioBlog
 } from '../comentario-blog';
+import { Usuario } from '../../usuario/usuario';
 
 @Component({
     selector: 'app-comentario-create',
@@ -85,6 +86,7 @@ export class ComentarioCreateComponent implements OnInit {
      */
     ngOnInit() {
         this.comentario = new ComentarioBlog();
+        this.comentario.autor= new Usuario();
     }
 
 }

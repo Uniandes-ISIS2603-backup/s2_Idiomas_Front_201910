@@ -208,21 +208,6 @@ export class ComentarioBlogListComponent implements OnInit {
   //  this.comentarioBlogService.getComentarioFechas(fecha1, fecha2).subscribe(comentarioFecha => this.comentarioFecha = comentarioFecha);
     //console.log(fecha1 + "----"+fecha2);
   //}
-
-
-
-
-  list: ComentarioBlog[] = [];
-  getCommentBetweenDate(fecha1: Date, fecha2: Date): ComentarioBlog[]{
-    for (let c of this.comentarioBlogs) {
-      if(c.fecha<= fecha2 && c.fecha>= fecha1){
-        this.list.push(c);
-        console.log(c.texto);
-      }
-    }
-    return this.list;
-  }
-
   
 
   /**
@@ -263,8 +248,8 @@ export class ComentarioBlogListComponent implements OnInit {
   }
 
   getComentariosFecha(fecha1: string, fecha2: string){
-    this.comentarioFecha=[];
-    this.comentarioBlogService.getComentarioFechas(fecha1, fecha2).subscribe(comentarioFecha => this.comentarioFecha = comentarioFecha);
+    this.comentarioBlogs=[];
+    this.comentarioBlogService.getComentarioFechas(fecha1, fecha2).subscribe(comentarioBlogs => this.comentarioBlogs = comentarioBlogs);
   }
   storeDates(){
 
