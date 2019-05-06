@@ -29,7 +29,7 @@ import {EstadiaModule} from './estadia/estadia.module';
 import {EncuentroModule} from './encuentro/encuentro.module';
 import {OtroModule} from './otro/otro.module';
 import {ChatModule} from './chat/chat.module';
-
+import {CodigosModule} from './codigos/cuatroCeroCuatro.module';
 
 
 
@@ -39,7 +39,7 @@ import {ChatModule} from './chat/chat.module';
         AppComponent,
 
     ],
-    imports: [
+    imports: [        
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,

@@ -11,7 +11,7 @@
                     </li>
                     <li class = "nav-item">
                         <a id= "actividadesTag" class = "nav-link" routerLink = "/actividades/list">
-                        <font size = "3">Actividades</font></a>
+                            <font size = "3">Actividades</font></a>
                     </li>
                     <li class="nav-item">
                         <a id="calificacionesTag" class="nav-link" routerLink="/calificaciones/list">
@@ -21,14 +21,14 @@
                 </ul>
             </div>
         </a>
-
+        
         <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav mr-auto mt-0">
-
+                
             </div>
             <div class="navbar-nav ml-auto flex-column">
                 <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
@@ -49,39 +49,31 @@
             </div>
         </div>
     </nav>
-
-
+    
+    
     <ul class="nav nav-tabs">
         
         <li class="nav-item">
             <a id="usuariosTag" class="nav-link" routerLink="/usuarios/list">usuarios</a>
         </li>
-        <li class="nav-item">
-            <a id="usuariosCreateTag" class="nav-link" routerLink="/usuarios/create">usuariosCreate</a>
-        </li>
+        
         <li class="nav-item">
             <a id="administradorTag" class="nav-link" routerLink="/administradores/list">administradores</a>
         </li>
-        <li class="nav-item">
-            <a id="administradorCreateTag" class="nav-link" routerLink="/administradores/create">administradoresCreate</a>
-        </li>
+        
         <li class="nav-item">
             <a id="coordinadoresTag" class="nav-link" routerLink="/coordinadores/list">coordinadores</a>
         </li>
-        <li class="nav-item">
-            <a id="coordinadoresCreateTag" class="nav-link" routerLink="/coordinadores/create">coordinadoresCreate</a>
-        </li>
+        
         <li class="nav-item">
             <a id="anfitrionesTag" class="nav-link" routerLink="/anfitriones/list">anfitriones</a>
         </li>
-        <li class="nav-item">
-            <a id="anfitrionesCreateTag" class="nav-link" routerLink="/anfitriones/create">anfitrionesCreate</a>
-        </li>
-       
         
-         
+        
+        
+        
     </ul>
-
+    
     <div class="col">
         <router-outlet>
             
@@ -92,15 +84,15 @@
         <router-outlet name="detail"></router-outlet>
     </div>
     
-
+    
     <footer class="footer bg-light" id="footer">
         <div class="container">
-            <p class="navbar-text text-center pull-right ">
+            <p class="navbar-text text-center pull-center ">
                 <img src="../assets/logooo.png" alt="logo" width="60%" /><span id="footer-text"></span>
                 <a routerLink="/home"> Home</a>
             </p>
         </div>
     </footer>
     
-
-
+    
+    

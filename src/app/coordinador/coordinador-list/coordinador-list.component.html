@@ -9,25 +9,23 @@
     </head>
 
     <body>
-        <div class="container-fluid">
-            <div class="panel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading"><label class="primar">Usuario list</label></div>
-                    <div class="panel-body">                
-                        <div class="col-md-8">
+        
                             <table class="table table-striped">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th>id</th>  
-                                        <th>Name</th>   
-
+                                        <th scope="col">id</th>  
+                                        <th scope="col">Nombre</th>   
+                                        <th scope="col">editar</th>
+                                        <th scope="col">eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <tr *ngFor ="let e of coordinadores ">
                                         <td>
-                                            {{e.id}}
+                                            <div class="col">
+                                                {{e.id}}
+                                            </div>                                           
                                         </td>
 
                                         <td style="cursor: pointer;">
@@ -46,12 +44,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
+                      
     </body>
 </html>

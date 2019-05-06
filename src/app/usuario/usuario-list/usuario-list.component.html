@@ -9,34 +9,28 @@
     </head>
 
     <body>
-        <div class="container-fluid">
-            <div class="panel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading"><label class="primar">Usuario list</label></div>
-                    <div class="panel-body">                
-                        <div class="col-md-8">
+        
+                   
                             <table class="table table-striped">
                                 <thead class="thead-dark" >
                                     <tr>
                                         <th scope="col">id</th>  
-                                        <th scope="col-6">Nombre</th>   
+                                        <th scope="col">Nombre</th>   
                                         <th scope="col">editar</th>
                                         <th scope="col">eliminar</th>
-                                      </tr>                  
+                                    </tr>                  
                                 </thead>
                                 <tbody>
 
-                                    <tr *ngFor ="let e of usuarios ">
-                                        
-                                        
+                                    <tr *ngFor ="let e of usuarios ">                               
                                         <td>
-                                            <div class="col col-lg-10">
+                                            <div class="col">
                                                 {{e.id}}
                                             </div>                                           
                                         </td>
 
                                         <td style="cursor: pointer;">
-                                            <a class="figure-caption" [routerLink] ="['/usuarios', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
+                                            <a class="figure-caption" routerLink="/usuarios/{{e.id}}" >{{e.nombre}}</a>
                                         </td>                                  
                                         
                                         <td>                                            
@@ -46,18 +40,13 @@
                                         </td>
                                         
                                         <td>
-                                             <button class="btn btn-danger" (click)="deleteUsuario(e.id)">Eliminar<span class="fa"></span></button>
+                                             <button class="btn btn-danger" (click)="deleteUsuario(e.id)">Eliminar</button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                             
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
+                     
+                
     </body>
 </html>

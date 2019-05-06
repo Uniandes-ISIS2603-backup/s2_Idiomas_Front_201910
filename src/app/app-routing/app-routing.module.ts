@@ -193,8 +193,18 @@ const routes: Routes = [
         ]
     },
     {
-        path: 'home',
-        component: AuthLoginComponent
+        path: 'auth',
+        children: [
+            {
+                path: 'sign-up',
+                component: AuthSignUpComponent
+            }
+            ,
+            {
+                path: 'login',
+                component: AuthLoginComponent
+            }
+        ]
     }
     ,
     {
@@ -255,18 +265,18 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: UsuarioListComponent
-            },
+            }
+             ,
             {
-                path: ':id',
-                component: UsuarioDetailComponent,
-                outlet: 'detail'
+                path: 'create',
+                component: UsuarioCreateComponent
             }
             ,
             {
-                path: 'create',
-                component: UsuarioCreateComponent,
-
+                path: ':id',
+                component: UsuarioDetailComponent
             }
+           
             ,
             {
                 path: ':id/edit',
