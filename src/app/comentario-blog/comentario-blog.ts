@@ -11,12 +11,18 @@ id: number;
 
 texto: string;
 
-fecha: any;
+fecha: Date;
 
 autor: string;
     
-
-
+/*constructor(titulo: string, id: number, texto: string, fecha:Date, autor:string) {
+    this.titulo = titulo;
+    this.id = id;
+    this.texto = texto;
+    this.fecha = fecha;
+    this.autor = autor;
+}
+*/
 
 }
 

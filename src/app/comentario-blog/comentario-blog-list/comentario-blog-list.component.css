@@ -14,3 +14,19 @@ and open the template in the editor.
 .comments-list .media-body{
     border-bottom: 1px dotted #ccc;
 }
+.hidden {
+    display:none;
+    }
+
+    #something {
+
+        background: url(../../../assets/uniandes.png) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    }
+
+    .none {
+        display:none;
+    }

@@ -8,12 +8,14 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import {ComentarioBlogListComponent } from '../comentario-blog/comentario-blog-list/comentario-blog-list.component';
 import {ComentarioBlogDetailComponent } from '../comentario-blog/comentario-blog-detail/comentario-blog-detail.component';
 import {ComentarioCreateComponent} from '../comentario-blog/comentario-create/comentario-create.component';
 import {ComentarioEditComponent} from '../comentario-blog/comentario-edit/comentario-edit.component';
+
 
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { ComentarioBlogService } from './comentario-blog.service';
@@ -25,7 +27,7 @@ import { ComentarioBlogService } from './comentario-blog.service';
     HttpClientModule,
     CommonModule,
     FormsModule,
-
+    NgbModule
   ],
   declarations: [ComentarioBlogListComponent, ComentarioBlogDetailComponent, ComentarioCreateComponent, ComentarioEditComponent],
   exports: [ComentarioBlogListComponent],

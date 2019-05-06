@@ -62,5 +62,9 @@ export class ComentarioBlogService {
 deleteComentario(comentarioBlogId): Observable<boolean> {
     return this.http.delete<boolean>(API_URL + comments + '/' + comentarioBlogId);
 }
+
+getComentarioFechas(fecha1:string, fecha2:string): Observable<ComentarioBlog[]> {
+    return this.http.get<ComentarioBlog[]>(API_URL + comments + '/' + 'fechas?fecha1=' + fecha1 + '&fecha2=' + fecha2);
+}
 }
 
