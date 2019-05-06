@@ -70,14 +70,12 @@ export class ComentarioEditComponent implements OnInit, OnChanges {
     editComentario(): void {
         // let textoP: String = new String(this.comentario.texto);
         //this.comentario.texto = this.textoP;
-        console.log("entra");
-        this.comentarioService.updateComentario(this.comentario)
-    
+        /*this.comentarioService.updateComentario(this.comentario)
             .subscribe(() => {
                 this.toastrService.success("The comentario's information was updated", "Comentario edition");
                 this.router.navigate(['/comments/' + this.comentario_id]);
             });
-        this.update.emit();
+        this.update.emit();*/
     }
 
 

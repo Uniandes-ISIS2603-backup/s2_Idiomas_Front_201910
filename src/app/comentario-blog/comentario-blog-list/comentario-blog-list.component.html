@@ -1,73 +1,97 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
-
-<!--
-    <div class="container-fluid">
-    <div class="col-md-12">
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Titulo</th>
-                    <th>Texto</th>
-                    <th>Fecha</th>
-                    <th>Id</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let comentario of comentarioBlogs" routerLink="/comments/{{comentario.id}}">
-                    <td>{{comentario.titulo}}</td>
-                    <td>{{comentario.texto}}</td>
-                    <td>{{comentario.fecha}}</td>
-                    <td>{{countComments()}}</td>
-                </tr>
-
-        </table>
-    </div>
-            -->
-
-<div class="container pull-left">
+<div class="container-fluid">
     <div class="row ">
-        <div class="col-md-12">
+        <div class="col-12">
             <div class="page-header">
                 <h1><small class="pull-right ">
                         <font size="4">{{countComments()}} comentarios</font>
                     </small>
                     <font size="6">Comentarios</font>
                 </h1>
-            </div>
-            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink="../{{comentario.id}}"> 
-            
-                <div class="media-body">
-                    <p ><small class="pull-right">{{comentario.fecha| date:'MM/dd/yyyy'}}</small></p>
+
+                
+                    <ngb-datepicker #dp (select)="onDateSelection($event)" (click)="storeDates()" [displayMonths]="2"
+                        [dayTemplate]="t" outsideDays="hidden">
+                    </ngb-datepicker>
+
+                    <ng-template #t let-date let-focused="focused">
+                        <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                            [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                            (mouseleave)="hoveredDate = null">
+                            {{ date.day }}
+                        </span>
+                    </ng-template>
+
+                    <hr>
+
+                    <div class="comments-list" *ngFor="let c of comentarioFecha">
+
+                        <div class="media-body">
+                            <p><small class="pull-right">{{c.fecha| date:'MM/dd/yyyy'}}</small></p>
+
+                            <div class="media-body">
+
+                                <h4 class="media-heading user_name" style="cursor: pointer;" routerLink="../{{c.id}}">
+                                    Autor
+                                    - {{c.titulo}}</h4>
+                                {{c.texto}}
+
+                                <p><small><a routerLink="../{{c.id}}/edit">Editar</a></small></p>
+                                <td>
+                                    <button class="btn btn-danger" (click)="deleteComentario(o.id)">Eliminar<span
+                                            class="fa"></span></button>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="comments-list" *ngFor="let comentario of comentarioBlogs">
 
                     <div class="media-body">
+                        <p><small class="pull-right">{{comentario.fecha| date:'MM/dd/yyyy'}}</small></p>
 
-                        <h4 class="media-heading user_name"  style="cursor: pointer;" (click)="onSelected(comentario.id)">Autor - {{comentario.titulo}}</h4>
-                        {{comentario.texto}}
+                        <div class="media-body">
 
-                        <p><small><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
+                            <h4 class="media-heading user_name" style="cursor: pointer;"
+                                routerLink="../{{comentario.id}}">Autor - {{comentario.titulo}}</h4>
+                            {{comentario.texto}}
+
+                            <p><small><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
+                            <td>
+                                <button class="btn btn-danger" (click)="deleteComentario(comentario.id)">Eliminar<span
+                                        class="fa"></span></button>
+                            </td>
+                        </div>
                     </div>
                 </div>
+
+
+
             </div>
+        </div>
 
-
+        <div class="container-fluid">
+            <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                (click)="showHideCreate()">Crear un comentario</button>
+            <div *ngIf="showCreate">
+                <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comentario-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-comentario-edit [comentario]="selectedComment" (cancel)="showHideEdit(selectedComment.id)"
+                    (update)="updateComentario()"></app-comentario-edit>
+            </div>
 
         </div>
     </div>
-    <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-    (click)="showHideCreate()">Crear un comentario</button>  
-
-    <div class="container-fluid">
-    <div *ngIf="showCreate">
-        <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comentario-create>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js"></script>
+    <script>
+        var something = document.getElementById('something');
+        var dimensions = something.getClientRects()[0];
+        var pattern = Trianglify({
+            width: dimensions.width,
+            height: dimensions.height
+        });
+        something.appendChild(pattern.canvas());
+    </script>
 
 </div>
-
-
 

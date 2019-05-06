@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<!--
+    <div class="container-fluid">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Titulo</th>
+                    <th>Texto</th>
+                    <th>Fecha</th>
+                    <th>Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let comentario of comentarioBlogs" routerLink="/comments/{{comentario.id}}">
+                    <td>{{comentario.titulo}}</td>
+                    <td>{{comentario.texto}}</td>
+                    <td>{{comentario.fecha}}</td>
+                    <td>{{countComments()}}</td>
+                </tr>
+
+        </table>
+    </div>
+            -->
+
+<div class="container pull-left">
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1><small class="pull-right ">
+                        <font size="4">{{countComments()}} comentarios</font>
+                    </small>
+                    <font size="6">Comentarios</font>
+                </h1>
+            </div>
+            <div class="comments-list" *ngFor="let comentario of comentarioBlogs" routerLink="../{{comentario.id}}"> 
+            
+                <div class="media-body">
+                    <p ><small class="pull-right">{{comentario.fecha| date:'MM/dd/yyyy'}}</small></p>
+
+                    <div class="media-body">
+
+                        <h4 class="media-heading user_name"  style="cursor: pointer;" (click)="onSelected(comentario.id)">Autor - {{comentario.titulo}}</h4>
+                        {{comentario.texto}}
+
+                        <p><small><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+    (click)="showHideCreate()">Crear un comentario</button>  
+
+    <div class="container-fluid">
+    <div *ngIf="showCreate">
+        <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-comentario-create>
+    </div>
+
+</div>
+
+
+

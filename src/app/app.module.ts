@@ -17,7 +17,6 @@ import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
 
 import { ActividadCreateComponent} from './actividad/actividad-create/actividad-create.component';
 
-
 import {UsuarioModule} from './usuario/usuario.module';
 import {AdministradorModule} from './administrador/administrador.module';
 import {CoordinadorModule} from './coordinador/coordinador.module';

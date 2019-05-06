@@ -53,18 +53,5 @@ export class ComentarioBlogService {
     createComentario(comentarioBlog): Observable<ComentarioBlog> {
         return this.http.post<ComentarioBlog>(API_URL + comments, comentarioBlog);
     }
-
-    /**
-* Deletes an Actividad from the BookStore
-* @param ComentarioId The id of the Actividad
-* @returns The confirmation that the Actividad was deleted
-*/
-deleteComentario(comentarioBlogId): Observable<boolean> {
-    return this.http.delete<boolean>(API_URL + comments + '/' + comentarioBlogId);
-}
-
-getComentarioFechas(fecha1:string, fecha2:string): Observable<ComentarioBlog[]> {
-    return this.http.get<ComentarioBlog[]>(API_URL + comments + '/' + 'fechas?fecha1=' + fecha1 + '&fecha2=' + fecha2);
-}
 }
 
