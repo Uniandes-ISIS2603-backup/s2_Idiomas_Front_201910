@@ -8,7 +8,7 @@
                     <font size="6">Comentarios</font>
                 </h1>
 
-                
+                <div>Filtro de fechas:</div>
                     <ngb-datepicker #dp (select)="onDateSelection($event)" (click)="storeDates()" [displayMonths]="2"
                         [dayTemplate]="t" outsideDays="hidden">
                     </ngb-datepicker>
