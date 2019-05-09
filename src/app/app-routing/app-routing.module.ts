@@ -83,6 +83,28 @@ const routes: Routes = [
         ]
         
     },
+     {
+        path: 'calificaciones',
+        children: [
+            {
+                path: 'list',
+                component: ListarCalificacionesComponent
+            },
+            {
+                path: 'add',
+                component: CalificacionCreateComponent,
+            },
+            {
+                path: ':id',
+                component: CalificacionesDetailComponent
+            },
+            {
+                path: ':id/edit',
+                component: ComentarioEditComponent,
+            }
+        ]
+        
+    },
 
     /**
      * Rutas para los componentes asociados con actividad

@@ -1,4 +1,4 @@
-
+    
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-blue bg-dark">
         <a class="navbar-brand" href="#">
@@ -7,22 +7,27 @@
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
                         <a id="blogCommentsTag" class="nav-link" routerLink="/comments/list">
-                            <font size="3">Comentarios</font>
+                            <font size="5">Comentarios</font>
                         </a>
                     </li>
                     <li class = "nav-item">
                         <a id= "actividadesTag" class = "nav-link" routerLink = "/actividades/list">
-                            <font size = "3">Actividades</font></a>
+                            <font size = "5">Actividades</font></a>
                     </li>
                     <li class="nav-item">
                         <a id="calificacionesTag" class="nav-link" routerLink="/calificaciones/list">
-                            <font size="3">Calificaciones</font>
+                            <font size="5">Calificaciones</font>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="perfilTag" class="nav-link" routerLink="/usuarios/perfil/"> 
+                            <font size="5">Perfil</font>
                         </a>
                     </li>
                 </ul>
             </div>
         </a>
-        
+            
         <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,58 +39,58 @@
             <div class="navbar-nav ml-auto flex-column">
                 <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
                     <div class="form-inline">
-                        <li class="right-space"><a id="signup-navbar-item" routerLink="/auth/sign-up"><span
-                                    class="fa fa-user"></span>
-                                Sign Up</a></li>
+                        <li class="right-space"><a id="signup-navbar-item" routerLink="/auth/sign-up">
+                                <font size="5">Sing Up</font></a></li>
                         <li><a id="login-navbar-item" routerLink="/auth/login"><span
-                                    class="fa fa-sign-in"></span>Login</a></li>
+                                    class="fa fa-sign-in"></span><font size="5">Login</font></a></li>
                     </div>
                 </div>
                 <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
                     <div class="form-inline">
-                        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span
-                                    class="fa fa-sign-out"></span>Logout</a></li>
+                        <li><a id="logout-navbar-item" (click)="logout()" href="#"><font size="5">log out</font></a></li>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-    
-    
+        
+        
     <ul class="nav nav-tabs">
         
         <li class="nav-item">
             <a id="usuariosTag" class="nav-link" routerLink="/usuarios/list">usuarios</a>
         </li>
-        
+            
         <li class="nav-item">
             <a id="administradorTag" class="nav-link" routerLink="/administradores/list">administradores</a>
         </li>
-        
+            
         <li class="nav-item">
             <a id="coordinadoresTag" class="nav-link" routerLink="/coordinadores/list">coordinadores</a>
         </li>
-        
+            
         <li class="nav-item">
             <a id="anfitrionesTag" class="nav-link" routerLink="/anfitriones/list">anfitriones</a>
         </li>
-        
-        
-        
-        
+            
+        <li class="nav-item">
+            <a id="perfilTag" class="nav-link" routerLink="/usuarios/perfil/">perfil</a>
+        </li>  
+            
+            
     </ul>
-    
+        
     <div class="col">
         <router-outlet>
             
         </router-outlet>
     </div>
-    
+        
     <div class="col">
         <router-outlet name="detail"></router-outlet>
     </div>
-    
-    
+        
+        
     <footer class="footer bg-light" id="footer">
         <div class="container">
             <p class="navbar-text text-center pull-center ">
@@ -94,8 +99,7 @@
             </p>
         </div>
     </footer>
-
-
-    
-    
-    
+        
+        
+        
+        
