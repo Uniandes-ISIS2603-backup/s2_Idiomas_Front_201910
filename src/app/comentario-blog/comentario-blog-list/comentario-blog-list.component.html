@@ -61,16 +61,16 @@
 
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js"></script>
-    <script>
-        var something = document.getElementById('something');
-        var dimensions = something.getClientRects()[0];
-        var pattern = Trianglify({
-            width: dimensions.width,
-            height: dimensions.height
-        });
-        something.appendChild(pattern.canvas());
-    </script>
+    <body>
+
+            <p>Click the button to get your coordinates.</p>
+            
+            <button (click)="getLocation()">Try It</button>
+            
+            <p id="demo"></p>
+            <img id="mapholder"/>
+            
+            </body>
 
 </div>
 

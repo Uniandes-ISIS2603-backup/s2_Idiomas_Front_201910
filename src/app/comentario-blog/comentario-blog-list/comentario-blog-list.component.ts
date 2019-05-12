@@ -260,4 +260,21 @@ export class ComentarioBlogListComponent implements OnInit {
     this.getComentariosFecha(this.dp.transform(dateA, 'yyyy/MM/dd'),this.dp.transform(dateB, 'yyyy/MM/dd'));
   }
 
+  getLocation() {
+    var x = document.getElementById("demo");
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  
+  showPosition(position) {
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+  
+    var img_url = "https://www.latlong.net/c/?lat="+position.coords.latitude+ "&long="+position.coords.longitude;
+  
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+  }
+
 }
