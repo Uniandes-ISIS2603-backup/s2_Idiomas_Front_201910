@@ -277,4 +277,16 @@ export class ComentarioBlogListComponent implements OnInit {
     document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
   }
 
+  SoH() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  SoH1(){
+    var x = document.getElementById("myDIV");
+    x.style.display = "none";
+  }
 }
