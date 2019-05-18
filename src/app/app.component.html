@@ -1,18 +1,21 @@
-    
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+
+
+
+
+<div class="container-fluid" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <div class="form-inline">
                 <h2 class="mainTitle">HYGGE</h2>
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
                         <a id="blogCommentsTag" class="nav-link" routerLink="/comments/list">
-                            <font size="5">Comentarios</font>
+                            <font size="3" color="white">Comentarios</font>
                         </a>
                     </li>
                     <li class = "nav-item">
                         <a id= "actividadesTag" class = "nav-link" routerLink = "/actividades/list">
-                            <font size = "5">Actividades</font></a>
+                        <font size = "3" color="white">Actividades</font></a>
                     </li>
                     <li class="nav-item">
                         <a id="calificacionesTag" class="nav-link" routerLink="/calificaciones/list">
@@ -39,10 +42,11 @@
             <div class="navbar-nav ml-auto flex-column">
                 <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
                     <div class="form-inline">
-                        <li class="right-space"><a id="signup-navbar-item" routerLink="/auth/sign-up">
-                                <font size="5">Sing Up</font></a></li>
-                        <li><a id="login-navbar-item" routerLink="/auth/login"><span
-                                    class="fa fa-sign-in"></span><font size="5">Login</font></a></li>
+                        <li class="right-space"><a id="signup-navbar-item" routerLink="/auth/sign-up"><span
+                                    class="fa fa-user"></span>
+                                Sign Up</a></li>
+                        <li><a id="login-navbar-item" routerLink="/auth/login" ><span
+                                    class="fa fa-sign-in"></span>Log in</a></li>
                     </div>
                 </div>
                 <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
@@ -79,7 +83,56 @@
             
             
     </ul>
-        
+
+    <style>
+            /* Make the image fully responsive */
+            .carousel-inner img {
+              width: 100%;
+              height: 100%;
+            }
+            </style>
+
+    <div class="bd-example">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="../assets/id1.jpg" class="d-block w-100" alt="Grupos de interés" style="width:1024px;height:512px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5 ><font size="8" color="white">Aprende idiomas</font> </h5>
+                    <p><font size="5" color="white">Convirtiendo la rutina en aprendizaje.</font></p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/id2.jpg   " class="d-block w-100" alt="Actividades" style="width:1024px;height:512px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5><font size="8" color="white">Actividades</font></h5>
+                    <p><font size="5" color="white">Inscríbete a actividades para aprender del modo que te gusta.</font></p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="../assets/ImagenIdiomas.jpg" class="d-block w-100" alt="Calificaciones" style="width:1024px;height:512px;">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5><font size="8" color="white">Grupos de interés</font></h5>
+                    <p><font size="5" color="black">Comunicate y aprende con la communidad por medio de grupos de interes!</font></p>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+
     <div class="col">
         <router-outlet>
             
@@ -89,17 +142,15 @@
     <div class="col">
         <router-outlet name="detail"></router-outlet>
     </div>
-        
-        
-    <footer class="footer bg-light" id="footer">
-        <div class="container">
-            <p class="navbar-text text-center pull-center ">
+
+    <footer class="footer bg-light" >
+        <div class="container pull-right" id="footer">
+            <p class="navbar-text text-center pull-right ">
                 <img src="../assets/logooo.png" alt="logo" width="60%" /><span id="footer-text"></span>
                 <a routerLink="/home"> Home</a>
             </p>
         </div>
     </footer>
-        
-        
-        
-        
+
+
+

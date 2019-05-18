@@ -2,3 +2,12 @@ p {
     font-family: 'Times New Roman', Times, serif;
     color: black;
   }
+
+  #footer {
+    position: fixed;
+    bottom: 0;
+    width: 10%;
+}
+h5{
+  text-shadow: 3px 3px 0px #000;
+}
