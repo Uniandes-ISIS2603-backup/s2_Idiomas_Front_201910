@@ -17,6 +17,6 @@ import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodein
     ],
     declarations: [GrupoDeInteresListComponent, GrupoDeInteresDetailComponent, GrupodeinteresCreateComponent],
     providers: [GrupoDeInteresService],
-    exports:[GrupoDeInteresListComponent]
+    exports:[GrupoDeInteresListComponent , GrupoDeInteresDetailComponent , GrupodeinteresCreateComponent]
 })
 export class GrupoDeInteresModule {}

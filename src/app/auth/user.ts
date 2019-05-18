@@ -11,7 +11,7 @@ export class User {
     /**
     * The user's password
     */
-    password: string;
+    password: number;
 
     /**
     * The user's role

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignUpComponent } from './auth-sign-up/auth-sign-up.component';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { AuthSignUpComponent } from './auth-sign-up/auth-sign-up.component';
         HttpClientModule,
         CommonModule,
         FormsModule,
-        NgbModule
+        NgbModule,
+        NgxPermissionsModule
     ],
     declarations: [AuthLoginComponent, AuthSignUpComponent],
     providers: [AuthService],

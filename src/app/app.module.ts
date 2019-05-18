@@ -29,6 +29,10 @@ import {EncuentroModule} from './encuentro/encuentro.module';
 import {OtroModule} from './otro/otro.module';
 import {ChatModule} from './chat/chat.module';
 import {CodigosModule} from './codigos/cuatroCeroCuatro.module';
+import { CookieService } from 'ngx-cookie-service';
+import {GrupoDeInteresModule} from './grupodeinteres/grupodeinteres.module';
+
+
 
 
 
@@ -47,6 +51,7 @@ import {CodigosModule} from './codigos/cuatroCeroCuatro.module';
         AuthModule,
         FormsModule,
         ComentarioBlogModule,
+        GrupoDeInteresModule,
         UsuarioModule,
         AnfitrionModule,
         AdministradorModule,
@@ -60,9 +65,10 @@ import {CodigosModule} from './codigos/cuatroCeroCuatro.module';
         OtroModule,
 
         ToastrModule.forRoot({
-            timeOut: 10000,
+            timeOut: 25000,
             positionClass: 'toast-bottom-right',
             preventDuplicates: true,
+            progressBar : true
         }),
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
@@ -71,10 +77,14 @@ import {CodigosModule} from './codigos/cuatroCeroCuatro.module';
     bootstrap: [AppComponent],
     providers: [
         {
-            provide: HTTP_INTERCEPTORS,
+            provide: HTTP_INTERCEPTORS, 
             useClass: HttpErrorInterceptor,
             multi: true
+            
         }
+        
+        ,
+            CookieService
     ]
 })
 export class AppModule {}

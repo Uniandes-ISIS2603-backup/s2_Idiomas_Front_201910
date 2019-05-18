@@ -29,13 +29,11 @@ import { ChatCreateComponent } from '../chat/chat-create/chat-create.component';
 import { ChatEditComponent } from '../chat/chat-edit/chat-edit.component';
 import {ComentarioCreateComponent } from '../comentario-blog/comentario-create/comentario-create.component';
 import {ComentarioEditComponent } from '../comentario-blog/comentario-edit/comentario-edit.component';
-import { ListarCalificacionesComponent } from '../Calificacion/listar-calificaciones/listar-calificaciones.component';
-import { CalificacionesDetailComponent } from '../Calificacion/calificaciones-detail/calificaciones-detail/calificaciones-detail.component';
-import { CalificacionCreateComponent } from '../Calificacion/calificacion-create/calificacion-create.component';
 import {UsuarioListComponent} from '../usuario/usuario-list/usuario-list.component';
 import {UsuarioDetailComponent} from '../usuario/usuario-detail/usuario-detail.component';
 import {UsuarioCreateComponent} from '../usuario/usuario-create/usuario-create.component';
 import {UsuarioEditComponent} from '../usuario/usuario-edit/usuario-edit.component';
+import {UsuarioProfileComponent} from '../usuario/usuario-profile/usuario-profile.component';
 import {CoordinadorListComponent} from '../coordinador/coordinador-list/coordinador-list.component';
 import {CoordinadorDetailComponent} from '../coordinador/coordinador-detail/coordinador-detail.component';
 import {CoordinadorCreateComponent} from '../coordinador/coordinadro-create/coordinador-create.component';
@@ -48,6 +46,9 @@ import {AnfitrionListComponent} from '../anfitrion/anfitrion-list/anfitrion-list
 import {AnfitrionDetailComponent} from '../anfitrion/anfitrion-detail/anfitrion-detail.component';
 import {AnfitrionCreateComponent} from '../anfitrion/anfitrion-create/anfitrion-create.component';
 import {AnfitrionEditComponent} from '../anfitrion/anfitrion-edit/anfitrion-edit.component';
+import {GrupoDeInteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
+import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
+import {GrupoDeInteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 
 const routes: Routes = [
 
@@ -60,6 +61,28 @@ const routes: Routes = [
         component: AuthLoginComponent
     }
     ,
+    {
+        path: 'groups',
+        children: [
+            {
+                path: 'list',
+                component: GrupoDeInteresListComponent
+            },
+//            {
+//                path: 'add',
+//                component: GrupodeinteresCreateComponent,
+//            },
+//            {
+//                path: ':id',
+//                component: GrupoDeInteresDetailComponent
+//            },
+//            {
+//                path: ':id/edit',
+//                component: GrupoDeInteresEditComponent,
+//            }
+        ]
+        
+    },
 
     {
         path: 'comments',
@@ -83,28 +106,7 @@ const routes: Routes = [
         ]
         
     },
-     {
-        path: 'calificaciones',
-        children: [
-            {
-                path: 'list',
-                component: ListarCalificacionesComponent
-            },
-            {
-                path: 'add',
-                component: CalificacionCreateComponent,
-            },
-            {
-                path: ':id',
-                component: CalificacionesDetailComponent
-            },
-            {
-                path: ':id/edit',
-                component: ComentarioEditComponent,
-            }
-        ]
-        
-    },
+     
 
     /**
      * Rutas para los componentes asociados con actividad
@@ -294,6 +296,12 @@ const routes: Routes = [
                 component: UsuarioCreateComponent
             }
             ,
+             {
+                path: 'profile',
+                component: UsuarioProfileComponent
+
+            }
+            ,
             {
                 path: ':id',
                 component: UsuarioDetailComponent
@@ -305,6 +313,8 @@ const routes: Routes = [
                 component: UsuarioEditComponent
 
             }
+            
+            
         ]
     }
     

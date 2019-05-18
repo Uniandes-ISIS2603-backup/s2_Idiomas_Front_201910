@@ -4,27 +4,27 @@ import { GrupoDeInteres } from '../grupodeinteres';
 import { GrupoDeInteresService } from '../grupodeinteres.service';
 
 /**
- * The component for the list of editorials in the BookStore
+ * The component for the list of grupodeinteress in the BookStore
  */
 @Component({ 
-  selector: 'list-editorial',
-  templateUrl: './editorial-list.component.html',
+  selector: 'list-grupodeinteres',
+  templateUrl: './grupodeinteres-list.component.html',
 })
 export class GrupoDeInteresListComponent implements OnInit {
 
   /**
    * Constructor for the component
-   * @param editorialService The author's services provider
+   * @param grupodeinteresService The author's services provider
    */
   constructor(private grupodeinteresService: GrupoDeInteresService, private router: Router) { }
 
   /**
-   * The list of editorials which belong to the BookStore
+   * The list of grupodeinteress which belong to the BookStore
    */
   grupodeinteress: GrupoDeInteres[];
 
   /**
-   * Asks the service to update the list of editorials
+   * Asks the service to update the list of grupodeinteress
    */
   getGrupoDeInteres(): void {
     this.grupodeinteresService.getGrupoDeInteres().subscribe(grupodeinteres => this.grupodeinteress = grupodeinteres);
@@ -32,7 +32,7 @@ export class GrupoDeInteresListComponent implements OnInit {
 
   
   /**
-   * This will initialize the component by retrieving the list of editorials from the service
+   * This will initialize the component by retrieving the list of grupodeinteress from the service
    * This method will be called when the component is created
    */
   ngOnInit() {

@@ -19,12 +19,12 @@
                     </li>
                     <li class="nav-item">
                         <a id="calificacionesTag" class="nav-link" routerLink="/calificaciones/list">
-                            <font size="5">Calificaciones</font>
+                            <font size="3" color="white">Calificaciones</font>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a id="perfilTag" class="nav-link" routerLink="/usuarios/perfil/"> 
-                            <font size="5">Perfil</font>
+                    <li class="nav-item" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
+                        <a id="perfilTag" class="nav-link" routerLink="/usuarios/profile/"> 
+                            <font size="3" color="white">Perfil</font>
                         </a>
                     </li>
                 </ul>
@@ -61,30 +61,31 @@
         
     <ul class="nav nav-tabs">
         
-        <li class="nav-item">
+        
+        <li class="nav-item" *ngxPermissionsOnly="[ 'ADMIN']">
             <a id="usuariosTag" class="nav-link" routerLink="/usuarios/list">usuarios</a>
         </li>
             
-        <li class="nav-item">
+        <li class="nav-item" *ngxPermissionsOnly="[ 'ADMIN']">
             <a id="administradorTag" class="nav-link" routerLink="/administradores/list">administradores</a>
         </li>
             
-        <li class="nav-item">
+        <li class="nav-item" *ngxPermissionsOnly="[ 'ADMIN']">
             <a id="coordinadoresTag" class="nav-link" routerLink="/coordinadores/list">coordinadores</a>
         </li>
             
-        <li class="nav-item">
+        <li class="nav-item" *ngxPermissionsOnly="[ 'ADMIN']">
             <a id="anfitrionesTag" class="nav-link" routerLink="/anfitriones/list">anfitriones</a>
-        </li>
-            
-        <li class="nav-item">
-            <a id="perfilTag" class="nav-link" routerLink="/usuarios/perfil/">perfil</a>
-        </li>  
+        </li>    
+        <li class="nav-item" *ngxPermissionsOnly="[ 'ADMIN']">
+            <a id="anfitrionesTag" class="nav-link" routerLink="/groups/list">grupos</a>
+        </li>   
+       
             
             
     </ul>
 
-    <style>
+<!--    <style>
             /* Make the image fully responsive */
             .carousel-inner img {
               width: 100%;
@@ -104,21 +105,21 @@
                   <img src="../assets/id1.jpg" class="d-block w-100" alt="Grupos de interés" style="width:1024px;height:512px;">
                   <div class="carousel-caption d-none d-md-block">
                     <h5 ><font size="8" color="white">Aprende idiomas</font> </h5>
-                    <p><font size="5" color="white">Convirtiendo la rutina en aprendizaje.</font></p>
+                    <p><font size="6" color="white">Convirtiendo la rutina en aprendizaje.</font></p>
                   </div>
                 </div>
                 <div class="carousel-item">
                   <img src="../assets/id2.jpg   " class="d-block w-100" alt="Actividades" style="width:1024px;height:512px;">
                   <div class="carousel-caption d-none d-md-block">
                     <h5><font size="8" color="white">Actividades</font></h5>
-                    <p><font size="5" color="white">Inscríbete a actividades para aprender del modo que te gusta.</font></p>
+                    <p><font size="6" color="white">Inscríbete a actividades para aprender del modo que te gusta.</font></p>
                   </div>
                 </div>
                 <div class="carousel-item">
                   <img src="../assets/ImagenIdiomas.jpg" class="d-block w-100" alt="Calificaciones" style="width:1024px;height:512px;">
                   <div class="carousel-caption d-none d-md-block">
                     <h5><font size="8" color="white">Grupos de interés</font></h5>
-                    <p><font size="5" color="black">Comunicate y aprende con la communidad por medio de grupos de interes!</font></p>
+                    <p><font size="6" color="black">Comunicate y aprende con la communidad por medio de grupos de interes!</font></p>
                   </div>
                 </div>
               </div>
@@ -131,7 +132,7 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-          </div>
+          </div>-->
 
     <div class="col">
         <router-outlet>
@@ -143,10 +144,10 @@
         <router-outlet name="detail"></router-outlet>
     </div>
 
-    <footer class="footer bg-light" >
+    <footer class="footer bg-light pull-right" >
         <div class="container pull-right" id="footer">
             <p class="navbar-text text-center pull-right ">
-                <img src="../assets/logooo.png" alt="logo" width="60%" /><span id="footer-text"></span>
+                <img src="../assets/logooo.png" alt="logo" width="6 0%" /><span id="footer-text"></span>
                 <a routerLink="/home"> Home</a>
             </p>
         </div>
