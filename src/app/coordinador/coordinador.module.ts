@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,AppRoutingModule, FormsModule
     
   ],
-  declarations: [CoordinadorListComponent, CoordinadorDetailComponent, CoordinadorCreateComponent],
+  declarations: [CoordinadorListComponent, CoordinadorDetailComponent /*,CoordinadorCreateComponent*/],
   providers: [CoordinadorService]
 })
 export class CoordinadorModule { }

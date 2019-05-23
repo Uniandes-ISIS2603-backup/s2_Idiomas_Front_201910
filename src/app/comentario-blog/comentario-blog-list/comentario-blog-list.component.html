@@ -33,10 +33,10 @@
                         <div class="media-body">
 
                             <h4 class="media-heading user_name" style="cursor: pointer;"
-                                routerLink="../{{comentario.id}}">{{comentario.autor}} - {{comentario.titulo}}</h4>
+                                routerLink="../{{comentario.id}}">{{comentario.autor.nombre}} - {{comentario.titulo}}</h4>
                             {{comentario.texto}}
 
-                            <p><small><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
+                            <p><small ngxPermissionsOnly="['Administrador]"><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
                             <td>
                                 <button class="btn btn-danger" (click)="deleteComentario(comentario.id)">Eliminar<span
                                         class="fa"></span></button>
@@ -63,6 +63,7 @@
 
         </div>
     </div>
+    <!--
     <body>
 
             <p>Click the button to get your coordinates.</p>
@@ -73,6 +74,7 @@
             <img id="mapholder"/>
             
             </body>
+            -->
 
 </div>
 

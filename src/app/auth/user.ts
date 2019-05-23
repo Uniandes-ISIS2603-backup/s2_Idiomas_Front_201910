@@ -3,6 +3,8 @@
 * It contains all the information relevant to the user.
 */
 export class User {
+
+    id:number;
     /**
     * The user's name
     */

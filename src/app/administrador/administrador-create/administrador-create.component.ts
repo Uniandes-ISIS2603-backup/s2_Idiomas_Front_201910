@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Administrador} from '../administrador'
 import {AdministradorService} from '../administrador.service'
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../.././auth/auth.service';
 
 @Component({
   selector: 'app-administrador-create',
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class AdministradorCreateComponent implements OnInit {
 
   constructor(private administradorService : AdministradorService ,
-        private toastrService: ToastrService
+        private toastrService: ToastrService,private authService: AuthService
 ) { }
 
  
@@ -30,23 +31,27 @@ export class AdministradorCreateComponent implements OnInit {
     @Output() create = new EventEmitter();
 
   
-
+    login(): void {
+        this.authService.login('ADMIN');
+        this.toastrService.success('Logged in')
+    }
   
     /**
     * Creates an administrador
     */
     createAdministrador(): void {
-        var author_create = {
-            nombre: this.administrador.nombre,
-            contrasenia : this.administrador.contrasenia
-        };
-        this.administradorService.createAdministrador(author_create)
+        //var author_create = {
+        //    nombre: this.administrador.nombre,
+        //    contrasenia : this.administrador.contrasenia
+        //};
+        this.administradorService.createAdministrador(this.administrador)
             .subscribe(() => {
                 this.create.emit();
                 this.toastrService.success("The author was created", "Author creation");
             }, err => {
                 this.toastrService.error(err, "Error");
             });
+            console.log(this.administrador);
     }
     
     /**

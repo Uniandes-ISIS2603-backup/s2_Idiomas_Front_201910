@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,    
     FormsModule
   ],
-  declarations: [AnfitrionListComponent, AnfitrionDetailComponent, AnfitrionCreateComponent],
+  declarations: [AnfitrionListComponent, AnfitrionDetailComponent/*, AnfitrionCreateComponent*/],
   providers: [AnfitrionService]
 })
 export class AnfitrionModule { }

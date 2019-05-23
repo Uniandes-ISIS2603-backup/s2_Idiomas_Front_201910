@@ -86,7 +86,7 @@ export class ComentarioCreateComponent implements OnInit {
      */
     ngOnInit() {
         this.comentario = new ComentarioBlog();
-        this.comentario.autor= new Usuario();
+        
     }
 
 }

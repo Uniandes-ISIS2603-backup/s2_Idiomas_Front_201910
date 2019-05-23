@@ -5,6 +5,7 @@
  */
 
 import {Usuario} from '../usuario/usuario';
+import { Actividad } from '../actividad/actividad';
 
 export class ComentarioBlog {
 
@@ -17,6 +18,8 @@ texto: string;
 fecha: Date;
 
 autor: Usuario;
+
+actividad: Actividad;
     
 /*constructor(titulo: string, id: number, texto: string, fecha:Date, autor:string) {
     this.titulo = titulo;

@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,AppRoutingModule, FormsModule
   ],
-  declarations: [AdministradorListComponent, AdministradorDetailComponent, AdministradorCreateComponent ],  
+  declarations: [AdministradorListComponent, AdministradorDetailComponent/*AdministradorCreateComponent*/ ],  
   providers: [AdministradorService]
 })
 export class AdministradorModule { }

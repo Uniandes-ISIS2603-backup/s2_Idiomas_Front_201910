@@ -34,7 +34,6 @@ export class ComentarioBlogDetailComponent implements OnInit {
     @Input() comentarioBlog: ComentarioBlog;
 
 
-
     /**
     * The comentarioBlog's id retrieved from the address
     */

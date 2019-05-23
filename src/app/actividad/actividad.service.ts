@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Actividad } from './actividad';
 import { Observable } from 'rxjs';
 import { ActividadDetail } from './actividad-detail';
+import {ComentarioBlog} from '../comentario-blog/comentario-blog';
 
 
 const API_URL = environment.apiURL;
@@ -50,6 +51,10 @@ createActividad(actividad: Actividad): Observable<Actividad> {
 */
 updateActividad(actividad: Actividad): Observable<ActividadDetail> {
     return this.http.put<ActividadDetail>(API_URL + actividades + '/' + actividad.id, actividad);
+}
+
+createComentario(comentario): Observable<ComentarioBlog>{
+    return this.http.post<ComentarioBlog>(API_URL + 'comments', comentario);
 }
 
 /**

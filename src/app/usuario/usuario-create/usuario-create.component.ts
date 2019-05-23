@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Usuario} from '../usuario'
 import {UsuarioService} from '../usuario.service'
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-usuario-create',
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class UsuarioCreateComponent implements OnInit {
 
   constructor(private usuarioService : UsuarioService ,
-        private toastrService: ToastrService
+        private toastrService: ToastrService, private authService: AuthService
 ) { }
 
   usuarios : Usuario[];
@@ -30,7 +31,10 @@ export class UsuarioCreateComponent implements OnInit {
     @Output() create = new EventEmitter();
 
   
-
+    login(): void {
+        this.authService.login('Usuario');
+        this.toastrService.success('Logged in')
+    }
   
     /**
     * Creates an usuario

@@ -13,7 +13,7 @@
             <div class="col-3"></div>
             <div class="col-6">
                 <br>
-                <h2 class="text-center">Crear anfitrion</h2>
+                <h2 class="text-center">Registrarse como anfitrion</h2>
                 <br>                      
               <form  name="Anfitrion" (ngSubmit)=" createAnfitrion()" #f="ngForm" novalidate>
                       <div class="form-group">
@@ -35,7 +35,7 @@
                     <div class="row form-inline justify-content-center align-self-center">
                         <button type="button" class="btn btn-danger" routerLink="../list">Back</button>
                         <div class="divider"></div>
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" class="btn btn-primary " (click) = "login()">Create</button>
 
                     </div>
                 </form>

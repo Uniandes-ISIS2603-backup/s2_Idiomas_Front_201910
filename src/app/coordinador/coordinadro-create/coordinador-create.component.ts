@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Coordinador} from '../coordinador'
 import {CoordinadorService} from '../coordinador.service'
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../.././auth/auth.service';
 
 @Component({
   selector: 'app-coordinador-create',
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class CoordinadorCreateComponent implements OnInit {
 
   constructor(private coordinadorService : CoordinadorService ,
-        private toastrService: ToastrService
+        private toastrService: ToastrService, private authService: AuthService
 ) { }
 
   coordinadors : Coordinador[];
@@ -30,7 +31,10 @@ export class CoordinadorCreateComponent implements OnInit {
     @Output() create = new EventEmitter();
 
   
-
+    login(): void {
+        this.authService.login('Coordinador');
+        this.toastrService.success('Logged in')
+    }
   
     /**
     * Creates an coordinador

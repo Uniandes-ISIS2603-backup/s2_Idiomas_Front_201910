@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent],
+  declarations: [UsuarioListComponent, UsuarioDetailComponent/*, UsuarioCreateComponent*/],
   providers: [UsuarioService]
 })
 export class UsuarioModule { }

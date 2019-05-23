@@ -22,30 +22,43 @@ export class AuthService {
         this.roleService.flushRoles();
         this.permissionsService.loadPermissions(['edit_author_permission', 'delete_author_permission', 'leave_review']);
         const role = localStorage.getItem('role');
-        if (!role) {
+        if (role === 'Usuario') {
             this.setGuestRole();
         } else if (role === 'ADMIN') {
             this.setAdministratorRole();
-        } else {
+        } else if(role==='Coordinador'){
             this.setClientRole();
         }
+        else if(role==='Anfitrion'){
+            this.setAnfitrionRole();
+        }
+        this.printRole();
     }
 
     setGuestRole (): void {
         this.roleService.flushRoles();
-        this.roleService.addRole('GUEST', ['']);
+        this.roleService.addRole('Usuario', ['']);
+        localStorage.setItem('role', 'Usuario');
     }
 
     setClientRole (): void {
         this.roleService.flushRoles();
-        this.roleService.addRole('CLIENT', ['leave_review']);
-        localStorage.setItem('role', 'CLIENT');
+        this.roleService.addRole('Coordinador', ['leave_review']);
+        localStorage.setItem('role', 'Coordinador');
     }
 
     setAdministratorRole (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('ADMIN', ['edit_author_permission', 'delete_author_permission']);
         localStorage.setItem('role', 'ADMIN');
+        this.printRole();
+    }
+
+    setAnfitrionRole():void{
+        this.roleService.flushRoles();
+        this.roleService.addRole('Anfitrion', ['leave_review']);
+        localStorage.setItem('role', 'Anfitrion');
+        this.printRole();
     }
 
     printRole (): void {
@@ -57,10 +70,13 @@ export class AuthService {
      * @param role The desired role to set to the user
      */
     login (role): void {
-        if (role === 'Administrator') {
+        if (role === 'ADMIN') {
             this.setAdministratorRole();
-        } else {
+        } else if(role==="Coordinador"){
             this.setClientRole()
+        }
+        else if(role ==="Anfitrion"){
+            this.setAnfitrionRole()
         }
         this.router.navigateByUrl('/');
     }

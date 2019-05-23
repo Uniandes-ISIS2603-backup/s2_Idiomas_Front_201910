@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Anfitrion} from '../anfitrion'
 import {AnfitrionService} from '../anfitrion.service'
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../.././auth/auth.service';
 
 @Component({
   selector: 'app-anfitrion-create',
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class AnfitrionCreateComponent implements OnInit {
 
   constructor(private anfitrionService : AnfitrionService ,
-        private toastrService: ToastrService
+        private toastrService: ToastrService, private authService: AuthService
 ) { }
 
 
@@ -30,7 +31,10 @@ export class AnfitrionCreateComponent implements OnInit {
     @Output() create = new EventEmitter();
 
   
-
+    login(): void {
+        this.authService.login('Anfitrion');
+        this.toastrService.success('Logged in')
+    }
   
     /**
     * Creates an anfitrion
