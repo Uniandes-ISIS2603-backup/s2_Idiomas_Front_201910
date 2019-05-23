@@ -9,6 +9,7 @@ import { GrupoDeInteresDetailComponent } from './grupodeinteres-detail/grupodein
 import { GrupodeinteresCreateComponent } from './grupodeinteres-create/grupodeinteres-create.component';
 
 
+
 @NgModule({
     imports: [       
         CommonModule,

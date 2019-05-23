@@ -11,8 +11,9 @@ export class GrupoDeInteres {
     /**
     * The editorial's name
     */
-    name: string;
-  
+    idioma: string;
+    nombre: string;
+    descripcion: string;
 
 }
 

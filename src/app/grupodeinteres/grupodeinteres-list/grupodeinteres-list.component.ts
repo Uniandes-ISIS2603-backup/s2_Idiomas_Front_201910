@@ -7,8 +7,8 @@ import { GrupoDeInteresService } from '../grupodeinteres.service';
  * The component for the list of editorials in the BookStore
  */
 @Component({ 
-  selector: 'list-editorial',
-  templateUrl: './editorial-list.component.html',
+  selector: 'list-grupodeinteres',
+  templateUrl: './grupodeinteres-list.component.html',
 })
 export class GrupoDeInteresListComponent implements OnInit {
 
@@ -21,13 +21,13 @@ export class GrupoDeInteresListComponent implements OnInit {
   /**
    * The list of editorials which belong to the BookStore
    */
-  grupodeinteress: GrupoDeInteres[];
+  grupodeinteres: GrupoDeInteres[];
 
   /**
    * Asks the service to update the list of editorials
    */
   getGrupoDeInteres(): void {
-    this.grupodeinteresService.getGrupoDeInteres().subscribe(grupodeinteres => this.grupodeinteress = grupodeinteres);
+    this.grupodeinteresService.getGrupoDeInteres().subscribe(grupodeinteres => this.grupodeinteres = grupodeinteres);
   }
 
   

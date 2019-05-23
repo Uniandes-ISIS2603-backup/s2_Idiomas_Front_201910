@@ -5,8 +5,9 @@ import { GrupoDeInteres } from './grupodeinteres';
 import { GrupoDeInteresDetail } from './grupodeinteres-detail';
 import { Observable } from 'rxjs';
 
-const API_URL = "../../assets/";
-const grupodeinteres = 'editorials.json';
+import { environment } from '../../environments/environment';
+const API_URL = environment.apiURL;
+const grupodeinteres = '/grupoDeInteres';
 
 /**
 * The service provider for everything related to editorials
@@ -30,7 +31,18 @@ export class GrupoDeInteresService {
     * @returns The editorial
     */
     getGrupoDeInteresDetail(grupodeinteresId): Observable<GrupoDeInteresDetail> {
-        return this.http.get<GrupoDeInteresDetail>(API_URL + "grupo de interes-" + grupodeinteresId+".json");
+        return this.http.get<GrupoDeInteresDetail>(API_URL +grupodeinteres + '/' +grupodeinteresId);
+    }
+
+    createGrupoDeInteres(grupoDeInteres): Observable<GrupoDeInteres> {
+        return this.http.post<GrupoDeInteres>(API_URL + grupodeinteres, grupoDeInteres);
     }
     
+    deleteComentario(grupoDeInteresId): Observable<boolean> {
+        return this.http.delete<boolean>(API_URL + grupodeinteres + '/' + grupoDeInteresId);
+    }
+
+    updateComentario(GrupoDeInteres: GrupoDeInteres) {
+        return this.http.put<GrupoDeInteres>(API_URL + grupodeinteres + '/' + GrupoDeInteres.id, GrupoDeInteres);
+    }
 }

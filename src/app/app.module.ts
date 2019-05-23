@@ -14,7 +14,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { ComentarioBlogModule } from './comentario-blog/comentario-blog.module';
-
+import {GrupoDeInteresModule} from './grupodeinteres/grupodeinteres.module';
 import { ActividadCreateComponent} from './actividad/actividad-create/actividad-create.component';
 
 import {UsuarioModule} from './usuario/usuario.module';
@@ -57,6 +57,7 @@ import {ChatModule} from './chat/chat.module';
         EstadiaModule,
         ChatModule,
         EncuentroModule,
+        GrupoDeInteresModule,
         OtroModule,
 
         ToastrModule.forRoot({

@@ -41,6 +41,9 @@ import {AdministradorCreateComponent} from '../administrador/administrador-creat
 import {AnfitrionListComponent} from '../anfitrion/anfitrion-list/anfitrion-list.component';
 import {AnfitrionDetailComponent} from '../anfitrion/anfitrion-detail/anfitrion-detail.component';
 import {AnfitrionCreateComponent} from '../anfitrion/anfitrion-create/anfitrion-create.component';
+import {GrupodeinteresCreateComponent} from '../grupodeinteres/grupodeinteres-create/grupodeinteres-create.component';
+import {GrupoDeInteresListComponent} from '../grupodeinteres/grupodeinteres-list/grupodeinteres-list.component';
+import {GrupoDeInteresDetailComponent} from '../grupodeinteres/grupodeinteres-detail/grupodeinteres-detail.component';
 
 const routes: Routes = [
 
@@ -50,7 +53,7 @@ const routes: Routes = [
       */
     {
         path: 'home',
-        component: ActividadListComponent
+        component: AuthSignUpComponent
     }
     ,
     {
@@ -176,6 +179,23 @@ const routes: Routes = [
                         only: ['ADMIN','Coordinador']
                     }
                 } 
+            }
+        ]
+    },
+    {
+        path: 'grupoDeInteres',
+        children: [
+            {
+                path: 'list',
+                component: GrupoDeInteresListComponent
+            },
+            {
+                path: ':id',
+                component: GrupoDeInteresDetailComponent
+            },
+            {
+                path: 'add',
+                component: GrupodeinteresCreateComponent
             }
         ]
     },

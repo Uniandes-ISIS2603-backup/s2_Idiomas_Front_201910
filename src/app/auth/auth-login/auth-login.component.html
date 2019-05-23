@@ -21,18 +21,14 @@
 <div class="row">
     <div class="col-6 offset-3">
         <div *ngIf="user.role == 'ADMIN'">
-            <app-administrador-create (ngSubmit)="createAdministrador()" ></app-administrador-create>
-        </div>
-        <div *ngIf="user.role == 'Anfitrion'">
-            <app-anfitrion-create (ngSubmit)="createAnfitrion()" >
-            </app-anfitrion-create>
+            <app-administrador-create type="button"(ngSubmit)="createAdministrador()" ></app-administrador-create>
         </div>
         <div *ngIf="user.role == 'Usuario'">
-            <app-usuario-create (ngSubmit)="createUsuario()" >
+            <app-usuario-create type="button"(ngSubmit)="createUsuario()" >
             </app-usuario-create>
         </div>
         <div *ngIf="user.role == 'Coordinador'">
-                <app-coordinador-create (ngSubmit)="createCoordinador()" >
+                <app-coordinador-create type="button"   (ngSubmit)="createCoordinador()" >
                 </app-coordinador-create>
             </div>
     </div>
