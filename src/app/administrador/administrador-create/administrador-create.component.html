@@ -36,14 +36,14 @@
                     <div class="row form-inline justify-content-center align-self-center">
                         <button type="button" class="btn btn-danger" routerLink="../list">Back</button>
                         <div class="divider"></div>
-                        <button type="submit" class="btn btn-primary" (click) = "login()">Create</button>
+                        <button type="submit" class="btn btn-primary" (click) = "login()" routerLink=".././actividades/list">Create</button>
 
                     </div>
                 </form>
             </div>
             <div class="col-3"></div>
         </div>
-
+        <router-outlet ></router-outlet>
 
     </body>
 </html>

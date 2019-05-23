@@ -46,10 +46,7 @@ export class AuthLoginComponent implements OnInit {
         this.rol = rolA
 
     }
-    log1():void{
-        this.user.role = "GUEST";
-        this.authService.login(this.user.role);
-    }
+
 
 
     /**
@@ -57,8 +54,7 @@ export class AuthLoginComponent implements OnInit {
     */
     ngOnInit() {
         this.user = new User();
-        this.log1();
-        this.roles = ['ADMIN', 'Anfitrion', 'Coordinador'];
+        this.roles = ['ADMIN', 'Coordinador'];
     }
 
 }

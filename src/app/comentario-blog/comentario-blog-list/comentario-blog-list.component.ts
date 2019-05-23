@@ -259,7 +259,7 @@ export class ComentarioBlogListComponent implements OnInit {
     this.dp.transform(dateB, 'yyyy/MM/dd');
     this.getComentariosFecha(this.dp.transform(dateA, 'yyyy/MM/dd'),this.dp.transform(dateB, 'yyyy/MM/dd'));
   }
-
+/*
   getLocation() {
     var x = document.getElementById("demo");
     if (navigator.geolocation) {
@@ -276,7 +276,7 @@ export class ComentarioBlogListComponent implements OnInit {
   
     document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
   }
-
+*/
   SoH() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
@@ -289,4 +289,7 @@ export class ComentarioBlogListComponent implements OnInit {
     var x = document.getElementById("myDIV");
     x.style.display = "none";
   }
+
+  
+
 }

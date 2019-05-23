@@ -9,7 +9,8 @@
                 </h1>
                 <button class="button2" (click)="SoH()">Filtro de fechas</button>
                 <button (click)="ngOnInit()" class="button button2" (click)="SoH1()">Clear</button>
-                <div id="myDIV" style="display: none;">
+
+                <div id="myDIV" style="display: none;" >
                     <ngb-datepicker #dp (select)="onDateSelection($event)" (click)="storeDates()" [displayMonths]="2"
                         [dayTemplate]="t" outsideDays="hidden">
                     </ngb-datepicker>
@@ -25,7 +26,7 @@
                     <hr>
                 </div>
 
-                <div class="comments-list" *ngFor="let comentario of comentarioBlogs">
+                <div class="comments-list" *ngFor="let comentario of comentarioBlogs" >
 
                     <div class="media-body">
                         <p><small class="pull-right">{{comentario.fecha| date:'MM/dd/yyyy'}}</small></p>
@@ -36,7 +37,7 @@
                                 routerLink="../{{comentario.id}}">{{comentario.autor.nombre}} - {{comentario.titulo}}</h4>
                             {{comentario.texto}}
 
-                            <p><small ><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
+                            <p><small   ><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
                             <td>
                                 <button class="btn btn-danger" (click)="deleteComentario(comentario.id)">Eliminar<span
                                         class="fa"></span></button>
@@ -75,6 +76,10 @@
             
             </body>
             -->
+
+                  
+
+
 
 </div>
 

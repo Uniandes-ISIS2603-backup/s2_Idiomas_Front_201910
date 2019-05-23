@@ -21,7 +21,7 @@ export class AuthService {
         this.permissionsService.flushPermissions();
         this.roleService.flushRoles();
         this.permissionsService.loadPermissions(['edit_author_permission', 'delete_author_permission', 'leave_review']);
-        const role = localStorage.getItem('role');
+        //const role = localStorage.getItem('role');
        // if (role === 'Usuario') {
             this.setGuestRole();
         //}// else if (role === 'ADMIN') {
@@ -56,12 +56,6 @@ export class AuthService {
         this.printRole();
     }
 
-    setAnfitrionRole():void{
-        this.roleService.flushRoles();
-        this.roleService.addRole('Anfitrion', ['leave_review']);
-        localStorage.setItem('role', 'Anfitrion');
-        this.printRole();
-    }
 
     printRole (): void {
         console.log(this.roleService.getRoles());
@@ -76,9 +70,6 @@ export class AuthService {
             this.setAdministratorRole();
         } else if(role==="Coordinador"){
             this.setClientRole()
-        }
-        else if(role ==="Anfitrion"){
-            this.setAnfitrionRole()
         }
         this.router.navigateByUrl('/');
     }

@@ -1,7 +1,7 @@
 export class Usuario 
 {
   id: number;
-  nombre: String;
+  nombre: string;
   contrasenia: number;
 
 
