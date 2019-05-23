@@ -9,7 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 import {ComentarioBlogListComponent } from '../comentario-blog/comentario-blog-list/comentario-blog-list.component';
 import {ComentarioBlogDetailComponent } from '../comentario-blog/comentario-blog-detail/comentario-blog-detail.component';
@@ -28,6 +28,7 @@ import { ComentarioBlogService } from './comentario-blog.service';
     HttpClientModule,
     CommonModule,
     FormsModule,
+    NgxPermissionsModule,
     NgbModule
   ],
   declarations: [ComentarioBlogListComponent, ComentarioBlogDetailComponent, ComentarioCreateComponent, ComentarioEditComponent],

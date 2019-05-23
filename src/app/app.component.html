@@ -30,8 +30,8 @@
             <div class="navbar-nav mr-auto mt-0">
 
             </div>
-            <div class="navbar-nav ml-auto flex-column" *ngxPermissionsOnly="['Usuario']">
-                <div class="flex-row"   >
+            <div class="navbar-nav ml-auto flex-column" >
+                <div class="flex-row"   *ngxPermissionsOnly="['GUEST']">
                     <div class="form-inline">
                         <li class="right-space "><a id="signup-navbar-item" routerLink="/auth/sign-up" ><span
                                     class="fa fa-user"></span>
@@ -40,9 +40,9 @@
                                 in</a></li>
                     </div>
                 </div>
-                <div class="flex-row" *ngxPermissionsOnly="['ADMIN','Coordinador']">
+                <div class="flex-row" *ngxPermissionsOnly="['ADMIN', 'Coordinador','Usuario']" >
                     <div class="form-inline">
-                        <li><a id="logout-navbar-item" (click)="logout()" href="#"><span
+                        <li><a id="logout-navbar-item"  (click)="logout()" href="#"><span
                                     class="fa fa-sign-out"></span>Logout</a></li>
                     </div>
                 </div>
@@ -55,30 +55,14 @@
 
     <ul class="nav nav-tabs">
 
-        <li class="nav-item">
+        <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
             <a id="usuariosTag" class="nav-link" routerLink="/usuarios/list">usuarios</a>
         </li>
-        <li class="nav-item">
-            <a id="usuariosCreateTag" class="nav-link" routerLink="/usuarios/create">usuariosCreate</a>
-        </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
             <a id="administradorTag" class="nav-link" routerLink="/administradores/list">administradores</a>
         </li>
-        <li class="nav-item">
-            <a id="administradorCreateTag" class="nav-link"
-                routerLink="/administradores/create">administradoresCreate</a>
-        </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
             <a id="coordinadoresTag" class="nav-link" routerLink="/coordinadores/list">coordinadores</a>
-        </li>
-        <li class="nav-item">
-            <a id="coordinadoresCreateTag" class="nav-link" routerLink="/coordinadores/create">coordinadoresCreate</a>
-        </li>
-        <li class="nav-item">
-            <a id="anfitrionesTag" class="nav-link" routerLink="/anfitriones/list">anfitriones</a>
-        </li>
-        <li class="nav-item">
-            <a id="anfitrionesCreateTag" class="nav-link" routerLink="/anfitriones/create">anfitrionesCreate</a>
         </li>
     </ul>
 

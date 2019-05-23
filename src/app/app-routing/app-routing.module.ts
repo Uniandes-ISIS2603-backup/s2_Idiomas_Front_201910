@@ -50,10 +50,22 @@ const routes: Routes = [
       */
     {
         path: 'home',
-        component: AuthLoginComponent
+        component: ActividadListComponent
     }
     ,
-
+    {
+        path: 'auth',
+        children: [
+            {
+                path: 'login',
+                component: AuthSignUpComponent
+            },
+            {
+                path: ':sign-up',
+                component: AuthLoginComponent
+            }
+        ]
+    },
     {
         path: 'comments',
         children: [
@@ -103,7 +115,13 @@ const routes: Routes = [
             },
             {
                 path:':id/edit',
-                component: ActividadEditComponent 
+                component: ActividadEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','Coordinador']
+                    }
+                }
             }
         ]
     },
@@ -124,7 +142,13 @@ const routes: Routes = [
             },
             {
                 path:':id/edit',
-                component: ChatEditComponent 
+                component: ChatEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','Coordinador']
+                    }
+                } 
             }
         ]
     },
@@ -145,7 +169,13 @@ const routes: Routes = [
             },
             {
                 path:':id/edit',
-                component: EncuentroEditComponent 
+                component: EncuentroEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','Coordinador']
+                    }
+                } 
             }
         ]
     },
@@ -166,7 +196,13 @@ const routes: Routes = [
             },
             {
                 path:':id/edit',
-                component: EstadiaEditComponent 
+                component: EstadiaEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','Coordinador']
+                    }
+                } 
             }
         ]
     },
@@ -187,13 +223,15 @@ const routes: Routes = [
             },
             {
                 path:':id/edit',
-                component: OtroEditComponent 
+                component: OtroEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN','Coordinador']
+                    }
+                } 
             }
         ]
-    },
-    {
-        path: 'home',
-        component: AuthLoginComponent
     }
     ,
     {
@@ -233,6 +271,27 @@ const routes: Routes = [
             {
                 path: 'create',
                 component: AnfitrionCreateComponent,
+
+            }
+        ]
+    }
+    ,
+    {
+        path: 'coordinadores',
+        children: [
+            {
+                path: 'list',
+                component: CoordinadorListComponent
+            },
+            {
+                path: ':id',
+                component: CoordinadorDetailComponent,
+                outlet: 'detail'
+            }
+            ,
+            {
+                path: 'create',
+                component: CoordinadorCreateComponent,
 
             }
         ]

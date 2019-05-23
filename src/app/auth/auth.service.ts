@@ -37,6 +37,13 @@ export class AuthService {
 
     setGuestRole (): void {
         this.roleService.flushRoles();
+        this.roleService.addRole('GUEST', ['']);
+        localStorage.setItem('role', 'GUEST');
+        this.printRole();
+    }
+
+    setUserRole (): void {
+        this.roleService.flushRoles();
         this.roleService.addRole('Usuario', ['']);
         localStorage.setItem('role', 'Usuario');
         this.printRole();
@@ -70,6 +77,8 @@ export class AuthService {
             this.setAdministratorRole();
         } else if(role==="Coordinador"){
             this.setClientRole()
+        } else if(role==="Usuario"){
+            this.setUserRole()
         }
         this.router.navigateByUrl('/');
     }

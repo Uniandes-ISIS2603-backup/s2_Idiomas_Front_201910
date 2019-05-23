@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-12">
             <br>
-            <div class="dropdown">
+            <div class="dropdown" *ngxPermissionsOnly="['ADMIN', 'Coordinador']">
                     <button class="btn btn-secondary dropdown-toggle justify-content-center align-self-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Crear actividad
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
                         <a [ngClass]="{ 'btn-primary': !showCreateA, 'btn-danger': showCreateA }" type="button" class="dropdown-item"
                         (click)="showHideCreateA()">Crear actividad</a>
                         <a [ngClass]="{ 'btn-primary': !showCreateC, 'btn-danger': showCreateC }" type="button" class="dropdown-item"
@@ -37,10 +37,10 @@
                         
                 </td>
                 <td>
-                    <button class="btn btn-primary" (click)="showHideEdit(actividad.id,actividad)">Editar<span class="fa"></span></button>
+                    <button *ngxPermissionsOnly="['ADMIN', 'Coordinador']" class="btn btn-primary" (click)="showHideEdit(actividad.id,actividad)">Editar<span class="fa"></span></button>
                 </td>
                 <td>
-                    <button class="btn btn-danger" (click)="deleteActividad(actividad.id)">Eliminar<span class="fa"></span></button>
+                    <button class="btn btn-danger" *ngxPermissionsOnly="['ADMIN']" (click)="deleteActividad(actividad.id)">Eliminar<span class="fa"></span></button>
                 </td>
                 </tr>
                 </tbody>
