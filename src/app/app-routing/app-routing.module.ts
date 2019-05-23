@@ -67,17 +67,17 @@ const routes: Routes = [
             },
             {
                 path: ':id',
-                component: ComentarioBlogDetailComponent,
+                component: ComentarioBlogDetailComponent
+            },
+            {
+                path: ':id/edit',
+                component: ComentarioEditComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
                         only: ['ADMIN']
                     }
                 }
-            },
-            {
-                path: ':id/edit',
-                component: ComentarioEditComponent
             }
         ]
         

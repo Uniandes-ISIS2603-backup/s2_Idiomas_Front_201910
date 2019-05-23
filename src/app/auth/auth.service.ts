@@ -22,16 +22,16 @@ export class AuthService {
         this.roleService.flushRoles();
         this.permissionsService.loadPermissions(['edit_author_permission', 'delete_author_permission', 'leave_review']);
         const role = localStorage.getItem('role');
-        if (role === 'Usuario') {
+       // if (role === 'Usuario') {
             this.setGuestRole();
-        } else if (role === 'ADMIN') {
-            this.setAdministratorRole();
-        } else if(role==='Coordinador'){
-            this.setClientRole();
-        }
-        else if(role==='Anfitrion'){
-            this.setAnfitrionRole();
-        }
+        //}// else if (role === 'ADMIN') {
+         //   this.setAdministratorRole();
+        //} else if(role==='Coordinador'){
+        //    this.setClientRole();
+        //}
+        //else if(role==='Anfitrion'){
+        //    this.setAnfitrionRole();
+        //}
         this.printRole();
     }
 
@@ -39,12 +39,14 @@ export class AuthService {
         this.roleService.flushRoles();
         this.roleService.addRole('Usuario', ['']);
         localStorage.setItem('role', 'Usuario');
+        this.printRole();
     }
 
     setClientRole (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('Coordinador', ['leave_review']);
         localStorage.setItem('role', 'Coordinador');
+        this.printRole();
     }
 
     setAdministratorRole (): void {

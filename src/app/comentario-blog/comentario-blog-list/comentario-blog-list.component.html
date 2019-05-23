@@ -36,7 +36,7 @@
                                 routerLink="../{{comentario.id}}">{{comentario.autor.nombre}} - {{comentario.titulo}}</h4>
                             {{comentario.texto}}
 
-                            <p><small ngxPermissionsOnly="['Administrador]"><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
+                            <p><small ><a routerLink="../{{comentario.id}}/edit">Editar</a></small></p>
                             <td>
                                 <button class="btn btn-danger" (click)="deleteComentario(comentario.id)">Eliminar<span
                                         class="fa"></span></button>
